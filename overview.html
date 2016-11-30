@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+  <head>
+   <title>Prototyp HIV Patients</title>
+   <link rel="stylesheet" href="overview.css">   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="d3.min.js" charset="utf-8"></script>
+   <script src="overview.js"></script>   
+  </head>
+
+  <body>
+    <h1>Prototyp HIV PATIENTS OVERVIEW!</h1> 
+	<div id="navigation" style="width:150px; height: 600px; float:left">
+		<div id="chooseCountry">
+		<select name="country-list">
+			<option value="Afghanistan">Afghanistan</option>
+			<option value="Albania">Albania</option> 
+			<option value="Algeria">Algeria</option>
+			<!-- and so on... -->
+		</select>
+		</div>
+		<div id="Gender" style="height:180px">
+		</div>
+		
+		<div id="riskGroup" style="height:75px">
+			<div id="list1" class="dropdown-check-list" tabindex="100">
+			<span class="anchor">Select Risk Groups</span>
+			<ul class="items">
+				<li><input type="checkbox" />Apple </li>
+				<li><input type="checkbox" />Orange</li>
+				<li><input type="checkbox" />Grapes </li>
+				<li><input type="checkbox" />Berry </li>
+				<li><input type="checkbox" />Mango </li>
+				<li><input type="checkbox" />Banana </li>
+				<li><input type="checkbox" />Tomato</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div id="ageGroup" style="height:75px">
+			<div id="list2" class="dropdown-check-list" tabindex="100">
+			<span class="anchor">Select Age Groups</span>
+			<ul class="items">
+				<li><input type="checkbox" />Apple </li>
+				<li><input type="checkbox" />Orange</li>
+				<li><input type="checkbox" />Grapes </li>
+				<li><input type="checkbox" />Berry </li>
+				<li><input type="checkbox" />Mango </li>
+				<li><input type="checkbox" />Banana </li>
+				<li><input type="checkbox" />Tomato</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div id="stopCause" style="height:75px">
+			<div id="list3" class="dropdown-check-list" tabindex="100">
+			<span class="anchor">Select Stop-Cause</span>
+			<ul class="items">
+				<li><input type="checkbox" />Apple </li>
+				<li><input type="checkbox" />Orange</li>
+				<li><input type="checkbox" />Grapes </li>
+				<li><input type="checkbox" />Berry </li>
+				<li><input type="checkbox" />Mango </li>
+				<li><input type="checkbox" />Banana </li>
+				<li><input type="checkbox" />Tomato</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div id="countryOfInfection" style="height:75px">
+			<div id="list4" class="dropdown-check-list" tabindex="100">
+			<span class="anchor">Select Country of infection</span>
+			<ul class="items">
+				<li><input type="checkbox" />Apple </li>
+				<li><input type="checkbox" />Orange</li>
+				<li><input type="checkbox" />Grapes </li>
+				<li><input type="checkbox" />Berry </li>
+				<li><input type="checkbox" />Mango </li>
+				<li><input type="checkbox" />Banana </li>
+				<li><input type="checkbox" />Tomato</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div style="width:150px; padding:3px" align="center">
+			<a href="countries.html" class="btn btn-primary btn-block" >Compare countries</a>
+		</div>
+		<div style="width:150px; padding:3px" align="center">
+			<a href="riskgroup.html" class="btn btn-primary btn-block" >Compare riskgroups</a>
+		</div>
+		
+	</div>	
+	<div id="bars1"style="width:1200px"> </div>
+	</div>
+	<div id="bars2"style="width:1200px"> </div>
+  </div>
+  </div>
+  </body>
+
+</html>
