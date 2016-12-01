@@ -6,11 +6,11 @@ var dataset, full_dataset;
 d3.json("data/oscar_winners.json", function (data) {
     full_dataset = data;
     dataset = full_dataset.slice(0,35);
-    gen_bars1();
- 	gen_bars2();
-	gen_bars3();
-    gen_bars4();
-	gen_pie();
+    gen_riskgroupsbars();
+ 	gen_agegroupsbars();
+	gen_stopcausebars();
+    gen_countryofinfectionbars();
+	gen_genderpie();
 });
 
   var dispatch = d3.dispatch("movieEnter");
@@ -32,7 +32,7 @@ dispatch.on("movieEnter.bars", function(movie){
 	})
 
 
-	function gen_pie() {
+	function gen_genderpie() {
 var dataset = [
     { name: 'F', percent: 38.49 },
     { name: 'M', percent: 61.51 },
@@ -84,7 +84,7 @@ path.transition()
 }
 
 
-function gen_bars1() {
+function gen_riskgroupsbars() {
     var w = 500;
     var h = 300;
 
@@ -154,7 +154,7 @@ function gen_bars1() {
 
 }
 
-function gen_bars2() {
+function gen_agegroupsbars() {
     var w = 500;
     var h = 300;
 
@@ -226,7 +226,7 @@ function gen_bars2() {
 
 }
 
-function gen_bars3() {
+function gen_stopcausebars() {
     var w = 500;
     var h = 300;
 
@@ -299,7 +299,7 @@ function gen_bars3() {
 
 
 
-function gen_bars4() {
+function gen_countryofinfectionbars() {
     var w = 500;
     var h = 300;
 
