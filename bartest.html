@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+  <head>
+   <title>Prototyp HIV Patients</title>
+   <link rel="stylesheet" href="overview.css">
+  	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <script src="dependencies/d3.min.js" charset="utf-8"></script>
+   <script src="dependencies/jquery-3.1.1.js"></script>
+   <script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+   <script src="bartest.js"></script>
+  </head>
+
+  <body>
+    <h1>Prototyp HIV PATIENTS OVERVIEW!</h1>
+	<div id="navigation" style="width:150px; height: 600px; float:left">
+		<div id="chooseCountry">
+		
+		<select id="country-list" class="selectpicker" style="width:150px">
+			<option id="all" value="AllCountries">All Countries</option>
+			<option id="germany" value="Germany">Germany</option>
+			<option id="portugal" value="Portugal">Portugal</option>
+			<option id="more to implement" value="Algeria">... more to implement</option>
+			<!-- and so on... -->
+		</select>
+		</div>
+		<div id="Gender" style="height:180px">
+		</div>
+
+		<div id="dropdownRiskGroups" class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="width:150px; padding:3px" align="center">RiskGroups
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><input id="homo" type="checkbox" />homosexual</li>
+				<li><input id="vertical"type="checkbox" />vertical transmission</li>
+				<li><input id="ivda" type="checkbox" />IVDA </li>
+				<li><input id="other" type="checkbox" />other</li>
+				<li><input id="hetero"type="checkbox" />heterosexual</li>
+				<li><input id="blood" type="checkbox" />blood products</li>
+			</ul>
+		</div>
+		
+		
+		<div id="dropdownAgeGroups" class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" style="width:150px; padding:3px" align="center" data-toggle="dropdown">AgeGroups
+					<span class="caret"></span>
+				</button>
+			<ul class="dropdown-menu" class="dropdown-menu">
+				<li><input id="15y" type="checkbox" /> <15 years</li>
+				<li><input id="1620y" type="checkbox" />16-20 years</li>
+				<li><input id="2125y" type="checkbox" />21-25 years </li>
+				<li><input id="2630y" type="checkbox" />26-30 years </li>
+				<li><input id="3150y" type="checkbox" />31-35 years </li>
+				<li><input id="3640y" type="checkbox" />36-40 years </li>
+				<li><input id="4145y" type="checkbox" />41-45 years</li>
+				<li><input id="4650y" type="checkbox" />46-50 years</li>
+				<li><input id="5155y" type="checkbox" />51-55 years</li>
+				<li><input id="55plusy" type="checkbox" />56+</li>
+				</ul>
+		</div>
+		
+			<div id="dropdownStopCauses" class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" style="width:150px; padding:3px" align="center" data-toggle="dropdown">StopCauses
+					<span class="caret"></span>
+				</button>
+			<ul class="dropdown-menu">
+				<li><input type="checkbox" />toDo </li>
+			
+			</ul>
+			</div>
+		
+		
+		<div id="dropdownCountryOfInfection" class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" style="width:150px; padding:3px" align="center" data-toggle="dropdown">CountryOfInfection
+					<span class="caret"></span>
+				</button>
+			<ul class="dropdown-menu">
+				<li><input type="checkbox" />toDo</li>
+				</ul>
+		</div>
+
+		<div style="width:150px; padding:3px" align="center">
+			<a href="countries.html" class="btn btn-primary btn-block" >Compare countries</a>
+		</div>
+		<div style="width:150px; padding:3px" align="center">
+			<a href="riskgroup.html" class="btn btn-primary btn-block" >Compare riskgroups</a>
+		</div>
+
+	</div>
+	
+
+	<svg width="960" height="500"></svg>
+	</div>
+	<div id="bars2"style="width:1200px"> </div>
+  </div>
+  </div>
+  </body>
+
+</html>
