@@ -1,49 +1,49 @@
 loaddata();
-	
+
 function loaddata(){
-			//////////////////////// Set-Up ////////////////////////////// 
+			//////////////////////// Set-Up //////////////////////////////
 
 			var margin = {top: 100, right: 100, bottom: 100, left: 100},
 				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
 				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-					
-			////////////////////////// Data ////////////////////////////// 
-			
-			var dataset = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];	
+
+			////////////////////////// Data //////////////////////////////
+
+			var dataset = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 			var gesamt,homo,blood,hetero,other,ivda,vertical = 0;
 			var valuesArray15,valuesArray21,valuesArray26 = [0,0,0,0,0,0];
-						
-			d3.csv("patients_final.csv", function(data) {
+
+			d3.csv("data/patients_final.csv", function(data) {
 				data.forEach(function(d) {
-					
+
 				valuesArray = amountOfeach(d);
-							
+
 				if(document.getElementById("15y").checked == true){
 					valuesArray15 = age(valuesArray[0],valuesArray[1],valuesArray[2],valuesArray[3],valuesArray[4],valuesArray[5]);
 				}
 				else{
 					valuesArray15 = [0,0,0,0,0,0];
 				}
-				
+
 				if(document.getElementById("21y").checked == true){
 						valuesArray21 = age(valuesArray[6],valuesArray[7],valuesArray[8],valuesArray[9],valuesArray[10],valuesArray[11]);
 				}
 				else{
 					valuesArray21 = [0,0,0,0,0,0];
 				}
-				
+
 				if(document.getElementById("26y").checked == true){
 					valuesArray26 = age(valuesArray[12],valuesArray[13],valuesArray[14],valuesArray[15],valuesArray[16],valuesArray[17]);
 				}
 				else{
 					valuesArray26 = [0,0,0,0,0,0];
 				}
-				
-				
+
+
 				})
-			
+
 			function amountOfeach(d){
-				
+
 				if (d.Risk=="homosexual/bisexual") {
 					if(d.age_at_infection>0&&d.age_at_infection<=15){
 						dataset[0]++;}
@@ -93,20 +93,20 @@ function loaddata(){
 						dataset[17]++;}
 				}
 				}
-								
+
 				return dataset;
 			}
-			
+
 			function age(p1,p2,p3,p4,p5,p6){
 				gesamt = p1+p2+p3+p4+p5+p6;
-				
+
 				homo = (Math.round((p1/gesamt)* 100) / 100);
 				blood = (Math.round((p2/gesamt)* 100) / 100);
 				hetero = (Math.round((p3/gesamt)* 100) / 100);
 				other = (Math.round((p4/gesamt)* 100) / 100);
 				ivda = (Math.round((p5/gesamt)* 100) / 100);
 				vertical = (Math.round((p6/gesamt)* 100) / 100);
-				
+
 				var tmparray = new Object();
 				tmparray[0]=homo;
 				tmparray[1]=blood;
@@ -114,10 +114,10 @@ function loaddata(){
 				tmparray[3]=other;
 				tmparray[4]=ivda;
 				tmparray[5]=vertical;
-				
+
 				return tmparray;
 			}
-		
+
 			var data = [
 					[//bis 15 Jahre
 						{axis:"homosexual/bisexual",value:valuesArray15[0]},
@@ -142,31 +142,31 @@ function loaddata(){
 						{axis:"vertical transmission",value:valuesArray26[5]},
 					  ]
 					];
-		
-			////////////////////////////////////////////////////////////// 
-			//////////////////// Draw the Chart ////////////////////////// 
-			////////////////////////////////////////////////////////////// 
+
+			//////////////////////////////////////////////////////////////
+			//////////////////// Draw the Chart //////////////////////////
+			//////////////////////////////////////////////////////////////
 
 			var color = d3.scale.ordinal()
 				.range(["#EDC951","#CC333F","#00A0B0"]);
-				
+
 			var radarChartOptions = {
 			  w: width,
 			  h: height,
-			  
+
 			  margin: margin,
 			  maxValue: 0.5,
 			  levels: 5,
 			  roundStrokes: true,
 			  color: color
 			};
-			
+
 			//Call function to draw the Radar chart
 			RadarChart(".radarChart", data, radarChartOptions);
-				
-			});			
+
+			});
 	}
-	
+
 function RadarChart(id, dataset, options) {
 	var cfg = {
 	 w: 600,				//Width of the circle
@@ -183,49 +183,49 @@ function RadarChart(id, dataset, options) {
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
 	 color: d3.scale.category10()	//Color function
 	};
-	
+
 	//Put all of the options into a variable called cfg
 	if('undefined' !== typeof options){
 	  for(var i in options){
 		if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
 	  }//for i
 	}//if
-	
+
 	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
 	var maxValue = Math.max(cfg.maxValue, d3.max(dataset, function(i){return d3.max(i.map(function(o){return o.value;}))}));
-		
+
 	var allAxis = (dataset[0].map(function(i, j){return i.axis})),	//Names of each axis
 	//var allAxis = ("Name"),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
 		Format = d3.format('%'),			 	//Percentage formatting
 		angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
-	
+
 	//Scale for the radius
 	var rScale = d3.scale.linear()
 		.range([0, radius])
 		.domain([0, maxValue]);
-		
+
 	/////////////////////////////////////////////////////////
 	//////////// Create the container SVG and g /////////////
 	/////////////////////////////////////////////////////////
 
 	//Remove whatever chart with the same id/class was present before
 	d3.select(id).select("svg").remove();
-	
+
 	//Initiate the radar chart SVG
 	var svg = d3.select(id).append("svg")
 			.attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
 			.attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
 			.attr("class", "radar"+id);
-	//Append a g element		
+	//Append a g element
 	var g = svg.append("g")
 			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
-	
+
 	/////////////////////////////////////////////////////////
 	////////// Glow filter for some extra pizzazz ///////////
 	/////////////////////////////////////////////////////////
-	
+
 	//Filter for the outside glow
 	var filter = g.append('defs').append('filter').attr('id','glow'),
 		feGaussianBlur = filter.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','coloredBlur'),
@@ -236,10 +236,10 @@ function RadarChart(id, dataset, options) {
 	/////////////////////////////////////////////////////////
 	/////////////// Draw the Circular grid //////////////////
 	/////////////////////////////////////////////////////////
-	
+
 	//Wrapper for the grid & axes
 	var axisGrid = g.append("g").attr("class", "axisWrapper");
-	
+
 	//Draw the background circles
 	axisGrid.selectAll(".levels")
 	   .data(d3.range(1,(cfg.levels+1)).reverse())
@@ -267,7 +267,7 @@ function RadarChart(id, dataset, options) {
 	/////////////////////////////////////////////////////////
 	//////////////////// Draw the axes //////////////////////
 	/////////////////////////////////////////////////////////
-	
+
 	//Create the straight lines radiating outward from the center
 	var axis = axisGrid.selectAll(".axis")
 		.data(allAxis)
@@ -298,24 +298,24 @@ function RadarChart(id, dataset, options) {
 	/////////////////////////////////////////////////////////
 	///////////// Draw the radar chart blobs ////////////////
 	/////////////////////////////////////////////////////////
-	
+
 	//The radial line function
 	var radarLine = d3.svg.line.radial()
 		.interpolate("linear-closed")
 		.radius(function(d) { return rScale(d.value); })
 		.angle(function(d,i) {	return i*angleSlice; });
-		
+
 	if(cfg.roundStrokes) {
 		radarLine.interpolate("cardinal-closed");
 	}
-				
-	//Create a wrapper for the blobs	
+
+	//Create a wrapper for the blobs
 	var blobWrapper = g.selectAll(".radarWrapper")
 		.data(dataset)
 		.enter().append("g")
 		.attr("class", "radarWrapper");
-			
-	//Append the backgrounds	
+
+	//Append the backgrounds
 	blobWrapper
 		.append("path")
 		.attr("class", "radarArea")
@@ -326,11 +326,11 @@ function RadarChart(id, dataset, options) {
 			//Dim all blobs
 			d3.selectAll(".radarArea")
 				.transition().duration(200)
-				.style("fill-opacity", 0.1); 
+				.style("fill-opacity", 0.1);
 			//Bring back the hovered over blob
 			d3.select(this)
 				.transition().duration(200)
-				.style("fill-opacity", 0.7);	
+				.style("fill-opacity", 0.7);
 		})
 		.on('mouseout', function(){
 			//Bring back all blobs
@@ -338,16 +338,16 @@ function RadarChart(id, dataset, options) {
 				.transition().duration(200)
 				.style("fill-opacity", cfg.opacityArea);
 		});
-		
-	//Create the outlines	
+
+	//Create the outlines
 	blobWrapper.append("path")
 		.attr("class", "radarStroke")
 		.attr("d", function(d,i) { return radarLine(d); })
 		.style("stroke-width", cfg.strokeWidth + "px")
 		.style("stroke", function(d,i) { return cfg.color(i); })
 		.style("fill", "none")
-		.style("filter" , "url(#glow)");		
-	
+		.style("filter" , "url(#glow)");
+
 	//Append the circles
 	blobWrapper.selectAll(".radarCircle")
 		.data(function(d,i) { return d; })
@@ -362,13 +362,13 @@ function RadarChart(id, dataset, options) {
 	/////////////////////////////////////////////////////////
 	//////// Append invisible circles for tooltip ///////////
 	/////////////////////////////////////////////////////////
-	
+
 	//Wrapper for the invisible circles on top
 	var blobCircleWrapper = g.selectAll(".radarCircleWrapper")
 		.data(dataset)
 		.enter().append("g")
 		.attr("class", "radarCircleWrapper");
-		
+
 	//Append a set of invisible circles on top for the mouseover pop-up
 	blobCircleWrapper.selectAll(".radarInvisibleCircle")
 		.data(function(d,i) { return d; })
@@ -382,7 +382,7 @@ function RadarChart(id, dataset, options) {
 		.on("mouseover", function(d,i) {
 			newX =  parseFloat(d3.select(this).attr('cx')) - 10;
 			newY =  parseFloat(d3.select(this).attr('cy')) - 10;
-					
+
 			tooltip
 				.attr('x', newX)
 				.attr('y', newY)
@@ -394,18 +394,18 @@ function RadarChart(id, dataset, options) {
 			tooltip.transition().duration(200)
 				.style("opacity", 0);
 		});
-		
+
 	//Set up the small tooltip for when you hover over a circle
 	var tooltip = g.append("text")
 		.attr("class", "tooltip")
 		.style("opacity", 0);
-	
+
 	/////////////////////////////////////////////////////////
 	/////////////////// Helper Function /////////////////////
 	/////////////////////////////////////////////////////////
 
 	//Taken from http://bl.ocks.org/mbostock/7555321
-	//Wraps SVG text	
+	//Wraps SVG text
 	function wrap(text, width) {
 	  text.each(function() {
 		var text = d3.select(this),
@@ -418,7 +418,7 @@ function RadarChart(id, dataset, options) {
 			x = text.attr("x"),
 			dy = parseFloat(text.attr("dy")),
 			tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
-			
+
 		while (word = words.pop()) {
 		  line.push(word);
 		  tspan.text(line.join(" "));
@@ -430,6 +430,6 @@ function RadarChart(id, dataset, options) {
 		  }
 		}
 	  });
-	}//wrap	
-	
+	}//wrap
+
 }//RadarChart

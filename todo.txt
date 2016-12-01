@@ -1,0 +1,12 @@
+Nils:
+    load (+display simply) real data
+    filtering / interactivity
+
+Overview
+    fix axes
+    interactivity
+    drop down menus
+
+Heatmap
+
+Radial
