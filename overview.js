@@ -21,7 +21,6 @@ dispatch.on("movieEnter.scatterplot", function(movie){
 		}
 		selectedCircle = d3.select("circle[title=\'"+movie.title+"\']")
 		selectedCircle.attr("fill", "red");
-		console.log(movie.title);
 	})
 
 dispatch.on("movieEnter.bars", function(movie){
@@ -30,7 +29,6 @@ dispatch.on("movieEnter.bars", function(movie){
 		}
 		selectedBar = d3.select("rect[title=\'"+movie.title+"\']")
 		selectedBar.attr("fill", "red");
-		console.log(movie.title);
 	})
 
 
