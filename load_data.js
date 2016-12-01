@@ -63,15 +63,15 @@ function update_filters() {
         columns[i].filter = $('#'+columns[i].cl).val();
     }
 
-    // filter
+    // apply filter
     filtered_dataset = full_dataset.filter(filter_function);
     filtered_unique_columns = unique_columns.map(column_filter);
 
+    // update display
     update_select_boxes();
     generate_table();
 }
 
-//
 function column_filter(column, i) {
     // no filter selected for this column -> only get possible values
     if (columns[i].filter.length == 0) {

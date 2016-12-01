@@ -1,7 +1,3 @@
-Nils:
-    load (+display simply) real data
-    filtering / interactivity
-
 Overview
     fix axes
     interactivity
@@ -10,3 +6,7 @@ Overview
 Heatmap
 
 Radial
+
+after prototype:
+    transition of gender pie to switch between angles not 0,0
+    text position of gender pie
