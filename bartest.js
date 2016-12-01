@@ -5,20 +5,20 @@ var unique_columns, filtered_unique_columns;
 var agegroups, riskgroups, gendergroups, stopcausesgroup, countryofinfectiongroup;
 
 var columns = [
-{ head: 'Gender', cl: 'gender', filter: [],
-html: function(r) { return r.Gender; } },
-{ head: 'Riskgroup', cl: 'riskgroup', filter: [],
-html: function(r) { return r.Risk; } },
-{ head: 'Infection Age', cl: 'age_at_infection', filter: [],
-html: function(r) { return r.age_at_infection; } },
-{ head: 'First Positive Test', cl: 'first_positive_test_date', filter: [],
-html: function(r) { return r.first_positive_test_date; } },
-{ head: 'Country of Infection', cl: 'infection', filter: [],
-html: function(r) { return r.infection; } },
-{ head: 'Country of Origin', cl: 'origin', filter: [],
-html: function(r) { return r.origin; } },
-{ head: 'Year of Birth', cl: 'year_of_birth', filter: [],
-html: function(r) { return r.year_of_birth; } },
+  { head: 'Gender', cl: 'gender', filter: [],
+    html: function(r) { return r.Gender; } },
+  { head: 'Riskgroup', cl: 'riskgroup', filter: [],
+    html: function(r) { return r.Risk; } },
+  { head: 'Infection Age', cl: 'age_at_infection', filter: [],
+    html: function(r) { return r.age_at_infection; } },
+  { head: 'First Positive Test', cl: 'first_positive_test_date', filter: [],
+    html: function(r) { return r.first_positive_test_date; } },
+  { head: 'Country of Infection', cl: 'infection', filter: [],
+    html: function(r) { return r.infection; } },
+  { head: 'Country of Origin', cl: 'origin', filter: [],
+    html: function(r) { return r.origin; } },
+  { head: 'Year of Birth', cl: 'year_of_birth', filter: [],
+    html: function(r) { return r.year_of_birth; } },
 ];
 
 // --- main entry point
@@ -40,18 +40,38 @@ d3.csv("data/patients_final.csv", function (data) {
   // update everything
   update_select_boxes();
   gen_genderpie(true);
+  //generate_table();
   //gen_riskgroupsbars();
 });
 
 // Generate one time only things (selectors, etc)
 function first_setup() {
-  // create one selection box for each column
+//only testing
+    // create table
+    var table = d3.select('.table')
+        .append('table').attr('class', 'table');
+
+    // create table header
+    table.append('thead').append('tr')
+        .selectAll('th')
+        .data(columns).enter()
+        .append('th')
+        .attr('class', function(x) { return x.cl; })
+        .text(function(x) { return x.head; });
+    table.append('tbody');
+
+
+  //--- Generate Selectors
+  //gender, riskgroup, agegroup, country x 2
+  var selectors = ['riskgroup', 'agegroup', 'age_at_infection', 'infection', 'origin'];
+
+  // create one selection box for each set
   var select_boxes = d3.select('#selectors')
     .selectAll('select')
-    .data(columns).enter()
+    .data(selectors).enter()
     .append('select')
     .attr('class', 'selectpicker').attr('multiple', 'multiple')
-    .attr('id', x => x.cl)
+    .attr('id', x => x)
     .on('change', x => update_filters());
 
   //--- Create Gender Pie
@@ -87,6 +107,65 @@ function first_setup() {
     .append('text')
     .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
     .attr("dy", ".35em").text(function(d) { return d.data.name; });
+}
+
+function update_select_boxes(){
+  //gender, riskgroup, agegroup, country x 2
+  var select_data = [
+    filtered_unique_columns[1],
+    agegroups.map(x => x.string),
+    filtered_unique_columns[4], // country of infection
+    filtered_unique_columns[5]  // country of origin
+  ];
+
+  // select all select boxes options and connect them with new data
+  var select_contents = d3.select('#selectors').selectAll('select').data(select_data)
+    .selectAll('option')
+    .data((row, i) => select_data[i]);
+
+  // update existing elements
+  select_contents.text(function(x) {return x});
+
+  // create new elements as needed
+  select_contents.enter()
+    .append('option')
+    .text(function(x) {return x});
+
+  // remove old elements
+  select_contents.exit().remove();
+
+  // necessary call to update the select box display
+  $('.selectpicker').selectpicker('refresh');
+}
+
+// main update function, reads currently selected filters and applies them before updating the display
+function update_filters() {
+  // riskgroup, country x 2 are at position 1, 4, 5
+  var normal_idx = [1, 4, 5];
+  for (var i in normal_idx) {
+    columns[normal_idx[i]].filter = $('#'+columns[normal_idx[i]].cl).val();
+  }
+
+  //agegroup
+  var selected_agegroups = $('#agegroup').val();
+  columns[2].filter = [];
+  for (var ag in agegroups) {
+    if (selected_agegroups.includes(ag.string)) {
+      for (var i = ag.min; i < ag.max; i++) {
+        selected_agegroups.push(i);
+      }
+    }
+  }
+
+  // apply filter and update data
+  filtered_dataset = full_dataset.filter(filter_function);
+  filtered_unique_columns = unique_columns.map(column_filter);
+  update_derived_data()
+
+  // update display
+  update_select_boxes();
+  gen_genderpie(false);
+  //generate_table();
 }
 
 function gen_genderpie() {
@@ -128,26 +207,9 @@ function gen_genderpie() {
   });
 }
 
-// main update function, reads currently selected filters and applies them before updating the display
-function update_filters() {
-  //get currently selected (or unselected values for all ids in columns.head)
-  for (var i = 1; i < columns.length; i++) {
-    columns[i].filter = $('#'+columns[i].cl).val();
-  }
-
-  // apply filter and update data
-  filtered_dataset = full_dataset.filter(filter_function);
-  filtered_unique_columns = unique_columns.map(column_filter);
-  update_derived_data()
-
-  // update display
-  update_select_boxes();
-  gen_genderpie(false);
-}
-
 function column_filter(column, i) {
     // no filter selected for this column -> only get possible values
-    if (columns[i].filter.length == 0) {
+    if (columns[i] && columns[i].filter.length == 0) {
         //TODO: find out which is quicker! // drop completely because it's too slow for full dataset?
         //column.filter(x => filtered_dataset.map(y => columns[i].html(y)).includes(x))
         return get_unique_column(columns[i].html)
@@ -172,28 +234,6 @@ function filter_function(x) {
   return true;
 }
 
-function update_select_boxes(){
-
-  // select all select boxes options and connect them with new data
-  var select_contents = d3.select('#selectors').selectAll('select').data(columns)
-    .selectAll('option')
-    .data((row, i) => filtered_unique_columns[i]);
-
-  // update existing elements
-  select_contents.text(function(x) {return x});
-
-  // create new elements as needed
-  select_contents.enter()
-    .append('option')
-    .text(function(x) {return x});
-
-  // remove old elements
-  select_contents.exit().remove();
-
-  // necessary call to update the select box display
-  $('.selectpicker').selectpicker('refresh');
-}
-
 // Generates an array with all unique values of one of the dataset columns
 // takes an attr_function of the form function (x) { return x.ATTR }] as parameter
 // adapted from https://stackoverflow.com/questions/17780508/selecting-distinct-values-from-a-json
@@ -215,7 +255,7 @@ function get_unique_column(attr_function) {
 function catch_genderpie_click (d) {
   if (columns[0].filter.includes(d.data.name)) columns[0].filter = [];
   else  columns[0].filter = [d.data.name];
-  update_filters(d.data.name);
+  update_filters();
 }
 
 // code mostly from http://bl.ocks.org/gka/17ee676dc59aa752b4e6 and adapted to our purposes
