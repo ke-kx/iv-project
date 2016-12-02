@@ -19,33 +19,67 @@
   display: none;
 }
 
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
 </style>
+
+
    <script src="dependencies/d3.min.js" charset="utf-8"></script>
    <script src="dependencies/jquery-3.1.1.js"></script>
    <script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
    <script src="dependencies/bootstrap-select.js"></script>
+	<script src="dependencies/d3.tip.js"></script>
 
    <script src="bartest.js"></script>
   </head>
 
   <body>
     <h1>Prototyp HIV PATIENTS OVERVIEW!</h1>
-	<div id="navigation" style="width:220px; height: 600px; float:left">
+	<div id="navigation" style="width:180px; height: 600px; float:left">
 		<div id="Gender" style="height:180px"></div>
 		<div id="selectors"></div>
 
-		<div style="width:150px; padding:3px" align="center">
+		<div style="width:160px; padding:3px" align="center">
 			<a href="countries.html" class="btn btn-primary btn-block" >Compare countries</a>
 		</div>
-		<div style="width:150px; padding:3px" align="center">
+		<div style="width:160px; padding:3px" align="center">
 			<a href="riskgroup.html" class="btn btn-primary btn-block" >Compare riskgroups</a>
 		</div>
 	</div>
-	<div id="bars1"style="width:1200px">
+	<div id="bars1"style="width:1400px">
 		<svg id='riskgroup_svg' height=300 width=500></svg>
 		<svg id='agegroup_svg' height=300 width=500></svg>
 	</div>
-	<div id="bars2"style="width:1200px"> </div>
+	<div id="bars2"style="width:1400px">
+		<svg id='group1_svg' height=300 width=500></svg>
+		<svg id='group2_svg' height=300 width=500></svg>
+	</div>
   </div>
   </div>
   </body>

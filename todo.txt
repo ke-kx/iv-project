@@ -1,13 +1,16 @@
-Overview
-    fix axes
-    interactivity
-    drop down menus
-
 Heatmap
 
 Radial
+    clean up code!!! -> implement same pattern as in bartest
+    // alternativly make load data a module with update function as parameter
+    correct agerange array
 
 after prototype:
     transition of gender pie to switch between angles not 0,0
     text position of gender pie
     navigation fixed width or at least reasonably more small
+    correctly filter selector entries for agegroup!
+    tooltips for genderpie
+
+generally:
+    make sure graphics title text is in FRONT of bars!
