@@ -3,6 +3,7 @@
 var full_dataset, filtered_dataset, gender_dataset;
 var unique_columns, filtered_unique_columns;
 var agegroups, riskgroups, gendergroups, stopcausesgroup, countryofinfectiongroup;
+var riskgroup_bars, agegroup_bars;
 
 var columns = [
   { head: 'Gender', cl: 'gender', filter: [],
@@ -41,7 +42,8 @@ d3.csv("data/patients_final.csv", function (data) {
   update_select_boxes();
   gen_genderpie(true);
   //generate_table();
-  //gen_riskgroupsbars();
+  generate_bars(riskgroups, '#riskgroup_svg', true);
+  generate_bars(agegroups, '#agegroup_svg', true);
 });
 
 // Generate one time only things (selectors, etc)
@@ -63,7 +65,7 @@ function first_setup() {
 
   //--- Generate Selectors
   //gender, riskgroup, agegroup, country x 2
-  var selectors = ['riskgroup', 'agegroup', 'age_at_infection', 'infection', 'origin'];
+  var selectors = ['riskgroup', 'agegroup', 'infection', 'origin'];
 
   // create one selection box for each set
   var select_boxes = d3.select('#selectors')
@@ -165,6 +167,8 @@ function update_filters() {
   // update display
   update_select_boxes();
   gen_genderpie(false);
+  generate_bars(riskgroups, '#riskgroup_svg', false);
+  generate_bars(agegroups, '#agegroup_svg', false);
   //generate_table();
 }
 
@@ -258,6 +262,89 @@ function catch_genderpie_click (d) {
   update_filters();
 }
 
+function get_row_function(row, i) {
+  return columns.map(function(c) {
+    // compute cell values for this specific row
+    var cell = {};
+    d3.keys(c).forEach(function(k) {
+      cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
+    });
+    return cell;
+  });
+}
+
+// reset all derived data arrays to their initial state (0,0,0,...)
+function resetgroups(){
+  // divide agegroups into <16 and then intervals of 5 (16-20, 21-25, ...)
+  agegroups = [{min: 0, max: 15, string:"<16", count: 0, percent:0}];
+  for(var i=1; i<11; i++){
+   agegroups[i] = {min: 11+i*5, max: 15+i*5, string: (11+i*5) +"-" + (15+i*5), count: 0, percent: 0};
+ }
+ agegroups[11] = {min:56, max: 100, string:"56+", count: 0, percent:0}
+ agegroups[12] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
+
+ riskgroups = [
+  { string: "homosexual/bisexual", count: 0, percent: 0},
+  { string: "blood products", count: 0, percent: 0},
+  { string: "heterosexual", count: 0, percent: 0},
+  { string: "other", count: 0, percent: 0},
+  { string: "IVDA", count: 0, percent: 0},
+  { string: "vertical transmission", count: 0, percent: 0}
+];
+
+gendergroups = {"M": 0, "F": 0};
+}
+
+function update_derived_data() {
+  //first reset the groups to start at 0 entries
+  resetgroups();
+
+  // go through whole dataset once and count all occurences
+  for (var i = 0; i < filtered_dataset.length; i++) {
+    gendergroups[filtered_dataset[i].Gender]++;
+    riskgroups.find(x => x.string==filtered_dataset[i].Risk).count++;
+
+    if(filtered_dataset[i].age_at_infection<=-1){
+      agegroups[12].count++;
+    } else if(filtered_dataset[i].age_at_infection <=15){
+      agegroups[0].count++;
+    } else if(filtered_dataset[i].age_at_infection >= 56){
+      agegroups[11].count++;
+    } else {
+      var index=Math.ceil((filtered_dataset[i].age_at_infection-15)/5);
+      if(!isNaN(index)) agegroups[index].count++;
+    }
+  }
+
+  //toDo StopCauses
+  //toDo CountryOfInfection
+
+  // update riskgroups percentages
+  for (var i in riskgroups) {
+    riskgroups[i].percent = riskgroups[i].count / filtered_dataset.length;
+  }
+  for (var i in agegroups) {
+    agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
+  }
+}
+
+// toDo
+function countStopCauses(){
+  var ret = {"s1": 0};
+  for (var i = 0; i < filtered_dataset.length; i++) {
+    ret[filtered_dataset[i].Risk]++;
+  }
+  return ret;
+}
+// toDo
+function countCountryOfInfection(){
+  var ret = {"s1":0}
+  for (var i = 0; i < filtered_dataset.length; i++) {
+    ret[filtered_dataset[i].Risk]++;
+  }
+  return ret;
+}
+
 // code mostly from http://bl.ocks.org/gka/17ee676dc59aa752b4e6 and adapted to our purposes
 function generate_table(){
 
@@ -284,161 +371,162 @@ function generate_table(){
   table.exit().remove();
 }
 
-function get_row_function(row, i) {
-  return columns.map(function(c) {
-    // compute cell values for this specific row
-    var cell = {};
-    d3.keys(c).forEach(function(k) {
-      cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
-    });
-    return cell;
-  });
-}
+function generate_bars(data, target, first_time) {
+  // Mike Bostock "margin conventions"
+  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
-// reset all derived data arrays to their initial state (0,0,0,...)
-function resetgroups(){
-  // divide agegroups into <16 and then intervals of 5 (16-20, 21-25, ...)
-  agegroups = [{min: 0, max: 15, string:"<16", count: 0, percent:0}];
-  for(var i=1; i<11; i++){
-   agegroups[i] = {min: 11+i*5, max: 15+i*5, string: (11+i*5) +"-" + (15+i*5), count: 0, percent: 0};
- }
- agegroups[11] = {min:56, max: 100, string:"56+", count: 0, percent:0}
- agegroups[12] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
+  // D3 scales = just math
+  // x is a function that transforms from "domain" (data) into "range" (usual pixels)
+  // domain gets set after the data loads
+  var x = d3.scaleBand().rangeRound([0, width]).padding(0.1)
 
- riskgroups = {
-  "homosexual/bisexual": {abs: 0, percent: 0},
-  "blood products": {abs: 0, percent: 0},
-  "heterosexual": {abs: 0, percent: 0},
-  "other": {abs: 0, percent: 0},
-  "IVDA": {abs: 0, percent: 0},
-  "vertical transmission": {abs: 0, percent: 0}
-};
+  var y = d3.scaleLinear()
+    .range([height, 0]);
 
-gendergroups = {"M": 0, "F": 0};
-}
+  // D3 Axis - renders a d3 scale in SVG
+  var xAxis = d3.axisBottom(x);
 
-function update_derived_data() {
-  //first reset the groups to start at 0 entries
-  resetgroups();
+  var yAxis = d3.axisLeft(y)
+    .ticks(10, "%");
 
-  // go through whole dataset once and count all occurences
-  for (var i = 0; i < filtered_dataset.length; i++) {
-    gendergroups[filtered_dataset[i].Gender]++;
-    riskgroups[filtered_dataset[i].Risk].abs++;
+  var svg = d3.select(target);
 
-    if(filtered_dataset[i].age_at_infection<=-1){
-      agegroups[12].count++;
-    } else if(filtered_dataset[i].age_at_infection <=15){
-      agegroups[0].count++;
-    } else if(filtered_dataset[i].age_at_infection >= 56){
-      agegroups[11].count++;
-    } else {
-      var index=Math.ceil((filtered_dataset[i].age_at_infection-15)/5);
-      if(!isNaN(index)) agegroups[index].count++;
-    }
+  if (first_time) {
+    var svg = d3.select(target)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+
+    svg.append("g")
+      .attr("class", "y axis")
+    .append("text") // just for the title (ticks are automatic)
+      .attr("transform", "rotate(-90)") // rotate the text!
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Frequency");
+  } else {
+    var svg = d3.select(target);
   }
 
-  //toDo StopCauses
-  //toDo CountryOfInfection
+  // measure the domain (for x, unique letters) (for y [0,maxFrequency])
+  // now the scales are finished and usable
+  x.domain(data.map(function(d) { return d.string; }));
+  y.domain([0, d3.max(data, function(d) { return d.percent; })]);
 
-  // update riskgroups percentages
-  Object.keys(riskgroups).forEach((key, index) => {
-    riskgroups[key].percent = riskgroups[key].abs / filtered_dataset.length;
-  });
-  Object.keys(agegroups).forEach((key, index) => {
-    agegroups[key].percent = agegroups[key].count / filtered_dataset.length;
-  });
+  // another g element, this time to move the origin to the bottom of the svg element
+  // someSelection.call(thing) is roughly equivalent to thing(someSelection[i])
+  //   for everything in the selection\
+  // the end result is g populated with text and lines!
+  svg.select('.x.axis').transition().duration(300).call(xAxis);
+
+  // same for yAxis but with more transform and a title
+  svg.select(".y.axis").transition().duration(300).call(yAxis)
+
+  // THIS IS THE ACTUAL WORK!
+  var bars = svg.selectAll(".bar").data(data, function(d) { return d.string; }) // (data) is an array/iterable thing, second argument is an ID generator function
+
+  bars.attr("class", "bar")
+    .attr("width", x.bandwidth()) // constant, so no callback function(d) here
+    .attr("x", function(d) { return x(d.string); })
+    .attr("y", function(d) { return y(d.percent); })
+    .attr("height", function(d) { return height - y(d.percent); });
+
+  // data that needs DOM = enter() (a set/selection, not an event!)
+  bars.enter().append("rect")
+    .attr("class", "bar")
+    .attr("width", x.bandwidth()) // constant, so no callback function(d) here
+    .attr("x", function(d) { return x(d.string); })
+    .attr("y", function(d) {
+      console.log(d.percent);
+      return y(d.percent); })
+    .attr("height", function(d) { return height - y(d.percent); });
+
+/*
+  // the "UPDATE" set:
+  bars.transition().duration(300).attr("x", function(d) { return x(d.string); }) // (d) is one item from the data array, x is the scale object from above
+    .attr("width", x) // constant, so no callback function(d) here
+    .attr("y", function(d) { return y(d.percent); })
+    .attr("height", function(d) {
+      console.log(d.percent);
+      console.log(y(d.percent));
+      return height - y(d.percent);
+    }); // flip the height, because y's domain is bottom up, but SVG renders top down
+  */
+
+  bars.exit()
+    .transition().duration(300)
+    .attr("y", y(0))
+    .attr("height", height - y(0))
+    .style('fill-opacity', 1e-6)
+    .remove();
 }
 
-// toDo
-function countStopCauses(){
-  var ret = {"s1": 0};
-  for (var i = 0; i < filtered_dataset.length; i++) {
-    ret[filtered_dataset[i].Risk]++;
+function generate_bars_old(data, target, first_time){
+  // local variables
+  var svg = d3.select(target),
+    svg_height = 300, svg_width = 500,
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    height =  +svg.attr("height") - margin.top - margin.bottom,
+    width =  +svg.attr("width") - margin.left - margin.right;
+
+  // axes setup
+  var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+      y = d3.scaleLinear().rangeRound([height, 0]);
+  x.domain(data.map(function(d) { return d.string; }));
+  y.domain([0, d3.max(data, function(d) { return d.percent; })]);
+
+
+  if (first_time) {
+    var g = svg.append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+    g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
+  } else {
+    var g = svg.select('g');
+
+    g.select("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+    g.select("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"))
+    .select("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
+
+    g.exit().remove();
   }
-  return ret;
+
+  g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.string); })
+      .attr("y", function(d) { return y(d.percent); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d.percent); });
 }
-// toDo
-function countCountryOfInfection(){
-  var ret = {"s1":0}
-  for (var i = 0; i < filtered_dataset.length; i++) {
-    ret[filtered_dataset[i].Risk]++;
-  }
-  return ret;
-}
-
-function gen_riskgroupsbars(){
-
-}
-
-function gen_riskgroupsbars_tutorialclass() {
-  var w = 500;
-  var h = 300;
-
-  var dict = countRiskGroups();
-
-  var svg = d3.select("#bars1")
-    .append("svg")
-    .attr("width",w)
-    .attr("height",h)
-    .attr("id", "riskgroups")
-
-  svg.append("text")
-    .attr("x", (w / 2))
-    .attr("y", 35)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .text("Risk Groups");
-
-  var padding = 30;
-  var bar_w = 15;
-
-  // 0  bis maximum prozent?
-  var hscale = d3.scaleLinear()
-    .domain([10,0])
-    .range([padding,h-padding]);
-  // 0, so viele wie filter aktiv
-  var xscale = d3.scaleLinear()
-    .domain([0,7])
-    .range([padding,w-padding]);
-
-  var yaxis = d3.axisLeft()
-
-
-  var xaxis = d3.axisBottom()
-    .scale(d3.scaleLinear()
-    .domain([dataset[0].oscar_year,dataset[dataset.length-1].oscar_year])
-    .range([padding+bar_w/2,w-padding-bar_w/2]))
-    .tickFormat(d3.format("d"))
-    .ticks(dataset.length/4);
-              //.ticks(20);
-
-
-
-              svg.append("g")
-              .attr("transform","translate(30,0)")
-              .attr("class","y axis")
-              .call(yaxis);
-
-              svg.append("g")
-              .attr("transform","translate(0," + (h-padding) + ")")
-              .call(xaxis);
-
-
-              svg.selectAll("rect")
-              .data(dataset)
-              .enter().append("rect")
-              .attr("width",Math.floor((w-padding*2)/dataset.length)-1)
-              .attr("height",function(d) {
-                return h-padding-hscale(d.rating);
-              })
-              .attr("fill","purple")
-              .attr("x",function(d, i) {
-                return xscale(i);
-              })
-              .attr("y",function(d) {
-               return hscale(d.rating);
-             })
-              .attr("title", function(d) {return d.title;})
-              .on("mouseover", function(d){dispatch.call("movieEnter",d,d);});
-            }

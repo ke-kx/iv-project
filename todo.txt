@@ -10,3 +10,4 @@ Radial
 after prototype:
     transition of gender pie to switch between angles not 0,0
     text position of gender pie
+    navigation fixed width or at least reasonably more small
