@@ -13,7 +13,7 @@ function loaddata(){
 			var gesamt,homo,blood,hetero,other,ivda,vertical = 0;
 			var valuesArray15,valuesArray21,valuesArray26 = [0,0,0,0,0,0];
 
-			d3.csv("data/patients_final.csv", function(data) {
+			d3.csv("../data/patients_final.csv", function(data) {
 				data.forEach(function(d) {
 
 				valuesArray = amountOfeach(d);

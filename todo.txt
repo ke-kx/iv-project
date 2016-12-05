@@ -1,7 +1,8 @@
+clean up code!!! -> implement same pattern as in bartest
+
 Heatmap
 
 Radial
-    clean up code!!! -> implement same pattern as in bartest
     // alternativly make load data a module with update function as parameter
     correct agerange array
 

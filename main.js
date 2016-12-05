@@ -1,3 +1,15 @@
+/*
+make genderpie module as test
+
+ split files by main, navigators, load/prepare data, and different display elements.
+main has a "current display" var which contains method for current update contents function
+just see how to clear the display and remove everything from the old method
+remove custom elements from main.html (svgs and 2 divs for bars -> implement in display code)
+   only navigation divs and display divs on toplevel
+
+split first_setup into different parts for selecectors and other display shit
+reserach how to remove everything below something
+*/
 
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
@@ -40,7 +52,7 @@ d3.csv("data/patients_final.csv", function (data) {
 
   // update everything
   update_select_boxes();
-  gen_genderpie();
+  update_genderpie();
   //generate_table();
   generate_bars(riskgroups, '#riskgroup_svg', true, "Riskgroups");
   generate_bars(agegroups, '#agegroup_svg', true, "Age of Infection");
@@ -171,7 +183,7 @@ function update_filters() {
 
   // update display
   update_select_boxes();
-  gen_genderpie();
+  update_genderpie();
   generate_bars(riskgroups, '#riskgroup_svg', false);
   generate_bars(agegroups, '#agegroup_svg', false);
   //generate_table();
@@ -179,56 +191,6 @@ function update_filters() {
     //dummy data
   generate_bars(riskgroups, '#group1_svg', false);
   generate_bars(agegroups, '#group2_svg', false);
-}
-
-function gen_genderpie() {
-  var dataset = [
-    { name: 'F', percent: gendergroups["F"]/filtered_dataset.length},
-    { name: 'M', percent: gendergroups["M"]/filtered_dataset.length}
-  ];
-
-  var pie=d3.pie()
-    .value(function(d){return d.percent})
-    .sort(null)
-    .padAngle(.03);
-
-  var w=170,h=200, radius = Math.min(w,h) / 2;
-  var arc=d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(radius - 50);
-
-  var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-10, 0])
-    .html(function(d) {
-      return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%<br>Total:" + d.count + "</span>";
-  })
-
-  var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-  var svg = d3.select("#Gender").select("svg");
-  var path = svg.selectAll('path').data(pie(dataset));
-
-  path.enter().attr("d",arc)
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide);
-
-  svg.call(tip);
-
-  svg.selectAll('text')
-    .data(pie(dataset)).enter()
-    .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
-    .attr("dy", ".35em").text(function(d) { return d.data.name; })
-    .exit().remove();
-
-  path.transition()
-    .duration(750)
-    .attrTween('d', function(d) {
-      var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
-      return function(t) {
-        return arc(interpolate(t));
-      };
-  });
 }
 
 function column_filter(column, i) {
@@ -297,11 +259,11 @@ function get_row_function(row, i) {
 function resetgroups(){
   // divide agegroups into <16 and then intervals of 5 (16-20, 21-25, ...)
   agegroups = [{min: 0, max: 15, string:"<16", count: 0, percent:0}];
-  for(var i=1; i<11; i++){
+  for(var i=1; i<9; i++){
    agegroups[i] = {min: 11+i*5, max: 15+i*5, string: (11+i*5) +"-" + (15+i*5), count: 0, percent: 0};
  }
- agegroups[11] = {min:56, max: 100, string:"56+", count: 0, percent:0}
- agegroups[12] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
+ agegroups[9] = {min:56, max: 100, string:"56+", count: 0, percent:0}
+ agegroups[10] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
 
  riskgroups = [
   { string: "homosexual/bisexual", count: 0, percent: 0},
@@ -325,11 +287,11 @@ function update_derived_data() {
     riskgroups.find(x => x.string==filtered_dataset[i].Risk).count++;
 
     if(filtered_dataset[i].age_at_infection<=-1){
-      agegroups[12].count++;
+      agegroups[10].count++;
     } else if(filtered_dataset[i].age_at_infection <=15){
       agegroups[0].count++;
     } else if(filtered_dataset[i].age_at_infection >= 56){
-      agegroups[11].count++;
+      agegroups[9   ].count++;
     } else {
       var index=Math.ceil((filtered_dataset[i].age_at_infection-15)/5);
       if(!isNaN(index)) agegroups[index].count++;
