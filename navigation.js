@@ -146,7 +146,8 @@ var navigation = (function () {
     var svg = d3.select("#Gender").select("svg");
     var path = svg.selectAll('path').data(pie(dataset));
 
-    path.enter().attr("d",arc)
+    //path.enter().attr("d",arc)
+	path.attr("d",arc)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
