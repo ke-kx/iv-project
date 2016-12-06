@@ -2,19 +2,23 @@
 <html>
 <meta charset="utf-8"/>
   <head>
-   <title>Prototyp HIV Patients</title>
-   <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.css">
-   <link rel="stylesheet" href="dependencies/bootstrap-select.css">
-   <link rel="stylesheet" href="main.css">
+    <title>Prototyp HIV Patients</title>
+    <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dependencies/bootstrap-select.css">
+    <link rel="stylesheet" href="main.css">
 
-   <script src="dependencies/d3.min.js" charset="utf-8"></script>
-   <script src="dependencies/jquery-3.1.1.js"></script>
-   <script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
-   <script src="dependencies/bootstrap-select.js"></script>
+    <script src="dependencies/d3.min.js" charset="utf-8"></script>
+    <script src="dependencies/jquery-3.1.1.js"></script>
+    <script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dependencies/bootstrap-select.js"></script>
     <script src="dependencies/d3.tip.js"></script>
 
-   <script src="main.js"></script>
-   <script src="genderpie.js"></script>
+    <script src="data.js"></script>
+    <script src="bars.js"></script>
+    <script src="table.js"></script>
+    <script src="navigation.js"></script>
+    <script src="main.js"></script>
+
   </head>
 
   <body>
@@ -22,22 +26,9 @@
     <div id="navigation" style="width:180px; height: 600px; float:left">
         <div id="Gender" style="height:180px"></div>
         <div id="selectors"></div>
-
-        <div style="width:160px; padding:3px" align="center">
-            <a href="countries.html" class="btn btn-primary btn-block" >Compare countries</a>
-        </div>
-        <div style="width:160px; padding:3px" align="center">
-            <a href="riskgroup.html" class="btn btn-primary btn-block" >Compare riskgroups</a>
-        </div>
+        <div id="buttons"></div>
     </div>
-    <div id="bars1"style="width:1400px">
-        <svg id='riskgroup_svg' height=300 width=500></svg>
-        <svg id='agegroup_svg' height=300 width=500></svg>
-    </div>
-    <div id="bars2"style="width:1400px">
-        <svg id='group1_svg' height=300 width=500></svg>
-        <svg id='group2_svg' height=300 width=500></svg>
-    </div>
+    <div id="content" style="width:1400px"></div>
   </div>
   </div>
   </body>
