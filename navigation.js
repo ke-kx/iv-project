@@ -122,7 +122,7 @@ var navigation = (function () {
     var dataset = [
       { name: 'F', percent: gendergroups["F"]/filtered_dataset.length},
       { name: 'M', percent: gendergroups["M"]/filtered_dataset.length}
-    ];
+	];
 
     var pie=d3.pie()
       .value(function(d){return d.percent})
@@ -137,8 +137,10 @@ var navigation = (function () {
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
-      .html(function(d) {
-        return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%<br>Total:" + d.count + "</span>";
+      .html(function(d,i) {
+        //return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%<br>Total:" + d.count + "</span>";
+	  return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round(d.data.percent*10000/100) + "%</span> \
+          <br><strong>Total:</strong> <span style='color:red'>" +  gendergroups[d.data.name] + " / " + filtered_dataset.length + "</span>";
     })
 
     var color = d3.scaleOrdinal(d3.schemeCategory20);
