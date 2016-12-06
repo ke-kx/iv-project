@@ -1,5 +1,6 @@
 var navigation = (function () {
   var mod = {};
+   var tip;
 
   // private variable = var private = 1;
   // private method = functions here
@@ -114,6 +115,7 @@ var navigation = (function () {
   function catch_genderpie_click (d) {
     if (columns[0].filter.includes(d.data.name)) columns[0].filter = [];
     else  columns[0].filter = [d.data.name];
+	tip.hide();
     update();
   }
 
@@ -133,7 +135,7 @@ var navigation = (function () {
       .outerRadius(radius - 10)
       .innerRadius(radius - 50);
 
-    var tip = d3.tip()
+   tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d,i) {
