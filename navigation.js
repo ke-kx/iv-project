@@ -104,7 +104,6 @@ var navigation = (function () {
       .append('path').attr("d",arc)
       .attr("fill", function(d,i){return color(d.data.name);})
       .on('click', catch_genderpie_click);
-
     svg.selectAll('text')
       .data(pie(dataset)).enter()
       .append('text')
