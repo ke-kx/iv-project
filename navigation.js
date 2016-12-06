@@ -42,7 +42,8 @@ var navigation = (function () {
       .data(selectors).enter()
       .append('select')
       .attr('class', 'selectpicker').attr('multiple', 'multiple')
-      .attr('id', x => x)
+      .attr('data-live-search', 'true')
+	  .attr('id', x => x)
       .attr('data-width', "160px")
       .on('change', x => update());
   }
