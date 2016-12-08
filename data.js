@@ -81,6 +81,15 @@ var data = (function () {
 		];
 
 		gendergroups = {"M": 0, "F": 0};
+		
+		countryofinfectiongroups= [];
+		
+		for(var i=0; i<filtered_unique_columns[4].length; i++){
+			countryofinfectiongroups[i] = {string: filtered_unique_columns[4][i], count: 0, percent: 0}
+		}
+		
+		
+		
 	}
 
 	function update_derived_data() {
@@ -89,9 +98,8 @@ var data = (function () {
 
 	  // go through whole dataset once and count all occurences
 	  for (var i = 0; i < filtered_dataset.length; i++) {
-	    gendergroups[filtered_dataset[i].Gender]++;
 	    riskgroups.find(x => x.string==filtered_dataset[i].Risk).count++;
-
+		countryofinfectiongroups.find(x => x.string==filtered_dataset[i].infection).count++;
 	    if(filtered_dataset[i].age_at_infection<=-1){
 	      agegroups[10].count++;
 	    } else if(filtered_dataset[i].age_at_infection <=15){
@@ -113,6 +121,9 @@ var data = (function () {
 	  }
 	  for (var i in agegroups) {
 	    agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
+	  }
+	  for (var i in countryofinfectiongroups) {
+		countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
 	  }
 	}
 

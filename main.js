@@ -7,7 +7,7 @@ remove custom elements from main.html (svgs and 2 divs for bars -> implement in 
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
 var unique_columns, filtered_unique_columns;
-var agegroups, riskgroups, gendergroups, stopcausesgroup, countryofinfectiongroup;
+var agegroups, riskgroups, gendergroups, stopcausesgroup, countryofinfectiongroups;
 var riskgroup_bars, agegroup_bars;
 
 var current_graph;
