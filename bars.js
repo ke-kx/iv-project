@@ -1,5 +1,6 @@
 var bars = (function () {
   var mod = {};
+  var test;
 
   mod.setup = function () {
     var svg_ids = ["riskgroup_svg", "agegroup_svg", "group1_svg", "country_of_infectiongroup_svg"];
@@ -43,7 +44,7 @@ var bars = (function () {
 
     // D3 Axis - renders a d3 scale in SVG
     var xAxis = d3.axisBottom(x);
-
+	
     var yAxis = d3.axisLeft(y)
       .ticks(10, "%");
 
@@ -60,10 +61,12 @@ var bars = (function () {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      svg.append("g")
-        .attr("class", "x axis")
+    svg.append("g")
+        .attr("class", "x axis")	
         .attr("transform", "translate(0," + height + ")")
-
+		
+		
+		
       svg.append("g")
         .attr("class", "y axis")
       .append("text") // just for the title (ticks are automatic)
@@ -95,7 +98,16 @@ var bars = (function () {
     // someSelection.call(thing) is roughly equivalent to thing(someSelection[i])
     //   for everything in the selection\
     // the end result is g populated with text and lines!
-    svg.select('.x.axis').transition().duration(300).call(xAxis);
+    var xAxisCall =svg.select('.x.axis').transition().duration(300).call(xAxis);
+		xAxisCall.selectAll("text")   
+			.attr("y", function(d,i){
+				if(i % 2 ===0 ) return 9; 
+			else return 20;})
+		xAxisCall.selectAll("line")
+			.attr("y2",function(d,i){
+				if(i % 2 ===0 ) return 7; 
+			else return 18;})
+		
 
     // same for yAxis but with more transform and a title
     svg.select(".y.axis").transition().duration(300).call(yAxis)
@@ -140,6 +152,8 @@ var bars = (function () {
       .style('fill-opacity', 1e-6)
       .remove();
   }
+  
+  
 
   return mod;
 }());
