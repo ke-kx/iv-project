@@ -82,7 +82,7 @@ var data = (function () {
 
 		gendergroups = {"M": 0, "F": 0};
 		
-		countryofinfectiongroups= [];
+		countryofinfectiongroups=[];
 		
 		for(var i=0; i<filtered_unique_columns[4].length; i++){
 			countryofinfectiongroups[i] = {string: filtered_unique_columns[4][i], count: 0, percent: 0}
@@ -100,48 +100,36 @@ var data = (function () {
 	  for (var i = 0; i < filtered_dataset.length; i++) {
 	    riskgroups.find(x => x.string==filtered_dataset[i].Risk).count++;
 		countryofinfectiongroups.find(x => x.string==filtered_dataset[i].infection).count++;
+		gendergroups[filtered_dataset[i].Gender]++;
 	    if(filtered_dataset[i].age_at_infection<=-1){
 	      agegroups[10].count++;
 	    } else if(filtered_dataset[i].age_at_infection <=15){
 	      agegroups[0].count++;
 	    } else if(filtered_dataset[i].age_at_infection >= 56){
-	      agegroups[9   ].count++;
+	      agegroups[9].count++;
 	    } else {
 	      var index=Math.ceil((filtered_dataset[i].age_at_infection-15)/5);
 	      if(!isNaN(index)) agegroups[index].count++;
 	    }
 	  }
-
-	  //toDo StopCauses
-	  //toDo CountryOfInfection
-
+	  //sort array descending to easily get the first n max results
+	  countryofinfectiongroups.sort(function(a, b){return b.count-a.count});
+	  countryofinfectiongroups = countryofinfectiongroups.slice(0,10);
+		
 	  // update riskgroups percentages
 	  for (var i in riskgroups) {
 	    riskgroups[i].percent = riskgroups[i].count / filtered_dataset.length;
 	  }
+	  // update agegroups percentages
 	  for (var i in agegroups) {
 	    agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
 	  }
+	  //update country of infection percentages 
 	  for (var i in countryofinfectiongroups) {
 		countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
 	  }
-	}
-
-	// toDo
-	function countStopCauses(){
-	  var ret = {"s1": 0};
-	  for (var i = 0; i < filtered_dataset.length; i++) {
-	    ret[filtered_dataset[i].Risk]++;
-	  }
-	  return ret;
-	}
-	// toDo
-	function countCountryOfInfection(){
-	  var ret = {"s1":0}
-	  for (var i = 0; i < filtered_dataset.length; i++) {
-	    ret[filtered_dataset[i].Risk]++;
-	  }
-	  return ret;
+	  
+	  
 	}
 
 	function column_filter(column, i) {

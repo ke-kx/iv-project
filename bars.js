@@ -2,7 +2,7 @@ var bars = (function () {
   var mod = {};
 
   mod.setup = function () {
-    var svg_ids = ["riskgroup_svg", "agegroup_svg", "group1_svg", "group2_svg"];
+    var svg_ids = ["riskgroup_svg", "agegroup_svg", "group1_svg", "country_of_infectiongroup_svg"];
 
     d3.select('#content')
       .selectAll('svg').data(svg_ids).enter()
@@ -12,19 +12,19 @@ var bars = (function () {
 
     generate_bars(riskgroups, '#riskgroup_svg', true, "Riskgroups");
     generate_bars(agegroups, '#agegroup_svg', true, "Age of Infection");
-
+	generate_bars(countryofinfectiongroups, '#country_of_infectiongroup_svg', true, "Country of Infection");
     // dummy data
     generate_bars(riskgroups, '#group1_svg', true, "Placeholder 'stop causes'");
-    generate_bars(agegroups, '#group2_svg', true, "Placeholder 'country'");
+
   }
 
   mod.update = function () {
     generate_bars(riskgroups, '#riskgroup_svg', false);
     generate_bars(agegroups, '#agegroup_svg', false);
-
+	generate_bars(countryofinfectiongroups, '#country_of_infectiongroup_svg', false);
     //dummy data
     generate_bars(riskgroups, '#group1_svg', false);
-    generate_bars(agegroups, '#group2_svg', false);
+    
   }
 
   function generate_bars (data, target, first_time, title) {
