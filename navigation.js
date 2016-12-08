@@ -43,12 +43,14 @@ var navigation = (function () {
       .data(selectors).enter()
       .append('select')
       .attr('class', 'selectpicker').attr('multiple', 'multiple')
+	  .attr('title', function(d,i){return "Choose " + selectors[i];})
       .attr('data-live-search', 'true')
 	  .attr('id', x => x)
       .attr('data-width', "160px")
       .on('change', x => update());
   }
 
+  
   function update_select_boxes(){
     //gender, riskgroup, agegroup, country x 2
     var select_data = [
