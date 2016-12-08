@@ -131,7 +131,7 @@ var navigation = (function () {
     var pie=d3.pie()
       .value(function(d){return d.percent})
       .sort(null)
-      .padAngle(.02);
+      .padAngle(.00);
 
     var w=170,h=200, radius = Math.min(w,h) / 2;
     var arc=d3.arc()
@@ -157,7 +157,9 @@ var navigation = (function () {
       .on('mouseout', tip.hide);
 
 	text.attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
-      .attr("dy", ".35em").text(function(d) { return d.data.name; });  
+      .attr("dy", ".35em").text(function(d) { 
+		if(d.data.percent ==0) return ""
+			else return d.data.name; });  
 	
     svg.call(tip);
 
