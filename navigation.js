@@ -82,8 +82,8 @@ var navigation = (function () {
 
   function setup_genderpie() {
     var dataset = [
-      { name: 'F', percent: 0.5},
-      { name: 'M', percent: 0.5}
+      { name: 'F', percent: 0.7},
+      { name: 'M', percent: 0.3}
     ];
 
     var pie=d3.pie()
@@ -107,7 +107,8 @@ var navigation = (function () {
       .append('path').attr("d",arc)
       .attr("fill", function(d,i){return color(d.data.name);})
       .on('click', catch_genderpie_click);
-    svg.selectAll('text')
+    
+	svg.selectAll('text')
       .data(pie(dataset)).enter()
       .append('text')
       .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
@@ -130,7 +131,7 @@ var navigation = (function () {
     var pie=d3.pie()
       .value(function(d){return d.percent})
       .sort(null)
-      .padAngle(.03);
+      .padAngle(.02);
 
     var w=170,h=200, radius = Math.min(w,h) / 2;
     var arc=d3.arc()
@@ -141,7 +142,6 @@ var navigation = (function () {
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d,i) {
-        //return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%<br>Total:" + d.count + "</span>";
 	  return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round(d.data.percent*10000/100) + "%</span> \
           <br><strong>Total:</strong> <span style='color:red'>" +  gendergroups[d.data.name] + " / " + filtered_dataset.length + "</span>";
     })
@@ -150,19 +150,23 @@ var navigation = (function () {
 
     var svg = d3.select("#Gender").select("svg");
     var path = svg.selectAll('path').data(pie(dataset));
+	var text = svg.selectAll('text').data(pie(dataset));
 
-    //path.enter().attr("d",arc)
 	path.attr("d",arc)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
+	text.attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
+      .attr("dy", ".35em").text(function(d) { return d.data.name; });  
+	
     svg.call(tip);
 
-    svg.selectAll('text')
-      .data(pie(dataset)).enter()
-      .attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
-      .attr("dy", ".35em").text(function(d) { return d.data.name; })
-      .exit().remove();
+    //svg.selectAll('text')
+      //.data(pie(dataset)).enter()
+	  //.append('text')
+      //.attr("transform", function(d) {return "translate(" + arc.centroid(d) + ")";})
+      //.attr("dy", ".35em").text(function(d) { return d.data.name; })
+      //.exit().remove();
 
     path.transition()
       .duration(750)
