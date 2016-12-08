@@ -30,7 +30,7 @@ var bars = (function () {
 
   function generate_bars (data, target, first_time, title) {
     // Mike Bostock "margin conventions"
-    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    var margin = {top: 30, right: 20, bottom: 30, left: 40},
       width = 500 - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
 
@@ -40,7 +40,7 @@ var bars = (function () {
     var x = d3.scaleBand().rangeRound([0, width]).padding(0.1)
 
     var y = d3.scaleLinear()
-      .range([height, 0]);
+      .range([height, 10]);
 
     // D3 Axis - renders a d3 scale in SVG
     var xAxis = d3.axisBottom(x);
@@ -79,7 +79,7 @@ var bars = (function () {
       //title text
       svg.append("text")
         .attr("x", (width/2))
-        .attr("y", 35)
+        .attr("y", 0)
         .attr("text-anchor", "middle")
         .style("font-weight", "bold")
         .text(title)

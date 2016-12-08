@@ -114,7 +114,8 @@ var data = (function () {
 	  }
 	  //sort array descending to easily get the first n max results
 	  countryofinfectiongroups.sort(function(a, b){return b.count-a.count});
-	  countryofinfectiongroups = countryofinfectiongroups.slice(0,10);
+		var countryamount = columns[4].filter.length == 0 ? 10: columns[4].filter.length;
+	  countryofinfectiongroups = countryofinfectiongroups.slice(0,countryamount);
 		
 	  // update riskgroups percentages
 	  for (var i in riskgroups) {
