@@ -38,3 +38,19 @@
   top: 100%;
   left: 0;
 }
+
+.axisHorizontal path{
+        fill: none;
+}
+
+.axisHorizontal .tick line {
+        stroke-width: 1;
+        stroke: rgba(0, 0, 0, 0.2);
+    }
+	
+
+text.value {
+        font-size: 120%;
+		font: 10px sans-serif;
+        color: white;
+    }
