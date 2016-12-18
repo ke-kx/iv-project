@@ -339,21 +339,29 @@ var bars = (function () {
 		 var yAxis = d3.axisLeft(y);
 		 var x = d3.scaleLinear()
             .range([0,width]);
+			
+		var xAxis = d3.axisBottom(x);
 	
 	//tooltip as always
-	var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
-      .html(function(d) {
-        return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%</span> \
-          <br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + filtered_dataset.length + "</span>";
-    })
+		var tip = d3.tip()
+		.attr('class', 'd3-tip')
+		.offset([-10, 0])
+		.html(function(d) {
+			return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%</span> \
+			<br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + filtered_dataset.length + "</span>";
+		})
 
 	// first time rendering yAxis once and also title
     if (first_time) {
       var svg = d3.select(target)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+		    svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
 		
 		  svg.append("g")
                 .attr("class", "y axis")
@@ -364,6 +372,8 @@ var bars = (function () {
                 .attr("dx", ".1em")
                 .style("text-anchor", "end")
                 .text("Option %");
+				
+				
 				
 		//title
 		svg.append("text")
@@ -381,7 +391,7 @@ var bars = (function () {
    y.domain(data.map(function(d) { return d.string; }));
    x.domain([0, d3.max(data, function(d) { return d.percent; })]);
    
-   yAxis = d3.axisLeft(y);
+	svg.select(".x.axis").transition().duration(300).call(xAxis)
 	svg.select(".y.axis").transition().duration(300).call(yAxis)
 				
 	var bar = svg.selectAll(".bar")
