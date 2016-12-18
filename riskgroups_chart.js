@@ -1,35 +1,46 @@
 var riskgroups_chart = (function () {
   var mod = {};
-	console.log("123")
 
   mod.setup = function () {
     var svg_ids = ["radarchart_svg"];
-	
+	 var svg_ids2 = ["agegroup1_svg","agegroup2_svg","agegroup3_svg","agegroup4_svg","agegroup5_svg"];
 
     d3.select('#content')
       .selectAll('svg').data(svg_ids).enter()
       .append('svg')
       .attr('id', x => x)
-      .attr('height', 550).attr('width', 500)
+      .attr('height', 400).attr('width', 1220)
 
+	   d3.select('#content')
+      .selectAll('svg').data(svg_ids2).enter()
+      .append('svg')
+      .attr('id', x => x)
+      .attr('height', 200).attr('width', 250)
+	  
 	  
 	  generate_radar_chart("radarchart_svg", riskgroups) 
-
+	  update_smallmultiples();
   }
 
   mod.update = function () {
 	   
 	  generate_radar_chart("#radarchart_svg", riskgroups) 
-	  generate_bars_horizontal_yaxis("
-    
+      update_smallmultiples();
   }
+
+function update_smallmultiples(){
+	for(i=0; i<columns[1].filter.length; i++){
+		generate_bars_horizontal_yaxis(riskgroups,'#agegroup' +i +'_svg', true, "placeholder"+i)
+	}
+}
   
 function generate_radar_chart(id, data) {
 	//config for radar_chart
 	var cfg = {
 	 w: 500,				//Width of the circle
 	 h: 300,				//Height of the circle
-	 margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
+	 x:100,				// x-value to move the whole chart 
+	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
@@ -48,14 +59,14 @@ function generate_radar_chart(id, data) {
 	var maxValue = Math.max(cfg.maxValue,  d3.max(data, function(d) { return d.percent; }));
 	
 
-	var allAxis = (data.map(function(d){console.log(d.string);  return d.string})),	//Names of each axis
+	var allAxis = (data.map(function(d){return d.string})),	//Names of each axis
 	//var allAxis = ("Name"),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
 		Format = d3.format('%'),			 	//Percentage formatting
 		angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
-
-		console.log(allAxis);
+		
+		
 	//Scale for the radius
 	var rScale = d3.scaleLinear()
 		.range([0, radius])
@@ -65,7 +76,8 @@ function generate_radar_chart(id, data) {
 	//////////// Create the container SVG and g /////////////
 	/////////////////////////////////////////////////////////
 
-
+	//Remove whatever chart with the same id/class was present before
+	d3.select(id).select("svg").remove();
 
 	//Initiate the radar chart SVG
 	//at the moment there is a double svg which is unnecessary, but didn't find a working fix
@@ -73,6 +85,7 @@ function generate_radar_chart(id, data) {
 			.attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
 			//added plus 50 so that the label 'other' on the bottom will be displayed
 			.attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom+50)
+			.attr("x", cfg.x)
 			.attr("class", "radar"+id);
 	//Append a g element
 	var g = svg.append("g")
@@ -170,7 +183,7 @@ function generate_radar_chart(id, data) {
 		.data(data)
 		.enter().append("g")
 		.attr("class", "radarWrapper");
-console.log(blobWrapper);
+
 	//Append the backgrounds
 	blobWrapper
 		.append("path")
@@ -290,6 +303,10 @@ console.log(blobWrapper);
 
 }//RadarChart
 
+
+
+
+
  function generate_bars_horizontal_yaxis (data, target, first_time, title) {
 	   // margin to match the other bar charts
 	   var margin = {top: 30, right: 25, bottom: 30, left: 100},
@@ -306,7 +323,7 @@ console.log(blobWrapper);
 		 var x = d3.scaleLinear()
             .range([0,width]);
 			
-		var xAxis = d3.axisBottom(x);
+		
 	
 	//tooltip as always
 		var tip = d3.tip()
@@ -322,12 +339,6 @@ console.log(blobWrapper);
       var svg = d3.select(target)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-		
-		    svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
-
 		
 		  svg.append("g")
                 .attr("class", "y axis")
@@ -357,7 +368,7 @@ console.log(blobWrapper);
    y.domain(data.map(function(d) { return d.string; }));
    x.domain([0, d3.max(data, function(d) { return d.percent; })]);
    
-	svg.select(".x.axis").transition().duration(300).call(xAxis)
+
 	svg.select(".y.axis").transition().duration(300).call(yAxis)
 				
 	var bar = svg.selectAll(".bar")
