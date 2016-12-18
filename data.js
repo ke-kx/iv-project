@@ -63,14 +63,6 @@ var data = (function () {
 
 	// reset all derived data arrays to their initial state (0,0,0,...)
 	function resetgroups(){
-	  // divide agegroups into <16 and then intervals of 5 (16-20, 21-25, ...)
-	  agegroups = [{min: 0, max: 15, string:"<16", count: 0, percent:0}];
-	  for(var i=1; i<9; i++){
-	  	agegroups[i] = {min: 11+i*5, max: 15+i*5, string: (11+i*5) +"-" + (15+i*5), count: 0, percent: 0};
-	 	}
-	 	agegroups[9] = {min:56, max: 100, string:"56+", count: 0, percent:0}
-	 	agegroups[10] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
-
 	 	riskgroups = [
 		  { string: "homosexual/bisexual", count: 0, percent: 0},
 		  { string: "blood products", count: 0, percent: 0},
@@ -79,17 +71,26 @@ var data = (function () {
 		  { string: "IVDA", count: 0, percent: 0},
 		  { string: "vertical transmission", count: 0, percent: 0}
 		];
-		
+
+	  // divide agegroups into <16 and then intervals of 5 (16-20, 21-25, ...)
+	  agegroups = [{min: 0, max: 15, string:"<16", count: 0, percent:0}];
+	  for(var i=1; i<9; i++){
+	  	agegroups[i] = {min: 11+i*5, max: 15+i*5, string: (11+i*5) +"-" + (15+i*5), count: 0, percent: 0};
+	 	}
+	 	agegroups[9] = {min:56, max: 100, string:"56+", count: 0, percent:0}
+	 	agegroups[10] = {min:-9999, max: -1, string:"unknown", count: 0, percent: 0}
+
+	 	// add riskgroups array to agegroups (for radar chart)
+	 	for (var i=0; i<11; i++) {
+	 		agegroups[i].riskgroups = $.extend(true, [], riskgroups);
+	 	}
+
 		gendergroups = {"M": 0, "F": 0};
-		
+
 		countryofinfectiongroups=[];
-		
 		for(var i=0; i<filtered_unique_columns[4].length; i++){
 			countryofinfectiongroups[i] = {string: filtered_unique_columns[4][i], count: 0, percent: 0}
 		}
-		
-		
-		
 	}
 
 	function update_derived_data() {
@@ -98,25 +99,35 @@ var data = (function () {
 
 	  // go through whole dataset once and count all occurences
 	  for (var i = 0; i < filtered_dataset.length; i++) {
-	    riskgroups.find(x => x.string==filtered_dataset[i].Risk).count++;
-		countryofinfectiongroups.find(x => x.string==filtered_dataset[i].infection).count++;
-		gendergroups[filtered_dataset[i].Gender]++;
-	    if(filtered_dataset[i].age_at_infection<=-1){
+	  	var current_entry = filtered_dataset[i];
+
+	    riskgroups.find(x => x.string==current_entry.Risk).count++;
+			countryofinfectiongroups.find(x => x.string==current_entry.infection).count++;
+			gendergroups[current_entry.Gender]++;
+
+	    if(current_entry.age_at_infection<=-1){
 	      agegroups[10].count++;
-	    } else if(filtered_dataset[i].age_at_infection <=15){
+	      agegroups[10].riskgroups.find(x => x.string==current_entry.Risk).count++;
+	    } else if(current_entry.age_at_infection <=15){
 	      agegroups[0].count++;
-	    } else if(filtered_dataset[i].age_at_infection >= 56){
+	      agegroups[0].riskgroups.find(x => x.string==current_entry.Risk).count++;
+	    } else if(current_entry.age_at_infection >= 56){
 	      agegroups[9].count++;
+	      agegroups[9].riskgroups.find(x => x.string==current_entry.Risk).count++;
 	    } else {
-	      var index=Math.ceil((filtered_dataset[i].age_at_infection-15)/5);
-	      if(!isNaN(index)) agegroups[index].count++;
+	      var index=Math.ceil((current_entry.age_at_infection-15)/5);
+	      if(!isNaN(index)) {
+	      	agegroups[index].count++;
+	      	agegroups[index].riskgroups.find(x => x.string==current_entry.Risk).count++;
+	      }
 	    }
 	  }
+
 	  //sort array descending to easily get the first n max results
 	  countryofinfectiongroups.sort(function(a, b){return b.count-a.count});
-		var countryamount = columns[4].filter.length == 0 ? 10: columns[4].filter.length;
+	  var countryamount = columns[4].filter.length == 0 ? 10: columns[4].filter.length;
 	  countryofinfectiongroups = countryofinfectiongroups.slice(0,countryamount);
-		
+
 	  // update riskgroups percentages
 	  for (var i in riskgroups) {
 	    riskgroups[i].percent = riskgroups[i].count / filtered_dataset.length;
@@ -124,13 +135,15 @@ var data = (function () {
 	  // update agegroups percentages
 	  for (var i in agegroups) {
 	    agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
+	    // update age_riskgroup numbers
+	    for (var j in agegroups[i].riskgroups) {
+	    	agegroups[i].riskgroups[j].percent = agegroups[i].riskgroups[j].count / agegroups[i].count;
+	    }
 	  }
-	  //update country of infection percentages 
+	  //update country of infection percentages
 	  for (var i in countryofinfectiongroups) {
-		countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
+			countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
 	  }
-	  
-	  
 	}
 
 	function column_filter(column, i) {
