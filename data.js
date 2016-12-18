@@ -79,7 +79,7 @@ var data = (function () {
 		  { string: "IVDA", count: 0, percent: 0},
 		  { string: "vertical transmission", count: 0, percent: 0}
 		];
-
+		
 		gendergroups = {"M": 0, "F": 0};
 		
 		countryofinfectiongroups=[];

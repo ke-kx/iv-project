@@ -200,7 +200,7 @@ function RadarChart(id, dataset, options) {
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
 		Format = d3.format('%'),			 	//Percentage formatting
 		angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
-
+	console.log(allAxis);
 	//Scale for the radius
 	var rScale = d3.scale.linear()
 		.range([0, radius])

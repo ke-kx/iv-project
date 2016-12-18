@@ -21,7 +21,7 @@ var navigation = (function () {
     var buttons = [
       {string: "Overview", display: bars},
       {string: "Compare countries", display: bars},
-      {string: "Compare riskgroups", display: bars},
+      {string: "Compare riskgroups", display: riskgroups_chart},
       {string: "See table", display: table}
     ];
 
@@ -31,6 +31,7 @@ var navigation = (function () {
       .attr('class', 'btn btn-default')
       .on('click', x => change_view(x.display))
       .html(x => x.string);
+	 
   }
 
   function setup_select_boxes() {

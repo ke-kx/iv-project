@@ -120,7 +120,9 @@ var bars = (function () {
       .attr("x", function(d) { return x(d.string); })
       .attr("y", function(d) { return y(d.percent); })
       .attr("height", function(d) { return height - y(d.percent); })
-      .on('mouseover', tip.show)
+      .on('mouseover', function(d){
+			console.log(d.string);
+			tip.show})
       .on('mouseout', tip.hide);
 
     // data that needs DOM = enter() (a set/selection, not an event!)
