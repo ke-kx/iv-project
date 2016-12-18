@@ -2,7 +2,11 @@
 remove custom elements from main.html (svgs and 2 divs for bars -> implement in display code)
    only navigation divs and display divs on toplevel
    change into column layout of bootstrap -> no problem with table?!
-*/
+
+enable filtering by clicking on a bar of the barcharts
+
+ stop causes, full dataset, highlight bar percentages on mouse over
+ */
 
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
