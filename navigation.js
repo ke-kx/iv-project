@@ -46,6 +46,7 @@ var navigation = (function () {
       .attr('class', 'selectpicker').attr('multiple', 'multiple')
 	  .attr('title', function(d,i){return "Choose " + selectors[i];})
       .attr('data-live-search', 'true')
+	  .attr('data-actions-box', 'true')
 	  .attr('id', x => x)
       .attr('data-width', "160px")
       .on('change', x => update());
