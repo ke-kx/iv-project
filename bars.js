@@ -332,8 +332,6 @@ var bars = (function () {
 	   var margin = {top: 30, right: 25, bottom: 30, left: 100},
             width = 500 - margin.left - margin.right,
             height = 300 - margin.top - margin.bottom;
-			console.log(width);
-
 
 		var y = d3.scaleBand()
 			.rangeRound([10, height])
