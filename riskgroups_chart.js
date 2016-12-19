@@ -3,7 +3,8 @@ var riskgroups_chart = (function () {
 
   mod.setup = function () {
     var svg_ids = ["radarchart_svg"];
-	 var svg_ids2 = ["agegroup1_svg","agegroup2_svg","agegroup3_svg","agegroup4_svg","agegroup5_svg"];
+	 var firstrow = ["agegroup1_svg","agegroup2_svg","agegroup3_svg"];
+	 var secondrow = ["agegroup4_svg","agegroup5_svg","agegroup6_svg"];
 
     d3.select('#content')
       .selectAll('svg').data(svg_ids).enter()
@@ -11,26 +12,42 @@ var riskgroups_chart = (function () {
       .attr('id', x => x)
       .attr('height', 400).attr('width', 1220)
 
-	   d3.select('#content')
-      .selectAll('svg').data(svg_ids2).enter()
+	  
+	  d3.select('#content').append('div')
+	  .attr('id', "firstrow")
+	  .attr('height', 200).attr('width', 1220)
+	  
+	  d3.select('#content').append('div')
+	  .attr('id',"secondrow")
+	  .attr('height', 200).attr('width', 1220)
+	  
+	   d3.select('#firstrow')
+      .selectAll('svg').data(firstrow).enter()
+      .append('svg')
+      .attr('id', x => x)
+      .attr('height', 200).attr('width', 250)
+	  
+	  	   d3.select('#secondrow')
+      .selectAll('svg').data(secondrow).enter()
       .append('svg')
       .attr('id', x => x)
       .attr('height', 200).attr('width', 250)
 	  
 	  
-	  generate_radar_chart("radarchart_svg", riskgroups) 
+	  
+	  generate_radar_chart("radarchart_svg", agegroups) 
 	  update_smallmultiples();
   }
 
   mod.update = function () {
 	   
-	  generate_radar_chart("#radarchart_svg", riskgroups) 
+	  generate_radar_chart("#radarchart_svg", agegroups) 
       update_smallmultiples();
   }
 
 function update_smallmultiples(){
 	for(i=0; i<columns[1].filter.length; i++){
-		generate_bars_horizontal_yaxis(riskgroups,'#agegroup' +i +'_svg', true, "placeholder"+i)
+		generate_bars_horizontal_yaxis(riskgroups,'#agegroup' +i +'_svg', true, columns[i].filter[i])
 	}
 }
   
@@ -43,6 +60,7 @@ function generate_radar_chart(id, data) {
 	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
 	 maxValue: 0, 			//What is the value that the biggest circle will represent
+	 newMaxValue: 0,
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
 	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
 	 opacityArea: 0.35, 	//The opacity of the area of the blob
@@ -53,13 +71,29 @@ function generate_radar_chart(id, data) {
 	 color: d3.scaleOrdinal(d3.schemeCategory10)	//Color function
 	};
 
-	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
-	//currently the max data will be choosen from the data, which is the riskgroups array, so the
-	// max value is the maximal percentage for riskgroups and not the max value for riskgroups given the different ageranges
-	var maxValue = Math.max(cfg.maxValue,  d3.max(data, function(d) { return d.percent; }));
+	var old_datastructure = [];
+
+	
+	// ugly for loop to determine the max value for the level labels, also transform given data to the
+	// the old structure which was used by daniel in his example, because its easier to implement upcoming stuff
+	// with the old data structure
+	for(var i = 0; i < data.length; i++){
+		old_datastructure[i] = [];
+		console.log(old_datastructure);
+		for(var j = 0; j < data[i].riskgroups.length; j++){
+			old_datastructure[i][j] = 
+			{axis: data[i].riskgroups[j].string, value: data[i].riskgroups[j].percent.toFixed(2)};
+			
+			
+			if (data[i].riskgroups[j].percent > cfg.newMaxValue){
+				cfg.newMaxValue = data[i].riskgroups[j].percent.toFixed(2);
+			}
+		}
+	}
+	var maxValue = Math.max(cfg.maxValue,  cfg.newMaxValue);
 	
 
-	var allAxis = (data.map(function(d){return d.string})),	//Names of each axis
+	var allAxis = (data[0].riskgroups.map(function(d){return d.string})),	//Names of each axis
 	//var allAxis = ("Name"),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
@@ -102,6 +136,12 @@ function generate_radar_chart(id, data) {
 		feMergeNode_1 = feMerge.append('feMergeNode').attr('in','coloredBlur'),
 		feMergeNode_2 = feMerge.append('feMergeNode').attr('in','SourceGraphic');
 
+		
+	
+
+
+		
+		
 	/////////////////////////////////////////////////////////
 	/////////////// Draw the Circular grid //////////////////
 	/////////////////////////////////////////////////////////
@@ -167,23 +207,26 @@ function generate_radar_chart(id, data) {
 	/////////////////////////////////////////////////////////
 	///////////// Draw the radar chart blobs ////////////////
 	/////////////////////////////////////////////////////////
-
+ console.log("123"); 
 	//The radial line function
 	var radarLine = d3.radialLine()
-		//.interpolate("linear-closed")
-		.radius(function(d) { return rScale(d.value); })
+		.radius(function(d) {return rScale(d.value); })
 		.angle(function(d,i) {	return i*angleSlice; });
 
 	if(cfg.roundStrokes) {
 		radarLine.interpolate("cardinal-closed");
 	}
-	
+
+	g = svg.select("g");
+
 	//Create a wrapper for the blobs
 	var blobWrapper = g.selectAll(".radarWrapper")
-		.data(data)
+		.data(old_datastructure)
 		.enter().append("g")
 		.attr("class", "radarWrapper");
-
+	console.log(blobWrapper);
+	
+		
 	//Append the backgrounds
 	blobWrapper
 		.append("path")
@@ -234,7 +277,7 @@ function generate_radar_chart(id, data) {
 
 	//Wrapper for the invisible circles on top
 	var blobCircleWrapper = g.selectAll(".radarCircleWrapper")
-		.data(data)
+		.data(old_datastructure)
 		.enter().append("g")
 		.attr("class", "radarCircleWrapper");
 

@@ -142,7 +142,7 @@ function loaddata(){
 						{axis:"vertical transmission",value:valuesArray26[5]},
 					  ]
 					];
-
+			console.log(data);
 			//////////////////////////////////////////////////////////////
 			//////////////////// Draw the Chart //////////////////////////
 			//////////////////////////////////////////////////////////////
@@ -302,18 +302,20 @@ function RadarChart(id, dataset, options) {
 	//The radial line function
 	var radarLine = d3.svg.line.radial()
 		.interpolate("linear-closed")
-		.radius(function(d) { return rScale(d.value); })
+		.radius(function(d) { console.log(d); return rScale(d.value); })
 		.angle(function(d,i) {	return i*angleSlice; });
 
 	if(cfg.roundStrokes) {
 		radarLine.interpolate("cardinal-closed");
 	}
 
+	console.log(g);
 	//Create a wrapper for the blobs
 	var blobWrapper = g.selectAll(".radarWrapper")
 		.data(dataset)
 		.enter().append("g")
 		.attr("class", "radarWrapper");
+
 
 	//Append the backgrounds
 	blobWrapper
