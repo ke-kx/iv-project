@@ -79,17 +79,24 @@ function generate_radar_chart(id, data) {
 	// with the old data structure
 	for(var i = 0; i < data.length; i++){
 		old_datastructure[i] = [];
-		console.log(old_datastructure);
+	
 		for(var j = 0; j < data[i].riskgroups.length; j++){
-			old_datastructure[i][j] = 
-			{axis: data[i].riskgroups[j].string, value: data[i].riskgroups[j].percent.toFixed(2)};
+		
 			
+			if(data[i].riskgroups[j].count == 0)
+					cleanedValue= 0;
+				else cleanedValue = data[i].riskgroups[j].percent.toFixed(2);
+			
+			
+			old_datastructure[i][j] = 
+			{axis: data[i].riskgroups[j].string, value: cleanedValue}
 			
 			if (data[i].riskgroups[j].percent > cfg.newMaxValue){
 				cfg.newMaxValue = data[i].riskgroups[j].percent.toFixed(2);
 			}
 		}
 	}
+	console.log(old_datastructure);
 	var maxValue = Math.max(cfg.maxValue,  cfg.newMaxValue);
 	
 
@@ -207,7 +214,6 @@ function generate_radar_chart(id, data) {
 	/////////////////////////////////////////////////////////
 	///////////// Draw the radar chart blobs ////////////////
 	/////////////////////////////////////////////////////////
- console.log("123"); 
 	//The radial line function
 	var radarLine = d3.radialLine()
 		.radius(function(d) {return rScale(d.value); })
@@ -224,7 +230,6 @@ function generate_radar_chart(id, data) {
 		.data(old_datastructure)
 		.enter().append("g")
 		.attr("class", "radarWrapper");
-	console.log(blobWrapper);
 	
 		
 	//Append the backgrounds
@@ -355,7 +360,6 @@ function generate_radar_chart(id, data) {
 	   var margin = {top: 30, right: 25, bottom: 30, left: 100},
             width = 250 - margin.left - margin.right,
             height = 150 - margin.top - margin.bottom;
-			console.log(width);
 			
 			
 		var y = d3.scaleBand()

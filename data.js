@@ -28,13 +28,13 @@ var data = (function () {
 	  //agegroup
 	  var selected_agegroups = $('#agegroup').val();
 	  columns[2].filter = [];
-	  for (var ag in agegroups) {
-			if (selected_agegroups.includes(ag.string)) {
-			  for (var i = ag.min; i < ag.max; i++) {
-				selected_agegroups.push(i);
+		agegroups.forEach(function(entry) {
+			if (selected_agegroups.includes(entry.string)){
+				for (var i = entry.min; i <= entry.max; i++) {
+					columns[2].filter.push(i.toString());
 			  }
 			}
-	  }
+		});
 
 	  // apply filter and update data
 	  filtered_dataset = full_dataset.filter(filter_function);
