@@ -27,7 +27,7 @@ var data = (function () {
 
 	  //agegroup
 	  var selected_agegroups = $('#agegroup').val();
-	  columns[2].filter = [];
+	  columns[2].filter = []
 		agegroups.forEach(function(entry) {
 			if (selected_agegroups.includes(entry.string)){
 				for (var i = entry.min; i <= entry.max; i++) {
