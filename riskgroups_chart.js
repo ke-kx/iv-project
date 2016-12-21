@@ -205,7 +205,7 @@ function generate_radar_chart(id, data) {
 	   .attr("dy", "0.4em")
 	   .style("font-size", "10px")
 	   .attr("fill", "#737373")
-	   .text(function(d,i) { return Format(maxValue * d/cfg.levels); });
+	   .text(function(d,i) { return (((maxValue * d/cfg.levels)*10000/100).toFixed(2))+"%"; });
 
 	/////////////////////////////////////////////////////////
 	//////////////////// Draw the axes //////////////////////
@@ -330,7 +330,7 @@ function generate_radar_chart(id, data) {
 			tooltip
 				.attr('x', newX)
 				.attr('y', newY)
-				.text(((d.value*10000/100) +"%"))
+				.text(((d.value*10000/100).toFixed(2) +"%"))
 				.transition().duration(200)
 				.style('opacity', 1);
 		})
