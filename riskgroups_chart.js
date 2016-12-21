@@ -82,11 +82,11 @@ function generate_radar_chart(id, data) {
 	 x:100,				// x-value to move the whole chart 
 	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
-	 maxValue: 0.2, 			//What is the value that the biggest circle will represent
+	 maxValue: 0.5, 			//What is the value that the biggest circle will represent
 	 newMaxValue: 0,
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
 	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
-	 opacityArea: 0.35, 	//The opacity of the area of the blob
+	 opacityArea: 0.2, 	//The opacity of the area of the blob
 	 dotRadius: 4, 			//The size of the colored circles of each blog
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
@@ -96,7 +96,6 @@ function generate_radar_chart(id, data) {
 
 	var old_datastructure = [];
 
-	
 	// ugly for loop to determine the max value for the level labels, also transform given data to the
 	// the old structure which was used by daniel in his example, because its easier to implement upcoming stuff
 	// with the old data structure
@@ -142,7 +141,7 @@ function generate_radar_chart(id, data) {
 	/////////////////////////////////////////////////////////
 
 	//Remove whatever chart with the same id/class was present before
-	d3.select(id).select("svg").remove();
+	d3.select(id).selectAll("svg").remove();
 
 	//Initiate the radar chart SVG
 	//at the moment there is a double svg which is unnecessary, but didn't find a working fix
@@ -340,7 +339,45 @@ function generate_radar_chart(id, data) {
 	var tooltip = g.append("text")
 		.attr("class", "tooltip")
 		.style("opacity", 0);
-
+			
+			
+		console.log(selected_agegroups);	
+		var legend = d3.select(id).append("svg")
+			.attr("width",  100)
+			//added plus 50 so that the label 'other' on the bottom will be displayed
+			.attr("height", 480)
+			.attr("x", cfg.x+480)
+			.attr("class", "legend");		
+		
+		
+		var indexForColor= []
+	
+		agegroups.forEach(function(entry) {
+			if($('#agegroup').val().includes(entry.string))
+				indexForColor.push(agegroups.indexOf(entry))
+			
+		});
+		
+	legend.selectAll('rect')
+	  .data($('#agegroup').val())
+	  .enter()
+	  .append("rect")
+	  .attr("y", function(d, i){ return i * 20;})
+	  .attr("width", 10)
+	  .attr("height", 10)
+	  .style("fill", function(d, i){ return cfg.color(indexForColor[i]);})
+		
+		legend.selectAll('text')
+			.data($('#agegroup').val())
+			.enter()
+			.append("text")
+			.attr("x", "20")
+			.attr("y", function(d, i){ return i * 20 + 9;})
+			.attr("font-size", "11px")
+			.attr("fill", "#737373")
+			.text(function(d) { return d; })
+	  ;			
+		
 		
 	// Helper Function 
 	
@@ -516,7 +553,6 @@ function generate_radar_chart(id, data) {
     console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
 // attach the .equals method to Array's prototype to call it on any array
 Array.prototype.equals = function (array) {
-	console.log(array)
     // if the other array is a falsy value, return
     if (!array)
         return false;
