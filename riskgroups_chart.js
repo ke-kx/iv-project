@@ -2,6 +2,8 @@ var riskgroups_chart = (function () {
   var mod = {};
 	var selected_agegroups = [];
 	var maxValueBar = 0; // needed for barcharts
+	var colorValues = d3.scaleOrdinal(d3.schemeCategory10);
+	
   mod.setup = function () {
     var svg_ids = ["radarchart_svg"];
   
@@ -81,7 +83,7 @@ function generate_radar_chart(id, data) {
 	 h: 300,				//Height of the circle
 	 x:100,				// x-value to move the whole chart 
 	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
-	 levels: 3,				//How many levels or inner circles should there be drawn
+	 levels: 5,				//How many levels or inner circles should there be drawn
 	 maxValue: 0.5, 			//What is the value that the biggest circle will represent
 	 newMaxValue: 0,
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
@@ -91,7 +93,7 @@ function generate_radar_chart(id, data) {
 	 opacityCircles: 0.1, 	//The opacity of the circles of each blob
 	 strokeWidth: 2, 		//The width of the stroke around each blob
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
-	 color: d3.scaleOrdinal(d3.schemeCategory10)	//Color function
+	 color: colorValues	//Color function
 	};
 
 	var old_datastructure = [];
@@ -108,11 +110,13 @@ function generate_radar_chart(id, data) {
 			
 			if(data[i].riskgroups[j].count == 0)
 					cleanedValue= 0;
-				else cleanedValue = data[i].riskgroups[j].percent.toFixed(2);
+				else cleanedValue = data[i].riskgroups[j].percent.toFixed(4);
 			
 			
 			old_datastructure[i][j] = 
 			{axis: data[i].riskgroups[j].string, value: cleanedValue}
+			
+		
 			
 			if (data[i].riskgroups[j].percent > cfg.newMaxValue){
 				cfg.newMaxValue = data[i].riskgroups[j].percent.toFixed(2);
@@ -326,7 +330,7 @@ function generate_radar_chart(id, data) {
 			tooltip
 				.attr('x', newX)
 				.attr('y', newY)
-				.text(Format(d.value))
+				.text(((d.value*10000/100) +"%"))
 				.transition().duration(200)
 				.style('opacity', 1);
 		})
@@ -340,8 +344,8 @@ function generate_radar_chart(id, data) {
 		.attr("class", "tooltip")
 		.style("opacity", 0);
 			
-			
-		console.log(selected_agegroups);	
+		
+			// add legend
 		var legend = d3.select(id).append("svg")
 			.attr("width",  100)
 			//added plus 50 so that the label 'other' on the bottom will be displayed
@@ -349,15 +353,17 @@ function generate_radar_chart(id, data) {
 			.attr("x", cfg.x+480)
 			.attr("class", "legend");		
 		
-		
+		// only with the correct index
 		var indexForColor= []
 	
+		//seqarch every index which needs to be displayed
 		agegroups.forEach(function(entry) {
 			if($('#agegroup').val().includes(entry.string))
 				indexForColor.push(agegroups.indexOf(entry))
 			
 		});
-		
+	
+	//add legend
 	legend.selectAll('rect')
 	  .data($('#agegroup').val())
 	  .enter()
@@ -367,6 +373,7 @@ function generate_radar_chart(id, data) {
 	  .attr("height", 10)
 	  .style("fill", function(d, i){ return cfg.color(indexForColor[i]);})
 		
+		//add legend text
 		legend.selectAll('text')
 			.data($('#agegroup').val())
 			.enter()
