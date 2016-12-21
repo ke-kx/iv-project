@@ -1,7 +1,7 @@
 var riskgroups_chart = (function () {
   var mod = {};
 	var selected_agegroups = [];
-	var maxValue; // needed for linecharts
+	var maxValueBar = 0; // needed for barcharts
   mod.setup = function () {
     var svg_ids = ["radarchart_svg"];
   
@@ -11,18 +11,24 @@ var riskgroups_chart = (function () {
       .attr('id', x => x)
       .attr('height', 400).attr('width', 1220)
 
-	  
-
-	  
 	  generate_radar_chart("radarchart_svg", agegroups) 
 	  init_smallmultiples();
+	  //maxvalue of bar charts should not update, so identify highest value upfront
+	  agegroups.forEach(function(entry) {
+		  for(var i=0; i < entry.riskgroups.length; i++){
+		  if(entry.riskgroups[i].percent > maxValueBar){
+			maxValueBar = entry.riskgroups[i].percent;
+			  
+		}
+	  }} )
+	  console.log(maxValueBar);
   }
 
   mod.update = function () {
 	  generate_radar_chart("#radarchart_svg", agegroups) 
-     update_smallmultiples()
+	  update_smallmultiples();	
   }
-
+//method to setup smallmultiples if the user already choosen filters if the view get changed
 function init_smallmultiples(){
 	selected_agegroups = $('#agegroup').val();
 	
@@ -33,16 +39,16 @@ function init_smallmultiples(){
 		for(var i=0; i<selected_agegroups.length;i++){
 			if(i<3)
 			first_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg")
-			else
+			if(i >= 3 && i<6)
 			second_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg");
 		} 
 			generate_rows_container("firstrow", first_row);
 			generate_rows_container("secondrow", second_row)
 			agegroups.forEach(function(entry) {
-			console.log(entry);
-			var title =  "#agegroup" + entry.string.replace('<',"") + "_svg";
-			
-			generate_bars_horizontal_yaxis(entry.riskgroups, title, true, entry.string)
+				if (selected_agegroups.includes(entry.string)){
+					var title =  "#agegroup" + entry.string.replace('<',"") + "_svg";
+					generate_bars_horizontal_yaxis(entry.riskgroups, title, true, entry.string)
+			}
 		});
 		
 	}
@@ -50,7 +56,23 @@ function init_smallmultiples(){
 
 	}
 
-
+function update_smallmultiples(){
+	if(selected_agegroups.equals( $('#agegroup').val())){
+		agegroups.forEach(function(entry) {
+			if (selected_agegroups.includes(entry.string)){
+				var title =  "#agegroup" + entry.string.replace('<',"") + "_svg";
+				generate_bars_horizontal_yaxis(entry.riskgroups, title, false, entry.string)
+			}
+		})		
+	}
+	else{
+		d3.select("#content").select("#firstrow").remove();
+		d3.select("#content").select("#secondrow").remove();
+		init_smallmultiples();
+	}
+	
+	
+}
   
 function generate_radar_chart(id, data) {
 	//config for radar_chart
@@ -359,7 +381,7 @@ function generate_radar_chart(id, data) {
 
  function generate_bars_horizontal_yaxis (data, target, first_time, title) {
 	   // margin to match the other bar charts
-	   var margin = {top: 30, right: 25, bottom: 30, left: 100},
+	   var margin = {top: 20, right: 10, bottom: 20, left: 95 },
             width = 250 - margin.left - margin.right,
             height = 150 - margin.top - margin.bottom;
 			
@@ -371,7 +393,7 @@ function generate_radar_chart(id, data) {
 		 var yAxis = d3.axisLeft(y);
 		 var x = d3.scaleLinear()
             .range([0,width]);
-		var xAxis = d3.axisBottom(x);	
+		var xAxis = d3.axisBottom(x).ticks(5, "%");;	
 		
 	
 	//tooltip as always
@@ -394,8 +416,9 @@ function generate_radar_chart(id, data) {
                 .attr("class", "y axis")
                 .call(yAxis)
                 .append("text")
+				.style("font-size", "8px")
                 .attr("transform", "rotate(0)")
-                .attr("x", 50)
+                .attr("x", 20)
                 .attr("dx", ".1em")
                 .style("text-anchor", "end")
                 .text("Option %");
@@ -404,7 +427,12 @@ function generate_radar_chart(id, data) {
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);	
+			
+			svg.select(".y.axis")
+			.style("font-size","8px"); //To change the font size of texts
 				
+			svg.select(".x.axis")
+			.style("font-size","8px")	
 		//title
 		svg.append("text")
 			.attr("x", (width/2))
@@ -419,9 +447,19 @@ function generate_radar_chart(id, data) {
    }
   
    y.domain(data.map(function(d) { return d.string; }));
-   x.domain([0, maxValue]) 
+   x.domain([0, maxValueBar]) 
    
-	svg.select(".x.axis").transition().duration(300).call(xAxis)
+	var xAxisCall = svg.select(".x.axis").transition().duration(300).call(xAxis)
+	 xAxisCall.selectAll("text")
+			.attr("y", function(d,i){
+				if(i % 2 ===0 ) return 9;
+			else return 20;})
+		xAxisCall.selectAll("line")
+			.attr("y2",function(d,i){
+				if(i % 2 ===0 ) return 7;
+			else return 18;})
+			
+			
 	svg.select(".y.axis").transition().duration(300).call(yAxis)
 				
 	var bar = svg.selectAll(".bar")
@@ -466,9 +504,40 @@ function generate_radar_chart(id, data) {
       .selectAll('svg').data(data).enter()
       .append('svg')
       .attr('id', x => x)
-      .attr('height', 200).attr('width', 220)
+      .attr('height', 200).attr('width', 250)
 	} 
  }
+   
+   if(Array.prototype.equals)
+    console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+// attach the .equals method to Array's prototype to call it on any array
+Array.prototype.equals = function (array) {
+	console.log(array)
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time 
+    if (this.length != array.length)
+        return false;
+
+    for (var i = 0, l=this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;       
+        }           
+        else if (this[i] != array[i]) { 
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;   
+        }           
+    }       
+    return true;
+}
+// Hide method from for-in loops
+Object.defineProperty(Array.prototype, "equals", {enumerable: false});
+   
    
    
   return mod;

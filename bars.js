@@ -149,9 +149,9 @@ var bars = (function () {
     */
 
     bars.exit()
-      .transition().duration(300)
-      .attr("y", y(0))
-      .attr("height", height - y(0))
+      .transition().duration(700)
+	  .attr("height", function(d) { return y(d.percent); })
+	   .attr("y", function(d) { return height - y(d.percent) - .5; }) 
       .style('fill-opacity', 1e-6)
       .remove();
   }
@@ -341,7 +341,7 @@ var bars = (function () {
 		 var x = d3.scaleLinear()
             .range([0,width]);
 
-		var xAxis = d3.axisBottom(x);
+		var xAxis = d3.axisBottom(x).ticks(10, "%");
 
 	//tooltip as always
 		var tip = d3.tip()

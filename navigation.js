@@ -39,7 +39,7 @@ var navigation = (function () {
 	 
   }
 
-  function setup_select_boxes() {
+  function setup_select_boxes(current_graph) {
     //gender, riskgroup, agegroup, country x 2
     var selectors = ['riskgroup', 'agegroup', 'infection', 'origin'];
 	
@@ -49,7 +49,7 @@ var navigation = (function () {
       .selectAll('select')
       .data(selectors).enter()
       .append('select')
-      .attr('class', 'selectpicker').attr('multiple', 'multiple')	
+      .attr('class', 'selectpicker').attr('multiple', 'multiple')  
 	  .attr('title', function(d,i){return "Choose " + selectors[i];})
       .attr('data-live-search', 'true')
 	  .attr('data-actions-box', 'true')
@@ -72,9 +72,14 @@ var navigation = (function () {
 		//manipulate selector boxes for riskgroupsview
 	  if(current_graph == riskgroups_chart){
 		  select_data[0] = [];
+		 
 	  d3.select('#selectors')
       .select('#riskgroup').attr('disabled', false);
+	  
 	
+	d3.select('#selectors') 
+      .select('#agegroup').attr('maxOptions', 2)
+		
 	}	
 		else{
 		  d3.select('#selectors')
