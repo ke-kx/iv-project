@@ -54,7 +54,7 @@ function update() {
   data.update();
 
     // update display
-  navigation.update();
+  navigation.update(current_graph); //add current_graph to update to change selecetors depending on view
   current_graph.update()
 }
 
@@ -64,7 +64,7 @@ function change_view(new_view) {
   d3.select('#content').selectAll('*').remove();
 
   current_graph = new_view;
-  console.log(current_graph);
+  // disable und enable riskgroup drop down, doesnt make sense to change the riskgroups in the compare riskgroups view
   current_graph.setup()
   update();
 }

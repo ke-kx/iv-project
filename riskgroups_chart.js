@@ -1,11 +1,10 @@
 var riskgroups_chart = (function () {
   var mod = {};
-
+	var selected_agegroups = [];
+	var maxValue; // needed for linecharts
   mod.setup = function () {
     var svg_ids = ["radarchart_svg"];
-	 var firstrow = ["agegroup1_svg","agegroup2_svg","agegroup3_svg"];
-	 var secondrow = ["agegroup4_svg","agegroup5_svg","agegroup6_svg"];
-
+  
     d3.select('#content')
       .selectAll('svg').data(svg_ids).enter()
       .append('svg')
@@ -13,43 +12,45 @@ var riskgroups_chart = (function () {
       .attr('height', 400).attr('width', 1220)
 
 	  
-	  d3.select('#content').append('div')
-	  .attr('id', "firstrow")
-	  .attr('height', 200).attr('width', 1220)
-	  
-	  d3.select('#content').append('div')
-	  .attr('id',"secondrow")
-	  .attr('height', 200).attr('width', 1220)
-	  
-	   d3.select('#firstrow')
-      .selectAll('svg').data(firstrow).enter()
-      .append('svg')
-      .attr('id', x => x)
-      .attr('height', 200).attr('width', 250)
-	  
-	  	   d3.select('#secondrow')
-      .selectAll('svg').data(secondrow).enter()
-      .append('svg')
-      .attr('id', x => x)
-      .attr('height', 200).attr('width', 250)
-	  
-	  
+
 	  
 	  generate_radar_chart("radarchart_svg", agegroups) 
-	  update_smallmultiples();
+	  init_smallmultiples();
   }
 
   mod.update = function () {
-	   
 	  generate_radar_chart("#radarchart_svg", agegroups) 
-      update_smallmultiples();
+     update_smallmultiples()
   }
 
-function update_smallmultiples(){
-	for(i=0; i<columns[1].filter.length; i++){
-		generate_bars_horizontal_yaxis(riskgroups,'#agegroup' +i +'_svg', true, columns[i].filter[i])
+function init_smallmultiples(){
+	selected_agegroups = $('#agegroup').val();
+	
+	var first_row = [],
+	second_row = [];
+
+	if(selected_agegroups.length != 0){
+		for(var i=0; i<selected_agegroups.length;i++){
+			if(i<3)
+			first_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg")
+			else
+			second_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg");
+		} 
+			generate_rows_container("firstrow", first_row);
+			generate_rows_container("secondrow", second_row)
+			agegroups.forEach(function(entry) {
+			console.log(entry);
+			var title =  "#agegroup" + entry.string.replace('<',"") + "_svg";
+			
+			generate_bars_horizontal_yaxis(entry.riskgroups, title, true, entry.string)
+		});
+		
 	}
-}
+	
+
+	}
+
+
   
 function generate_radar_chart(id, data) {
 	//config for radar_chart
@@ -59,7 +60,7 @@ function generate_radar_chart(id, data) {
 	 x:100,				// x-value to move the whole chart 
 	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner circles should there be drawn
-	 maxValue: 0, 			//What is the value that the biggest circle will represent
+	 maxValue: 0.2, 			//What is the value that the biggest circle will represent
 	 newMaxValue: 0,
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
 	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
@@ -77,6 +78,7 @@ function generate_radar_chart(id, data) {
 	// ugly for loop to determine the max value for the level labels, also transform given data to the
 	// the old structure which was used by daniel in his example, because its easier to implement upcoming stuff
 	// with the old data structure
+	if(columns[2].filter.length>0){
 	for(var i = 0; i < data.length; i++){
 		old_datastructure[i] = [];
 	
@@ -96,8 +98,8 @@ function generate_radar_chart(id, data) {
 			}
 		}
 	}
-	console.log(old_datastructure);
-	var maxValue = Math.max(cfg.maxValue,  cfg.newMaxValue);
+	}
+		maxValue = Math.max(cfg.maxValue,  cfg.newMaxValue);
 	
 
 	var allAxis = (data[0].riskgroups.map(function(d){return d.string})),	//Names of each axis
@@ -369,7 +371,7 @@ function generate_radar_chart(id, data) {
 		 var yAxis = d3.axisLeft(y);
 		 var x = d3.scaleLinear()
             .range([0,width]);
-			
+		var xAxis = d3.axisBottom(x);	
 		
 	
 	//tooltip as always
@@ -381,6 +383,7 @@ function generate_radar_chart(id, data) {
 			<br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + filtered_dataset.length + "</span>";
 		})
 
+		
 	// first time rendering yAxis once and also title
     if (first_time) {
       var svg = d3.select(target)
@@ -397,7 +400,10 @@ function generate_radar_chart(id, data) {
                 .style("text-anchor", "end")
                 .text("Option %");
 				
-				
+			  svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);	
 				
 		//title
 		svg.append("text")
@@ -413,9 +419,9 @@ function generate_radar_chart(id, data) {
    }
   
    y.domain(data.map(function(d) { return d.string; }));
-   x.domain([0, d3.max(data, function(d) { return d.percent; })]);
+   x.domain([0, maxValue]) 
    
-
+	svg.select(".x.axis").transition().duration(300).call(xAxis)
 	svg.select(".y.axis").transition().duration(300).call(yAxis)
 				
 	var bar = svg.selectAll(".bar")
@@ -448,5 +454,22 @@ function generate_radar_chart(id, data) {
    }
 
 
+ function generate_rows_container(target, data){  
+	if(data.length > 0) {
+		
+		d3.select('#content').append('div')
+	  .attr('id', target)
+	  .attr('height', 200).attr('width', 1220)
+	 
+		
+ 	  d3.select('#content').select('#' + target)
+      .selectAll('svg').data(data).enter()
+      .append('svg')
+      .attr('id', x => x)
+      .attr('height', 200).attr('width', 220)
+	} 
+ }
+   
+   
   return mod;
 }());

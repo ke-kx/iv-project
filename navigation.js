@@ -12,22 +12,24 @@ var navigation = (function () {
     create_navigation_buttons();
   }
 
-  mod.update = function () {
+
+  mod.update = function (current_graph) {
     update_genderpie();
-    update_select_boxes();
+    update_select_boxes(current_graph);
   }
 
   function create_navigation_buttons() {
     var buttons = [
-      {string: "Overview", display: bars},
-      {string: "Compare countries", display: bars},
-      {string: "Compare riskgroups", display: riskgroups_chart},
-      {string: "See table", display: table}
+      {string: "Overview", display: bars, name:"overviewButton"},
+      {string: "Compare countries", display: bars, name:"countriesButton"},
+      {string: "Compare riskgroups", display: riskgroups_chart, name:"riskgroupsButton"},
+      {string: "See table", display: table, name:"tableButton"} // debug
     ];
 
     d3.select("#buttons")
       .selectAll('button').data(buttons).enter()
       .append('button')
+	  .attr('id', x=> x.name)
       .attr('class', 'btn btn-default')
       .on('click', x => change_view(x.display))
       .html(x => x.string);
@@ -43,7 +45,7 @@ var navigation = (function () {
       .selectAll('select')
       .data(selectors).enter()
       .append('select')
-      .attr('class', 'selectpicker').attr('multiple', 'multiple')
+      .attr('class', 'selectpicker').attr('multiple', 'multiple')	
 	  .attr('title', function(d,i){return "Choose " + selectors[i];})
       .attr('data-live-search', 'true')
 	  .attr('data-actions-box', 'true')
@@ -53,7 +55,7 @@ var navigation = (function () {
   }
 
   
-  function update_select_boxes(){
+  function update_select_boxes(current_graph){
     //gender, riskgroup, agegroup, country x 2
     var select_data = [
       filtered_unique_columns[1],
@@ -61,6 +63,19 @@ var navigation = (function () {
       filtered_unique_columns[4], // country of infection
       filtered_unique_columns[5]  // country of origin
     ];
+	
+		//manipulate selector boxes for riskgroupsview
+	  if(current_graph == riskgroups_chart){
+		  select_data[0] = [];
+	  d3.select('#selectors')
+      .select('#riskgroup').attr('disabled', false);
+	
+	}	
+		else{
+		  d3.select('#selectors')
+      .select('#riskgroup').attr('disabled', null);
+	 }
+	
 
     // select all select boxes options and connect them with new data
     var select_contents = d3.select('#selectors').selectAll('select').data(select_data)
