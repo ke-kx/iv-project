@@ -21,16 +21,19 @@ var navigation = (function () {
   function create_navigation_buttons() {
     var buttons = [
       {string: "Overview", display: bars, name:"overviewButton"},
-      {string: "Compare countries", display: bars, name:"countriesButton"},
       {string: "Compare riskgroups", display: riskgroups_chart, name:"riskgroupsButton"},
-      {string: "See table", display: table, name:"tableButton"} // debug
+	  {string: "Compare countries", display: bars, name:"countriesButton"} 		
+		//{string: "See table", display: table, name:"tableButton"} // debug
     ];
 
     d3.select("#buttons")
       .selectAll('button').data(buttons).enter()
       .append('button')
 	  .attr('id', x=> x.name)
-      .attr('class', 'btn btn-default')
+      .attr('class', 'btn btn-primary')
+	  .style('margin-left','5px')
+	  .style('margin-right','15px')
+	  .style('margin-top','5px')
       .on('click', x => change_view(x.display))
       .html(x => x.string);
 	 
@@ -39,6 +42,7 @@ var navigation = (function () {
   function setup_select_boxes() {
     //gender, riskgroup, agegroup, country x 2
     var selectors = ['riskgroup', 'agegroup', 'infection', 'origin'];
+	
 
     // create one selection box for each set
     var select_boxes = d3.select('#selectors')
@@ -51,6 +55,7 @@ var navigation = (function () {
 	  .attr('data-actions-box', 'true')
 	  .attr('id', x => x)
       .attr('data-width', "160px")
+	  .attr('margin-top', "20px")
       .on('change', x => update());
   }
 
