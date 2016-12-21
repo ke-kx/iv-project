@@ -380,6 +380,10 @@ function generate_radar_chart(id, data) {
 
 
  function generate_bars_horizontal_yaxis (data, target, first_time, title) {
+	 var maxCount = 0;
+	for(var i=0; i<data.length; i++){
+		maxCount += data[i].count;
+	}
 	   // margin to match the other bar charts
 	   var margin = {top: 20, right: 10, bottom: 20, left: 95 },
             width = 250 - margin.left - margin.right,
@@ -400,9 +404,9 @@ function generate_radar_chart(id, data) {
 		var tip = d3.tip()
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
-		.html(function(d) {
+		.html(function(d) {console.log(d);
 			return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%</span> \
-			<br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + filtered_dataset.length + "</span>";
+			<br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + maxCount + "</span>";
 		})
 
 		
