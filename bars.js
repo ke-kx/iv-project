@@ -298,6 +298,9 @@ var bars = (function () {
 
   //http://bl.ocks.org/juan-cb/ab9a30d0e2ace0d2dc8c
   function generate_bars_horizontal_yaxis (data, target, first_time, title) {
+    // don't display anything if there is only one empty coutry
+    if (data[0].count == 0) data = [];
+
     // margin to match the other bar charts
     var margin = {top: 30, right: 25, bottom: 30, left: 100},
       width = 500 - margin.left - margin.right,
