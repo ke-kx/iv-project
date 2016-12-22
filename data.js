@@ -27,11 +27,12 @@ var data = (function () {
 
 	  //agegroup
 	  var selected_agegroups = $('#agegroup').val();
-	  columns[2].filter = []
+	  columns[2].filter = [];
 		agegroups.forEach(function(entry) {
 			if (selected_agegroups.includes(entry.string)){
 				for (var i = entry.min; i <= entry.max; i++) {
-					columns[2].filter.push(i.toString());
+					//number must be added as string -> based on http://jsben.ch/#/ghQYR this method is the fastet
+					columns[2].filter.push(''+ i);
 			  }
 			}
 		});
@@ -136,8 +137,11 @@ var data = (function () {
 	  for (var i in agegroups) {
 	    agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
 	    // update age_riskgroup numbers
-	    for (var j in agegroups[i].riskgroups) {
+	    for (var j in agegroups[i].riskgroups){ 
+			// if else, because 0 divide by 0 is NaN in javascript
+			if(agegroups[i].count > 0 && agegroups[i].riskgroups[j].count > 0)
 	    	agegroups[i].riskgroups[j].percent = agegroups[i].riskgroups[j].count / agegroups[i].count;
+			else agegroups[i].riskgroups[j].percent = 0
 	    }
 	  }
 	  //update country of infection percentages

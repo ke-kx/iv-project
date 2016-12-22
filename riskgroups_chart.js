@@ -19,10 +19,9 @@ var riskgroups_chart = (function () {
 	  agegroups.forEach(function(entry) {
 		  for(var i=0; i < entry.riskgroups.length; i++){
 		  if(entry.riskgroups[i].percent > maxValueBar){
-			maxValueBar = entry.riskgroups[i].percent;
-			  
+			maxValueBar = entry.riskgroups[i].percent; 
 		}
-	  }} )
+	  }})
 	  console.log(maxValueBar);
   }
 
@@ -59,6 +58,7 @@ function init_smallmultiples(){
 	}
 
 function update_smallmultiples(){
+		 
 	if(selected_agegroups.equals( $('#agegroup').val())){
 		agegroups.forEach(function(entry) {
 			if (selected_agegroups.includes(entry.string)){
@@ -83,7 +83,7 @@ function generate_radar_chart(id, data) {
 	 h: 300,				//Height of the circle
 	 x:100,				// x-value to move the whole chart 
 	margin: {top: 40, right: 20, bottom: 20, left: 20}, //The margins of the SVG
-	 levels: 5,				//How many levels or inner circles should there be drawn
+	 levels: 5,					//How many levels or inner circles should there be drawn
 	 maxValue: 0.5, 			//What is the value that the biggest circle will represent
 	 newMaxValue: 0,
 	 labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
@@ -115,17 +115,15 @@ function generate_radar_chart(id, data) {
 			
 			old_datastructure[i][j] = 
 			{axis: data[i].riskgroups[j].string, value: cleanedValue}
-			
 		
-			
 			if (data[i].riskgroups[j].percent > cfg.newMaxValue){
 				cfg.newMaxValue = data[i].riskgroups[j].percent.toFixed(2);
 			}
 		}
 	}
 	}
-		maxValue = Math.max(cfg.maxValue,  cfg.newMaxValue);
-	
+		maxValue = maxValueBar = Math.max(cfg.maxValue,  cfg.newMaxValue);
+		
 
 	var allAxis = (data[0].riskgroups.map(function(d){return d.string})),	//Names of each axis
 	//var allAxis = ("Name"),	//Names of each axis
@@ -501,11 +499,11 @@ function generate_radar_chart(id, data) {
 	 xAxisCall.selectAll("text")
 			.attr("y", function(d,i){
 				if(i % 2 ===0 ) return 9;
-			else return 20;})
+			else return 17;})
 		xAxisCall.selectAll("line")
 			.attr("y2",function(d,i){
 				if(i % 2 ===0 ) return 7;
-			else return 18;})
+			else return 15;})
 			
 			
 	svg.select(".y.axis").transition().duration(300).call(yAxis)
@@ -524,7 +522,7 @@ function generate_radar_chart(id, data) {
 				.on('mouseover', tip.show)
 				.on('mouseout', tip.hide);
 		
-			
+			 console.log(data);
         // removed data:
         bar.exit().remove();
 
