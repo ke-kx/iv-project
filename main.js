@@ -1,10 +1,14 @@
 /*
 high:
-  fix transitions for barcharts
+  only display possible ageranges for agerange filter when nothing selected...
+
   fix agerange filter generally (check code!) + for radialchart
   stop causes! (generate data + display in bars)
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
   filter for hover + display bars (just override?!)
+
+  fix problem with filtered select boxes (due extension the new selected value is the one at the same position in the FULL dataset)
+    current workaround: disable filtered select boxes in data.column_filter
 
 medium:
   enable filtering by clicking on a bar of the barcharts

@@ -1,6 +1,8 @@
 var navigation = (function () {
   var mod = {};
-   var tip;
+  var tip;
+  //gender, riskgroup, agegroup, country x 2
+  var selectors = ['riskgroup', 'agegroup', 'infection', 'origin'];
 
   // private variable = var private = 1;
   // private method = functions here
@@ -40,9 +42,6 @@ var navigation = (function () {
   }
 
   function setup_select_boxes(current_graph) {
-    //gender, riskgroup, agegroup, country x 2
-    var selectors = ['riskgroup', 'agegroup', 'infection', 'origin'];
-
     // create one selection box for each set
     var select_boxes = d3.select('#selectors')
       .selectAll('select')
@@ -50,12 +49,15 @@ var navigation = (function () {
       .append('select')
       .attr('class', 'selectpicker').attr('multiple', 'multiple')
       .attr('title', function(d,i){return "Choose " + selectors[i];})
-      .attr('data-live-search', 'true')
       .attr('data-actions-box', 'true')
       .attr('id', x => x)
       .attr('data-width', "160px")
       .attr('margin-top', "20px")
       .on('change', x => update());
+
+    // enable search for the two country select boxes
+    d3.select('#infection').attr('data-live-search', 'true');
+    d3.select('#origin').attr('data-live-search', 'true');
   }
 
 
@@ -63,7 +65,7 @@ var navigation = (function () {
     //gender, riskgroup, agegroup, country x 2
     var select_data = [
       filtered_unique_columns[1],
-      agegroups.map(x => x.string),
+      filtered_agegroups.map(x => x.string),
       filtered_unique_columns[4], // country of infection
       filtered_unique_columns[5]  // country of origin
     ];
@@ -80,6 +82,12 @@ var navigation = (function () {
     } else {
       d3.select('#selectors')
         .select('#riskgroup').attr('disabled', null);
+    }
+
+    // save selected values of all select boxes
+    var selected_values = [];
+    for (var i in selectors) {
+      selected_values[i] = $('#' + selectors[i]).val();
     }
 
     // select all select boxes options and connect them with new data
@@ -100,6 +108,12 @@ var navigation = (function () {
 
     // necessary call to update the select box display
     $('.selectpicker').selectpicker('refresh');
+
+    //finally select all the correct values and render display again
+    for (var i in selectors) {
+      $('#' + selectors[i]).val(selected_values[i]);
+    }
+    $('.selectpicker').selectpicker('render');
   }
 
   function setup_genderpie() {
@@ -150,6 +164,11 @@ var navigation = (function () {
       { name: 'F', percent: gendergroups["F"]/filtered_dataset.length},
       { name: 'M', percent: gendergroups["M"]/filtered_dataset.length}
     ];
+
+    if (filtered_dataset.length == 0) {
+      dataset[0].percent = 0;
+      dataset[1].percent = 0;
+    }
 
     var pie=d3.pie()
       .value(function(d){return d.percent})

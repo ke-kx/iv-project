@@ -22,7 +22,7 @@ var data = (function () {
     // riskgroup, country x 2 are at position 1, 4, 5
     var normal_idx = [1, 4, 5];
     for (var i in normal_idx) {
-    columns[normal_idx[i]].filter = $('#'+columns[normal_idx[i]].cl).val();
+      columns[normal_idx[i]].filter = $('#'+columns[normal_idx[i]].cl).val();
     }
 
     //agegroup
@@ -41,8 +41,8 @@ var data = (function () {
     filtered_dataset = full_dataset.filter(filter_function);
     filtered_unique_columns = unique_columns.map(column_filter);
     update_derived_data()
+    filtered_agegroups = (columns[2].filter.length != 0) ? agegroups : agegroups.filter(x => x.count > 0);
   }
-
 
   // Generates an array with all unique values of one of the dataset columns
   // takes an attr_function of the form function (x) { return x.ATTR }] as parameter
@@ -129,37 +129,41 @@ var data = (function () {
     var countryamount = columns[4].filter.length == 0 ? 10: columns[4].filter.length;
     countryofinfectiongroups = countryofinfectiongroups.slice(0,countryamount);
 
-    // update riskgroups percentages
-    for (var i in riskgroups) {
-      riskgroups[i].percent = riskgroups[i].count / filtered_dataset.length;
-    }
-    // update agegroups percentages
-    for (var i in agegroups) {
-      agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
-      // update age_riskgroup numbers
-      for (var j in agegroups[i].riskgroups){
-      // if else, because 0 divide by 0 is NaN in javascript
-      if(agegroups[i].count > 0 && agegroups[i].riskgroups[j].count > 0)
-        agegroups[i].riskgroups[j].percent = agegroups[i].riskgroups[j].count / agegroups[i].count;
-      else agegroups[i].riskgroups[j].percent = 0
+    // all percentages only make sense if the dataset is not empty!
+    if (filtered_dataset.length > 0) {
+      // update riskgroups percentages
+      for (var i in riskgroups) {
+        riskgroups[i].percent = riskgroups[i].count / filtered_dataset.length;
       }
-    }
-    //update country of infection percentages
-    for (var i in countryofinfectiongroups) {
-      countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
+      // update agegroups percentages
+      for (var i in agegroups) {
+        agegroups[i].percent = agegroups[i].count / filtered_dataset.length;
+        // update age_riskgroup numbers
+        for (var j in agegroups[i].riskgroups){
+          // if else, because 0 divide by 0 is NaN in javascript
+          if(agegroups[i].count > 0 && agegroups[i].riskgroups[j].count > 0)
+            agegroups[i].riskgroups[j].percent = agegroups[i].riskgroups[j].count / agegroups[i].count;
+        }
+      }
+      //update country of infection percentages
+      for (var i in countryofinfectiongroups) {
+        countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
+      }
     }
   }
 
   function column_filter(column, i) {
-      // no filter selected for this column -> only get possible values
-      if (columns[i] && columns[i].filter.length == 0) {
-          //TODO: find out which is quicker! // drop completely because it's too slow for full dataset?
-          //column.filter(x => filtered_dataset.map(y => columns[i].html(y)).includes(x))
-          return get_unique_column(columns[i].html)
-        }
-      // some filter selected -> display complete column
-      return column;
+    // TODO fix?!
+    //return column;
+    // no filter selected for this column -> only get possible values
+    if (columns[i] && columns[i].filter.length == 0) {
+      //TODO: find out which is quicker! // drop completely because it's too slow for full dataset?
+      //column.filter(x => filtered_dataset.map(y => columns[i].html(y)).includes(x))
+      return get_unique_column(columns[i].html)
     }
+    // some filter selected -> display complete column
+    return column;
+  }
 
   // returns true if each attribute is eather in the filter list or the filter list is empty
   function filter_function(x) {
