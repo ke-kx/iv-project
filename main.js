@@ -38,7 +38,7 @@ main();
 
 function main () {
   data.load(function () {
-   
+
    current_graph = bars;
 
     // generate elements which only have to be generated once
@@ -53,13 +53,13 @@ function main () {
 function update() {
   data.update();
 
-    // update display
+  // update display
   navigation.update(current_graph); //add current_graph to update to change selecetors depending on view
   current_graph.update()
 }
 
 function change_view(new_view) {
-	console.log(new_view);
+  console.log(new_view);
   // remove currently displayed content
   d3.select('#content').selectAll('*').remove();
 
