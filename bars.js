@@ -112,7 +112,14 @@ var bars = (function () {
     // THIS IS THE ACTUAL WORK!
     var bars = svg.selectAll(".bar").data(data, function(d) { return d.string; }) // (data) is an array/iterable thing, second argument is an ID generator function
 
-    bars.attr("class", "bar")
+    bars.transition().duration(750)
+      .attr("x", function(d) { return x(d.string); })
+      .attr("y", function(d) { return y(d.percent); })
+      .attr("height", function(d) { return height - y(d.percent); })
+
+    // data that needs DOM = enter() (a set/selection, not an event!)
+    bars.enter().append("rect")
+      .attr("class", "bar")
       .attr("width", x.bandwidth()) // constant, so no callback function(d) here
       .attr("x", function(d) { return x(d.string); })
       .attr("y", function(d) { return y(d.percent); })
@@ -123,35 +130,7 @@ var bars = (function () {
       })
       .on('mouseout', tip.hide);
 
-    // data that needs DOM = enter() (a set/selection, not an event!)
-    bars.enter().append("rect")
-      .attr("class", "bar")
-      .attr("width", x.bandwidth()) // constant, so no callback function(d) here
-      .attr("x", function(d) { return x(d.string); })
-      .attr("y", function(d) { return y(d.percent); })
-      .attr("height", function(d) { return height - y(d.percent); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
-
-  /*
-    // the "UPDATE" set:
-    bars.transition().duration(300).attr("x", function(d) { return x(d.string); }) // (d) is one item from the data array, x is the scale object from above
-      .attr("width", x) // constant, so no callback function(d) here
-      .attr("y", function(d) { return y(d.percent); })
-      .attr("height", function(d) {
-        console.log(d.percent);
-        console.log(y(d.percent));
-        return height - y(d.percent);
-      }); // flip the height, because y's domain is bottom up, but SVG renders top down
-    */
-
     bars.exit().remove();
-
-    bars.transition()
-      .duration(750)
-//      .attr("x", function(d) { return x(d.string); })
-      .attr("y", function(d) { return y(d.percent); })
-      .attr("height", function(d) { return height - y(d.percent); })
 
     svg.call(tip);
   }

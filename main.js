@@ -1,12 +1,18 @@
 /*
-remove custom elements from main.html (svgs and 2 divs for bars -> implement in display code)
-   only navigation divs and display divs on toplevel
-   change into column layout of bootstrap -> no problem with table?!
+high:
+  fix transitions for barcharts
+  fix agerange filter generally (check code!) + for radialchart
+  stop causes! (generate data + display in bars)
+  heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
+  filter for hover + display bars (just override?!)
 
-enable filtering by clicking on a bar of the barcharts
+medium:
+  enable filtering by clicking on a bar of the barcharts
+  main.html: change into column layout of bootstrap -> no problem with table?!
 
- stop causes, full dataset, highlight bar percentages on mouse over
- */
+super low priority:
+  genderpie: make text also transition around pie
+*/
 
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
