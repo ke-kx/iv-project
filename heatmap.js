@@ -191,7 +191,7 @@ var heatmap = (function () {
     cards.transition().duration(1000)
       .style("fill", function(d) { return colorScale(d.value); });
 
-    cards.select("title").text(function(d) { return d.value; });
+    cards.select("title").text(function(d) { return Math.round(d.value*100)/100 + ' %'; });
 
     cards.exit().remove();
 
