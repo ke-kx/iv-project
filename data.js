@@ -2,7 +2,7 @@ var data = (function () {
   var mod = {};
 
   mod.load = function (cb) {
-    d3.csv("data/patients_final.csv", function (data) {
+    d3.csv("data/patients_final_large.csv", function (data) {
       d3.csv("data/therapies_csv.csv", function(therapies) {
         // merge therapies and patients via patient id
         // make it a lookup based dataset by patient_id

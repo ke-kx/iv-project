@@ -15,7 +15,7 @@ var bars = (function () {
       .attr('id', x => x)
       .attr('height', 300).attr('width', 500)
 
-    generate_bars(riskgroups, '#riskgroup_svg', true, "Riskgroups", filtered_dataset.length);
+    generate_bars(riskgroups, '#riskgroup_svg', true, "Risk groups", filtered_dataset.length);
     generate_bars(agegroups, '#agegroup_svg', true, "Age of Infection", filtered_dataset.length);
     generate_bars(Object.values(stopcausesgroups), '#stopcause_svg', true, "Stop Causes", stopcauses_total);
     generate_bars_horizontal_yaxis(countryofinfectiongroups, '#country_of_infectiongroup_svg', true, "Country of Infection");
