@@ -1,20 +1,3 @@
-/*
-high:
-  heatmap?!
-    add more possible datapoints to choose from (ageranges, stop causes..)
-
-  filter for hover + display bars (just override?!)
-
-medium:
-  enable filtering by clicking on a bar of the barcharts
-  wrap long country names in ybarchart - https://bl.ocks.org/mbostock/7555321
-  main.html: change into column layout of bootstrap -> no problem with table?!
-  change all groups to lookups instead of arrays?!
-
-super low priority:
-  genderpie: make text also transition around pie
-*/
-
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
 var unique_columns, filtered_unique_columns;
@@ -47,7 +30,7 @@ main();
 function main () {
   data.load(function () {
 
-   current_graph = heatmap;
+   current_graph = bars;
 
     // generate elements which only have to be generated once
     navigation.setup();
