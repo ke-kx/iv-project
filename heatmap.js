@@ -23,7 +23,7 @@ var heatmap = (function () {
   ];
 
   mod.setup = function () {
-    mod.attrFunction = attrFunction = x => x.gender;
+    mod.attrFunction = x => x.gender;
     update_data();
 
     create_heatmap(true, heatmapData);
@@ -47,8 +47,10 @@ var heatmap = (function () {
     };
 
     var empty_sc = {};
-    // leave
-    console.log(unique_stop_causes);
+    for (var i in unique_stop_causes) {
+      empty_sc[unique_stop_causes[i]] = 0;
+    }
+    console.log(empty_sc);
 
     //TODO: enable for both, origin and infection
     dataset = $('#infection').val(); // infection
@@ -58,12 +60,14 @@ var heatmap = (function () {
       country_values[dataset[i]] = {
         string: dataset[i],
         total: 0,
+        sc_total: 0,
         gender: {M: 0, F: 0},
-        riskgroups: $.extend(true, {}, empty_rg)
+        riskgroups: $.extend(true, {}, empty_rg),
+        stopcauses: $.extend(true, {}, empty_sc)
       };
     }
 
-    var i, patient, country;
+    var i, j, patient, country;
     for ( i = 0; i < filtered_dataset.length; i++) {
       patient = filtered_dataset[i];
       country = country_values[patient.infection];
@@ -72,6 +76,11 @@ var heatmap = (function () {
         country.total++;
         country.riskgroups[patient.Risk]++;
         country.gender[patient.Gender]++;
+
+        for (j in patient.therapies) {
+          country.sc_total++;
+          country.stopcauses[patient.therapies[j].stop_cause_desc]++;
+        }
       }
     }
 
@@ -87,6 +96,12 @@ var heatmap = (function () {
         current_country = country_array[i];
         current_data = mod.attrFunction(current_country);
         current_data_array = Object.values(current_data)
+
+        //dirtyyy fix for stop causes correct total
+        if (mod.attrFunction == mod.buttons[2].attrFunction) {
+          console.log("using sc_total!");
+          current_country.total = current_country.sc_total;
+        }
 
         for ( j in current_data_array) {
           heatmapData.push ( {
@@ -106,6 +121,15 @@ var heatmap = (function () {
     ind = topData.indexOf("vertical transmission");
     if (ind != -1) {
       topData[ind] = "vert. trans.";
+    }
+
+    if (mod.attrFunction == mod.buttons[2].attrFunction) {
+      console.log(topData);
+      topData[topData.indexOf('0')] = 'unknown';
+      topData[topData.indexOf('Compliance problems')] = 'Compl. problems';
+      topData[topData.indexOf('Immunological failure')] = 'Imn. failure';
+      topData[topData.indexOf('Patients own wish')] = 'Patients wish';
+
     }
   }
 
@@ -203,6 +227,11 @@ var heatmap = (function () {
 
     cards.exit().remove();
 
+    create_legend(svg, colorScale);
+    create_legend(svg, colorScale);
+  }
+
+  function create_legend(svg, colorScale) {
     var legend = svg.selectAll(".legend")
       .data([0].concat(colorScale.quantiles()), function(d) { return d; });
 
