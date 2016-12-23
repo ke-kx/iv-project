@@ -70,15 +70,23 @@ var navigation = (function () {
       filtered_unique_columns[5]  // country of origin
     ];
 
-    //manipulate selector boxes for riskgroupsview
+    //manipulate selector boxes for riskgroupsview 
+	//we only show 3 small bar chart so the maxOption will be restrict on three
     if(current_graph == riskgroups_chart){
-      // I inserted the riskgroup filters again, since they seem to work flawlessly
-      // left this piece in in case you wanted to reinstate it -> not sure it's necessary
-
-      d3.select('#selectors')
-        .select('#agegroup').attr('maxOptions', 2)
+	
+	if($('#agegroup').val().length > 3 && $('#agegroup').val().length < 11){
+		columns[2].filter = [];
+	    $('#agegroup').val('').selectpicker('refresh')
+	}
+	
+	$('#agegroup').selectpicker({
+      maxOptions:3,
+	  maxOptionsText: "In this View the maximal number of selectable Agegroups is 3!",
+	});
     } else {
-
+		$('#agegroup').selectpicker({
+      maxOptions:20
+	});
     }
 
     // save selected values of all select boxes

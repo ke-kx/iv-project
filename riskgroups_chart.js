@@ -30,6 +30,7 @@ var riskgroups_chart = (function () {
   }
 //method to setup smallmultiples if the user already choosen filters if the view get changed
 function init_smallmultiples(){
+	if($('#agegroup').val().length != 11){	 
 	selected_agegroups = $('#agegroup').val();
 	
 	var first_row = [],
@@ -53,11 +54,11 @@ function init_smallmultiples(){
 		
 	}
 	
-
+    }
 	}
 
 function update_smallmultiples(){
-		 
+	
 	if(selected_agegroups.equals( $('#agegroup').val())){
 		agegroups.forEach(function(entry) {
 			if (selected_agegroups.includes(entry.string)){
@@ -118,9 +119,18 @@ function generate_radar_chart(id, data) {
 		}
 	}
 	}
-		maxValue = maxValueBar = Math.max(cfg.maxValue,  cfg.newMaxValue);
+	maxValue = maxValueBar = Math.max(cfg.maxValue,  cfg.newMaxValue);
 		
-
+    var indexForColor= []
+	
+	//seqarch every index which needs to be displayed
+    agegroups.forEach(function(entry) {
+		if($('#agegroup').val().includes(entry.string))
+			indexForColor.push(agegroups.indexOf(entry))
+		});
+	
+	
+		
 	var allAxis = (data[0].riskgroups.map(function(d){return d.string})),	//Names of each axis
 	//var allAxis = ("Name"),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
@@ -249,16 +259,18 @@ function generate_radar_chart(id, data) {
 	//Create a wrapper for the blobs
 	var blobWrapper = g.selectAll(".radarWrapper")
 		.data(old_datastructure)
-		.enter().append("g")
+		.enter()
+		.filter(function(d,i){if(indexForColor.includes(i)) return true})
+		.append("g")
 		.attr("class", "radarWrapper");
 	
 		
 	//Append the backgrounds
 	blobWrapper
-		.append("path")
+		.append("path")	
 		.attr("class", "radarArea")
 		.attr("d", function(d,i) { return radarLine(d); })
-		.style("fill", function(d,i) { return cfg.color(i); })
+		.style("fill", function(d,i) { return cfg.color(indexForColor[i]); })
 		.style("fill-opacity", cfg.opacityArea)
 		.on('mouseover', function (d,i){
 			//Dim all blobs
@@ -282,7 +294,7 @@ function generate_radar_chart(id, data) {
 		.attr("class", "radarStroke")
 		.attr("d", function(d,i) { return radarLine(d); })
 		.style("stroke-width", cfg.strokeWidth + "px")
-		.style("stroke", function(d,i) { return cfg.color(i); })
+		.style("stroke", function(d,i) { return cfg.color(indexForColor[i]); })
 		.style("fill", "none")
 		.style("filter" , "url(#glow)");
 
@@ -348,14 +360,7 @@ function generate_radar_chart(id, data) {
 			.attr("class", "legend");		
 		
 		// only with the correct index
-		var indexForColor= []
-	
-		//seqarch every index which needs to be displayed
-		agegroups.forEach(function(entry) {
-			if($('#agegroup').val().includes(entry.string))
-				indexForColor.push(agegroups.indexOf(entry))
-			
-		});
+		
 	
 	//add legend
 	legend.selectAll('rect')
