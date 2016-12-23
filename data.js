@@ -1,6 +1,5 @@
 var data = (function () {
   var mod = {};
-
   mod.load = function (cb) {
     d3.csv("data/patients_final_large.csv", function (data) {
       d3.csv("data/therapies_csv.csv", function(therapies) {
