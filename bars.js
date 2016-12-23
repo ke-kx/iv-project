@@ -1,9 +1,13 @@
 var bars = (function () {
   var mod = {};
 
+  // Mike Bostock "margin conventions"
+  var margin = {top: 30, right: 20, bottom: 30, left: 40},
+    width = 500 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
   mod.setup = function () {
-    var svg_ids = ["riskgroup_svg", "agegroup_svg", "group1_svg", "country_of_infectiongroup_svg"];
+    var svg_ids = ["riskgroup_svg", "agegroup_svg", "stopcause_svg", "country_of_infectiongroup_svg"];
 
     d3.select('#content')
       .selectAll('svg').data(svg_ids).enter()
@@ -11,49 +15,37 @@ var bars = (function () {
       .attr('id', x => x)
       .attr('height', 300).attr('width', 500)
 
-    generate_bars(riskgroups, '#riskgroup_svg', true, "Riskgroups");
-    generate_bars(agegroups, '#agegroup_svg', true, "Age of Infection");
+    generate_bars(riskgroups, '#riskgroup_svg', true, "Riskgroups", filtered_dataset.length);
+    generate_bars(agegroups, '#agegroup_svg', true, "Age of Infection", filtered_dataset.length);
+    generate_bars(Object.values(stopcausesgroups), '#stopcause_svg', true, "Stop Causes", stopcauses_total);
     generate_bars_horizontal_yaxis(countryofinfectiongroups, '#country_of_infectiongroup_svg', true, "Country of Infection");
-    // dummy data
-    generate_bars(riskgroups, '#group1_svg', true, "Placeholder 'stop causes'");
-
   }
 
   mod.update = function () {
-    generate_bars(riskgroups, '#riskgroup_svg', false);
-    generate_bars(agegroups, '#agegroup_svg', false);
+    generate_bars(riskgroups, '#riskgroup_svg', false, '', filtered_dataset.length);
+    generate_bars(agegroups, '#agegroup_svg', false, '', filtered_dataset.length);
+    generate_bars(Object.values(stopcausesgroups), '#stopcause_svg', false, '', stopcauses_total);
     generate_bars_horizontal_yaxis(countryofinfectiongroups, '#country_of_infectiongroup_svg', false);
-    //dummy data
-    generate_bars(riskgroups, '#group1_svg', false);
-
   }
 
-  function generate_bars (data, target, first_time, title) {
-    // Mike Bostock "margin conventions"
-    var margin = {top: 30, right: 20, bottom: 30, left: 40},
-      width = 500 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom;
-
+  function generate_bars (data, target, first_time, title, total_for_tip) {
     // D3 scales = just math
     // x is a function that transforms from "domain" (data) into "range" (usual pixels)
     // domain gets set after the data loads
-    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1)
-
-    var y = d3.scaleLinear()
-      .range([height, 10]);
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+    var y = d3.scaleLinear().range([height, 10]);
 
     // D3 Axis - renders a d3 scale in SVG
     var xAxis = d3.axisBottom(x);
 
-    var yAxis = d3.axisLeft(y)
-      .ticks(10, "%");
+    var yAxis = d3.axisLeft(y).ticks(10, "%");
 
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
         return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%</span> \
-          <br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + filtered_dataset.length + "</span>";
+          <br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + total_for_tip + "</span>";
     })
 
     if (first_time) {
@@ -117,6 +109,10 @@ var bars = (function () {
       .attr("y", function(d) { return y(d.percent); })
       .attr("height", function(d) { return height - y(d.percent); })
 
+    // update tip as well
+    bars.on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
+
     // data that needs DOM = enter() (a set/selection, not an event!)
     bars.enter().append("rect")
       .attr("class", "bar")
@@ -124,15 +120,29 @@ var bars = (function () {
       .attr("x", function(d) { return x(d.string); })
       .attr("y", function(d) { return y(d.percent); })
       .attr("height", function(d) { return height - y(d.percent); })
-      .on('mouseover', function(d){
-        console.log(d.string);
-        tip.show(d);
-      })
-      .on('mouseout', tip.hide);
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
+      .on('click', hover_function);
 
     bars.exit().remove();
 
     svg.call(tip);
+  }
+
+  function hover_function (data) {
+    console.log(data);
+
+    var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+    var y = d3.scaleLinear().range([height, 10]);
+
+    //draw random bar
+    var test = d3.select('#agegroup_svg').select('g').append('rect')
+      .attr("class", "bar")
+      .attr("width", x.bandwidth()) // constant, so no callback function(d) here
+      .attr("x", x("<16"))
+      .attr("y", y(0.45))
+      .attr("height", height - y(0.06))
+    console.log(test);
   }
 
   //old version to generate bars like the one in the whatsapp pic.
@@ -311,8 +321,7 @@ var bars = (function () {
       .padding(0.1, 0.5);
 
     var yAxis = d3.axisLeft(y);
-    var x = d3.scaleLinear()
-      .range([0,width]);
+    var x = d3.scaleLinear().range([0,width]);
 
     var xAxis = d3.axisBottom(x).ticks(10, "%");
 

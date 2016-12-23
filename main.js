@@ -1,16 +1,13 @@
 /*
 high:
-  only display possible ageranges for agerange filter when nothing selected...
-
-  fix agerange filter generally (check code!) + for radialchart
   stop causes! (generate data + display in bars)
+    make sure to remove superflous global etc vars to save memory!!!
+  change all groups to lookups instead of arrays?!
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
   filter for hover + display bars (just override?!)
 
-  fix problem with filtered select boxes (due extension the new selected value is the one at the same position in the FULL dataset)
-    current workaround: disable filtered select boxes in data.column_filter
-
 medium:
+  wrap long country names in ybarchart - https://bl.ocks.org/mbostock/7555321
   enable filtering by clicking on a bar of the barcharts
   main.html: change into column layout of bootstrap -> no problem with table?!
 
@@ -21,7 +18,8 @@ super low priority:
 // --- global variables
 var full_dataset, filtered_dataset, gender_dataset;
 var unique_columns, filtered_unique_columns;
-var agegroups, riskgroups, gendergroups, stopcausesgroup, countryofinfectiongroups, riskagegroups;
+var unique_stop_causes, stopcauses_total;
+var agegroups, riskgroups, gendergroups, stopcausesgroups, countryofinfectiongroups, riskagegroups;
 var riskgroup_bars, agegroup_bars;
 
 var current_graph;

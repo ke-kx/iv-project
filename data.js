@@ -3,17 +3,40 @@ var data = (function () {
 
   mod.load = function (cb) {
     d3.csv("data/patients_final.csv", function (data) {
-      // load data
-      console.log(data);
-      full_dataset = data;
-      filtered_dataset = full_dataset;
+      d3.csv("data/therapies_csv.csv", function(therapies) {
+        // merge therapies and patients via patient id
+        // make it a lookup based dataset by patient_id
+        lookup_dataset = {};
+        var obj;
+        for (var i in data){
+          obj = data[i];
+          if (obj.patient_id) {
+            lookup_dataset[obj.patient_id] = obj;
+            lookup_dataset[obj.patient_id].therapies = [];
+          }
+        }
+        var patient;
+        // go once through all therapies and add them to corresponding patient in extra field
+        for (var i in therapies) {
+          obj = therapies[i];
+          patient = lookup_dataset[obj.patient_id];
+          if (patient){
+            patient.therapies.push(obj);
+          }
+        }
 
-      //array with all unique values / column, only needs to be generated once
-      unique_columns = columns.map(x => get_unique_column(x.html));
-      filtered_unique_columns = unique_columns.map(column_filter);
+        // convert merged dataset back to table
+        full_dataset = Object.values(lookup_dataset);
+        filtered_dataset = full_dataset;
 
-      update_derived_data();
-      cb();
+        //array with all unique values / column, only needs to be generated once
+        unique_columns = columns.map(x => get_unique_column(x.html, filtered_dataset));
+        filtered_unique_columns = unique_columns.map(column_filter);
+        unique_stop_causes = get_unique_column(x => x.stop_cause_desc, therapies);
+
+        update_derived_data();
+        cb();
+      });
     });
   }
 
@@ -47,11 +70,11 @@ var data = (function () {
   // Generates an array with all unique values of one of the dataset columns
   // takes an attr_function of the form function (x) { return x.ATTR }] as parameter
   // adapted from https://stackoverflow.com/questions/17780508/selecting-distinct-values-from-a-json
-  function get_unique_column(attr_function) {
+  function get_unique_column(attr_function, dataset) {
     var lookup = {};
     var result = [];
 
-    for (var item, i = 0; item = filtered_dataset[i++];) {
+    for (var item, i = 0; item = dataset[i++];) {
       var name = attr_function(item);
 
       if (!(name in lookup)) {
@@ -64,6 +87,13 @@ var data = (function () {
 
   // reset all derived data arrays to their initial state (0,0,0,...)
   function resetgroups(){
+    stopcauses_total = 0;
+    stopcausesgroups = {};
+    for (var i in unique_stop_causes) {
+      stopcausesgroups[unique_stop_causes[i]] = {string: unique_stop_causes[i], count: 0, percent: 0};
+    }
+    stopcausesgroups["0"].string = "Unknown"
+
     riskgroups = [
       { string: "homosexual/bisexual", count: 0, percent: 0},
       { string: "blood products", count: 0, percent: 0},
@@ -99,7 +129,8 @@ var data = (function () {
     resetgroups();
 
     // go through whole dataset once and count all occurences
-    for (var i = 0; i < filtered_dataset.length; i++) {
+    var i, j, inner_length;
+    for ( i = 0; i < filtered_dataset.length; i++) {
       var current_entry = filtered_dataset[i];
 
       riskgroups.find(x => x.string==current_entry.Risk).count++;
@@ -121,6 +152,13 @@ var data = (function () {
           agegroups[index].count++;
           agegroups[index].riskgroups.find(x => x.string==current_entry.Risk).count++;
         }
+      }
+
+      // update stopcauses
+      inner_length = current_entry.therapies.length;
+      for ( j = 0; j < inner_length; j++) {
+        stopcausesgroups[current_entry.therapies[j].stop_cause_desc].count++;
+        stopcauses_total++;
       }
     }
 
@@ -149,6 +187,13 @@ var data = (function () {
       for (var i in countryofinfectiongroups) {
         countryofinfectiongroups[i].percent = countryofinfectiongroups[i].count / filtered_dataset.length;
       }
+
+      // update stopcauses percentages
+      if (stopcauses_total > 0 ) {
+        Object.keys(stopcausesgroups).forEach(function(key,index) {
+          stopcausesgroups[key].percent = stopcausesgroups[key].count / stopcauses_total;
+        });
+      }
     }
   }
 
@@ -159,7 +204,7 @@ var data = (function () {
     if (columns[i] && columns[i].filter.length == 0) {
       //TODO: find out which is quicker! // drop completely because it's too slow for full dataset?
       //column.filter(x => filtered_dataset.map(y => columns[i].html(y)).includes(x))
-      return get_unique_column(columns[i].html)
+      return get_unique_column(columns[i].html, filtered_dataset)
     }
     // some filter selected -> display complete column
     return column;
