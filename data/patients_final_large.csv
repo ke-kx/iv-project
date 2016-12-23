@@ -2789,7 +2789,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 3866,86,F,IVDA,GERMANY,GERMANY,15.03.1998,12,12
 3869,54,M,homosexual/bisexual,GERMANY,GERMANY,02.01.1900,-54,-1
 3870,69,F,other,GERMANY,UNKNOWN,15.01.1998,29,29
-3871,60,F,heterosexual,RWANDA,ANTIGUA AND BARBUDA,15.01.1987,27,27
+3871,60,F,heterosexual,RWANDA,ANTIGUA,15.01.1987,27,27
 3872,66,F,heterosexual,GERMANY,GERMANY,01.01.1986,20,20
 3873,61,M,heterosexual,GERMANY,GERMANY,15.12.1985,24,24
 3874,67,M,homosexual/bisexual,GERMANY,GERMANY,15.12.1985,18,18
@@ -19393,7 +19393,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 41542,,M,homosexual/bisexual,BELIZE,BOLIVIA,,0,0
 41543,70,F,homosexual/bisexual,TAJIKISTAN,BOSNIA AND HERZEGOVINA,,-70,-1
 41552,70,M,heterosexual,ITALY,ITALY,,-70,-1
-41553,64,F,heterosexual,ANTIGUA AND BARBUDA,ANTIGUA AND BARBUDA,,-64,-1
+41553,64,F,heterosexual,ANTIGUA,ANTIGUA,,-64,-1
 41563,72,M,IVDA,ITALY,ITALY,,-72,-1
 41565,69,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-69,-1
 41566,67,M,heterosexual,ITALY,SOUTH AMERICA,,-67,-1
