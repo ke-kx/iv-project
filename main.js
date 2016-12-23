@@ -1,11 +1,10 @@
 /*	
 high:
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
-    enable updates + test filer
-      -> change first time part appropiately (right now top is not updated)
-      make sure stuff is removed correctly when countries change! -> is update_data correct?!
+    legend: make sure that maximal 10 ctrs are displayed (how?!)
+
+    make sure added tiles get the right data immideately and not just on update!
     add percent sign in tooltip + cutoff after short time
-    legend to the right / to the top?
     show whole countryname + top display solution for longer stuff
     add more possible datapoints to choose from (ageranges, stop causes..)
 

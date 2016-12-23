@@ -84,6 +84,7 @@ var data = (function () {
 	
     return result.sort();
   }
+  mod.get_unique_column = get_unique_column;
 
   // reset all derived data arrays to their initial state (0,0,0,...)
   function resetgroups(){

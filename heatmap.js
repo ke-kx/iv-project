@@ -4,7 +4,7 @@ var heatmap = (function () {
   // locals
   var margin = { top: 50, right: 0, bottom: 100, left: 30 },
     width = 960 - margin.left - margin.right,
-    height = 430 - margin.top - margin.bottom,
+    height = 500 - margin.top - margin.bottom,
     gridSize = Math.floor(width / 24),
     legendElementWidth = gridSize*2,
     buckets = 9,
@@ -75,7 +75,7 @@ var heatmap = (function () {
     //TODO: add more potential data
 
     //TODO: enable for both, origin and infection
-    dataset = filtered_unique_columns[4]; // infection
+    dataset = data.get_unique_column(x => x.infection, filtered_dataset); // infection
 
     country_values = {};
     for (var i in dataset) {
@@ -142,30 +142,50 @@ var heatmap = (function () {
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-      var leftLabel = svg.selectAll(".dayLabel")
-        .data(Object.keys(country_values)).enter()
-        .append("text")
-        .text(function (d) { return d; })
-        .attr("x", 0)
-        .attr("y", function (d, i) { return i * gridSize; })
-        .style("text-anchor", "end")
-        .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-        .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
-
-      console.log(topData);
-      var topLabels = svg.selectAll(".timeLabel")
-        .data(topData).enter()
-        .append("text")
-        .text(function(d) { return d; })
-        .attr("x", function(d, i) { return i * gridSize; })
-        .attr("y", 0)
-        .style("text-anchor", "middle")
-        .attr("transform", "translate(" + gridSize / 2 + ", -6)")
-        .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
     } else {
       var svg = d3.select('#content').select('g');
     }
+
+    // modifying / adding top labels
+    console.log(topData);
+    var topLabels = svg.selectAll(".timeLabel").data(topData)
+    .text(function(d) { return d; })
+    .attr("x", function(d, i) { return i * gridSize; })
+    .attr("y", 0)
+    .style("text-anchor", "middle")
+    .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+    .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+
+    topLabels.enter()
+      .append("text")
+      .text(function(d) { return d; })
+      .attr("x", function(d, i) { return i * gridSize; })
+      .attr("y", 0)
+      .style("text-anchor", "middle")
+      .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+      .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
+
+    topLabels.exit().remove();
+
+    // modifying / adding left labels
+    var leftLabels = svg.selectAll(".dayLabel").data(Object.keys(country_values))
+      .text(function (d) { return d; })
+      .attr("x", 0)
+      .attr("y", function (d, i) { return i * gridSize; })
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+      .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+    leftLabels.enter()
+      .append("text")
+      .text(function (d) { return d; })
+      .attr("x", 0)
+      .attr("y", function (d, i) { return i * gridSize; })
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+      .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
+
+    leftLabels.exit().remove();
 
     console.log(data);
 
@@ -203,7 +223,7 @@ var heatmap = (function () {
 
     legend.append("rect")
       .attr("x", function(d, i) { return legendElementWidth * i; })
-      .attr("y", height)
+      .attr("y", height + margin.bottom/2)
       .attr("width", legendElementWidth)
       .attr("height", gridSize / 2)
       .style("fill", function(d, i) { return colors[i]; });
@@ -212,7 +232,7 @@ var heatmap = (function () {
       .attr("class", "mono")
       .text(function(d) { return "≥ " + Math.round(d); })
       .attr("x", function(d, i) { return legendElementWidth * i; })
-      .attr("y", height + gridSize);
+      .attr("y", height + margin.bottom/2 + gridSize);
 
     legend.exit().remove();
   }
