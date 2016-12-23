@@ -39,15 +39,15 @@ function init_smallmultiples(){
 	if(selected_agegroups.length != 0){
 		for(var i=0; i<selected_agegroups.length;i++){
 			if(i<3)
-			first_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg")
+			first_row.push("agegroup"+selected_agegroups[i].replace('<',"").replace('+', "")+"_svg")
 			if(i >= 3 && i<6)
-			second_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg");
+			second_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg").replace('+', "");
 		} 
 			generate_rows_container("firstrow", first_row);
 			generate_rows_container("secondrow", second_row)
 			agegroups.forEach(function(entry) {
 				if (selected_agegroups.includes(entry.string)){
-					var title =  "#agegroup" + entry.string.replace('<',"") + "_svg";
+					var title =  "#agegroup" + entry.string.replace('<',"").replace('+', "") + "_svg";
 					generate_bars_horizontal_yaxis(entry.riskgroups, title, true, entry.string)
 			}
 		});
@@ -104,14 +104,11 @@ function generate_radar_chart(id, data) {
 	if(columns[2].filter.length>0){
 	for(var i = 0; i < data.length; i++){
 		old_datastructure[i] = [];
-	
 		for(var j = 0; j < data[i].riskgroups.length; j++){
-		
-			
+
 			if(data[i].riskgroups[j].count == 0)
 					cleanedValue= 0;
 				else cleanedValue = data[i].riskgroups[j].percent.toFixed(4);
-			
 			
 			old_datastructure[i][j] = 
 			{axis: data[i].riskgroups[j].string, value: cleanedValue}
