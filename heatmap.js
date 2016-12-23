@@ -12,36 +12,29 @@ var heatmap = (function () {
     days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
     times = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"];
   //var datasets = [];
-  var topData;
+  var topData, heatmapData;
+
+  // exported variables
+  mod.attrFunction;
+  mod.buttons = [
+    {string: "Gender", attrFunction: x => x.gender},
+    {string: "Riskgroups", attrFunction: x => x.riskgroups}
+  ];
 
   mod.setup = function () {
-    heatmapAttrFun = x => x.riskgroups;
-
+    mod.attrFunction = attrFunction = x => x.gender;
     update_data();
 
-    load_data( x => {
-      // testing purposes
-      var datasetpicker = d3.select("#navigation")
-        .selectAll(".dataset-button")
-        .data(['0', '1']);
-
-      datasetpicker.enter()
-        .append("input")
-        .attr("value", function(d){ return "Dataset " + d })
-        .attr("type", "button")
-        .attr("class", "dataset-button")
-        .on("click", function(d) {
-          create_heatmap(false, datasets[d], x => x.riskgroups);
-        });
-
-      create_heatmap(true, datasets[0], x => x.riskgroups);
-    });
-  }
+    create_heatmap(true, heatmapData);
+    create_heatmap(false, heatmapData);
+  };
 
   mod.update = function () {
-    //create_heatmap();
+    update_data();
+    create_heatmap(false, heatmapData);
   }
 
+/*
   function load_data (cb) {
     paths = ["data/test1.tsv", "data/test2.tsv"];
     d3.tsv(paths[0], function(d) {
@@ -67,6 +60,7 @@ var heatmap = (function () {
       });
     });
   }
+*/
 
   function update_data () {
     // empty stuff for all
@@ -92,7 +86,6 @@ var heatmap = (function () {
         riskgroups: $.extend(true, {}, empty_rg)
       };
     }
-    console.log(country_values);
 
     var i, patient, country;
     for ( i = 0; i < filtered_dataset.length; i++) {
@@ -105,32 +98,45 @@ var heatmap = (function () {
     }
 
     var country_array = Object.values(country_values);
-    topData = Object.keys(country_array.map(heatmapAttrFun)[0]);
+    topData = Object.keys(country_array.map(mod.attrFunction)[0]);
 
     // fill datastructure by iterating through all countries and the chosen data
     heatmapData = [];
     var i, j, current_country, current_data, current_data_array;
     for ( i in country_array) {
       current_country = country_array[i];
-      console.log(current_country);
-      current_data = heatmapAttrFun(current_country);
+      current_data = mod.attrFunction(current_country);
       current_data_array = Object.values(current_data)
-      console.log(current_data);
-      console.log(current_data_array);
 
       for ( j in current_data_array) {
         heatmapData.push ( {
-          country: current_country.string,
+          country: i,
           top: j,
-          value: current_data_array[j] / current_country.total
+          value: 100 * current_data_array[j] / current_country.total
         })
       }
     }
   }
 
-  function create_heatmap (first_time, data, attr_function) {
+  function create_heatmap (first_time, data) {
 
     if (first_time) {
+      console.log("ADDING HEATMAP BUTTONS")
+      d3.select('#navigation').select('#heatmap_buttons')
+        .selectAll('button').data(heatmap.buttons).enter()
+        .append('button')
+        .attr('id', x=> x.name)
+        .attr('class', 'btn btn-secondary')
+        .style('margin-left','5px')
+        .style('margin-right','15px')
+        .style('margin-top','5px')
+        .on('click', x => {
+          console.log(x);
+          mod.attrFunction = x.attrFunction;
+          mod.update();
+        })
+        .html(x => x.string);
+
       var svg = d3.select("#content").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -168,13 +174,13 @@ var heatmap = (function () {
       .range(colors);
 
     var cards = svg.selectAll(".hour")
-      .data(data, function(d) {return d.day+':'+d.hour;});
+      .data(data, function(d) {return d.country+':'+d.top;});
 
     cards.append("title");
 
     cards.enter().append("rect")
-      .attr("x", function(d) { return (d.hour - 1) * gridSize; })
-      .attr("y", function(d) { return (d.day - 1) * gridSize; })
+      .attr("x", function(d) { return (d.top) * gridSize; })
+      .attr("y", function(d) { return (d.country) * gridSize; })
       .attr("rx", 4)
       .attr("ry", 4)
       .attr("class", "hour bordered")

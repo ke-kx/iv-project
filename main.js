@@ -1,12 +1,13 @@
 /*	
 high:
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
-    chage step by step:
-      first one big function still with old dataset
-      change left axis, top axis, displayed data
-      make sure there is one datastrukture which is valid for all possible displays
-    make sure to display percentages as absolute values make no sense at all
-    enable switching between what is displayed (gender, riskgroup, + add additionals)
+    enable updates + test filer
+      -> change first time part appropiately (right now top is not updated)
+      make sure stuff is removed correctly when countries change! -> is update_data correct?!
+    add percent sign in tooltip + cutoff after short time
+    legend to the right / to the top?
+    show whole countryname + top display solution for longer stuff
+    add more possible datapoints to choose from (ageranges, stop causes..)
 
   filter for hover + display bars (just override?!)
 
@@ -26,8 +27,6 @@ var unique_columns, filtered_unique_columns;
 var unique_stop_causes, stopcauses_total;
 var agegroups, riskgroups, gendergroups, stopcausesgroups, countryofinfectiongroups, riskagegroups;
 var riskgroup_bars, agegroup_bars;
-var datasets = [];
-var heatmapAttrFun, heatmapData;
 
 var current_graph;
 
@@ -76,6 +75,12 @@ function update() {
 function change_view(new_view) {
   // remove currently displayed content
   d3.select('#content').selectAll('*').remove();
+
+  // remove navigation for heatmap
+  if (new_view != heatmap) {
+    console.log("Removing heatmap buttons");
+    d3.select('#navigation').select('#heatmap_buttons').selectAll('*').remove();
+  }
 
   current_graph = new_view;
   // disable und enable riskgroup drop down, doesnt make sense to change the riskgroups in the compare riskgroups view
