@@ -34,34 +34,6 @@ var heatmap = (function () {
     create_heatmap(false, heatmapData);
   }
 
-/*
-  function load_data (cb) {
-    paths = ["data/test1.tsv", "data/test2.tsv"];
-    d3.tsv(paths[0], function(d) {
-      return {
-        day: +d.day,
-        hour: +d.hour,
-        value: +d.value
-      };
-    }, function(error, data) {
-      console.log(data);
-      datasets[0] = data;
-
-      d3.tsv(paths[1], function(d) {
-        return {
-          day: +d.day,
-          hour: +d.hour,
-          value: +d.value
-        };
-      }, function(error, data) {
-        console.log(data);
-        datasets[1] = data;
-        cb();
-      });
-    });
-  }
-*/
-
   function update_data () {
     // empty stuff for all
     var empty_rg = {
@@ -75,7 +47,8 @@ var heatmap = (function () {
     //TODO: add more potential data
 
     //TODO: enable for both, origin and infection
-    dataset = data.get_unique_column(x => x.infection, filtered_dataset); // infection
+    dataset = $('#infection').val(); // infection
+    console.log(dataset);
 
     country_values = {};
     for (var i in dataset) {
@@ -92,28 +65,33 @@ var heatmap = (function () {
       patient = filtered_dataset[i];
       country = country_values[patient.infection];
 
-      country.total++;
-      country.riskgroups[patient.Risk]++;
-      country.gender[patient.Gender]++;
+      if (country) {
+        country.total++;
+        country.riskgroups[patient.Risk]++;
+        country.gender[patient.Gender]++;
+      }
     }
 
-    var country_array = Object.values(country_values);
-    topData = Object.keys(country_array.map(mod.attrFunction)[0]);
-
-    // fill datastructure by iterating through all countries and the chosen data
     heatmapData = [];
-    var i, j, current_country, current_data, current_data_array;
-    for ( i in country_array) {
-      current_country = country_array[i];
-      current_data = mod.attrFunction(current_country);
-      current_data_array = Object.values(current_data)
+    var country_array = Object.values(country_values);
+    topData = [];
+    if (country_array.length > 0) {
+      topData = Object.keys(country_array.map(mod.attrFunction)[0]);
 
-      for ( j in current_data_array) {
-        heatmapData.push ( {
-          country: i,
-          top: j,
-          value: 100 * current_data_array[j] / current_country.total
-        })
+      // fill datastructure by iterating through all countries and the chosen data
+      var i, j, current_country, current_data, current_data_array;
+      for ( i in country_array) {
+        current_country = country_array[i];
+        current_data = mod.attrFunction(current_country);
+        current_data_array = Object.values(current_data)
+
+        for ( j in current_data_array) {
+          heatmapData.push ( {
+            country: i,
+            top: j,
+            value: current_country.total>0 ? 100 * current_data_array[j] / current_country.total : 0
+          })
+        }
       }
     }
   }
@@ -206,7 +184,9 @@ var heatmap = (function () {
       .attr("class", "hour bordered")
       .attr("width", gridSize)
       .attr("height", gridSize)
-      .style("fill", colors[0]);
+      .style("fill", colors[0])
+      .transition().duration(1000)
+      .style("fill", function(d) { return colorScale(d.value); });
 
     cards.transition().duration(1000)
       .style("fill", function(d) { return colorScale(d.value); });
@@ -217,6 +197,8 @@ var heatmap = (function () {
 
     var legend = svg.selectAll(".legend")
       .data([0].concat(colorScale.quantiles()), function(d) { return d; });
+
+    legend.selectAll('*').remove();
 
     legend.enter().append("g")
       .attr("class", "legend");

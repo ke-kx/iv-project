@@ -1,9 +1,8 @@
-/*	
+/*
 high:
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
-    legend: make sure that maximal 10 ctrs are displayed (how?!)
 
-    make sure added tiles get the right data immideately and not just on update!
+    make sure added tiles get the right data immideately and not just on update! -> x2
     add percent sign in tooltip + cutoff after short time
     show whole countryname + top display solution for longer stuff
     add more possible datapoints to choose from (ageranges, stop causes..)

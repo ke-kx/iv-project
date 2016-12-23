@@ -24,7 +24,7 @@ var navigation = (function () {
     var buttons = [
       {string: "Overview", display: bars, name:"overviewButton"},
       {string: "Compare riskgroups", display: riskgroups_chart, name:"riskgroupsButton"},
-      {string: "Compare countries", display: heatmap, name:"countriesButton"}
+      {string: "Compare infection countries", display: heatmap, name:"countriesButton"},
       //{string: "See table", display: table, name:"tableButton"} // debug
     ];
 
@@ -70,23 +70,37 @@ var navigation = (function () {
       filtered_unique_columns[5]  // country of origin
     ];
 
-    //manipulate selector boxes for riskgroupsview 
-	//we only show 3 small bar chart so the maxOption will be restrict on three
+    //manipulate selector boxes for riskgroupsview
+    //we only show 3 small bar chart so the maxOption will be restrict on three
     if(current_graph == riskgroups_chart){
-	
-	if($('#agegroup').val().length > 3 && $('#agegroup').val().length < 11){
-		columns[2].filter = [];
-	    $('#agegroup').val('').selectpicker('refresh')
-	}
-	
-	$('#agegroup').selectpicker({
-      maxOptions:3,
-	  maxOptionsText: "In this View the maximal number of selectable Agegroups is 3!",
-	});
+
+      if($('#agegroup').val().length > 3 && $('#agegroup').val().length < 11){
+        columns[2].filter = [];
+        $('#agegroup').val('').selectpicker('refresh')
+      }
+
+      $('#agegroup').selectpicker({
+        maxOptions:3,
+        maxOptionsText: "In this view the maximum number of selectable agegroups is 3!",
+      });
     } else {
-		$('#agegroup').selectpicker({
-      maxOptions:20
-	});
+      $('#agegroup').selectpicker({maxOptions:20});
+    }
+
+    // same changes for heatmap
+    if (current_graph == heatmap) {
+
+      if($('#infection').val().length > 10) {
+        columns[4].filter = [];
+        $('#infection').val('').selectpicker('refresh')
+      }
+
+      $('#infection').selectpicker({
+        maxOptions: 10,
+        maxOptionsText: "In this view the maximum number of selectable countries is 10!",
+      });
+    } else {
+		  $('#infection').selectpicker({maxOptions:0});
     }
 
     // save selected values of all select boxes
