@@ -22,7 +22,6 @@ var riskgroups_chart = (function () {
 			maxValueBar = entry.riskgroups[i].percent; 
 		}
 	  }})
-	  console.log(maxValueBar);
   }
 
   mod.update = function () {
@@ -41,7 +40,7 @@ function init_smallmultiples(){
 			if(i<3)
 			first_row.push("agegroup"+selected_agegroups[i].replace('<',"").replace('+', "")+"_svg")
 			if(i >= 3 && i<6)
-			second_row.push("agegroup"+selected_agegroups[i].replace('<',"")+"_svg").replace('+', "");
+			second_row.push("agegroup"+selected_agegroups[i].replace('<',"").replace('+', "")+"_svg")
 		} 
 			generate_rows_container("firstrow", first_row);
 			generate_rows_container("secondrow", second_row)
@@ -443,7 +442,7 @@ function generate_radar_chart(id, data) {
 		var tip = d3.tip()
 		.attr('class', 'd3-tip')
 		.offset([-10, 0])
-		.html(function(d) {console.log(d);
+		.html(function(d) {
 			return "<strong>Percentage:</strong> <span style='color:red'>" + Math.round (d.percent*10000)/100 + "%</span> \
 			<br><strong>Total:</strong> <span style='color:red'>" +  d.count + " / " + maxCount + "</span>";
 		})
@@ -519,7 +518,6 @@ function generate_radar_chart(id, data) {
 				.on('mouseover', tip.show)
 				.on('mouseout', tip.hide);
 		
-			 console.log(data);
         // removed data:
         bar.exit().remove();
 
