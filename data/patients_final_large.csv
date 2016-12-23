@@ -233,7 +233,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 327,59,M,homosexual/bisexual,GERMANY,UNKNOWN,,-59,-1
 328,65,M,homosexual/bisexual,GERMANY,GERMANY,17.10.2003,38,38
 330,45,M,other,GERMANY,UNKNOWN,,-45,-1
-331,68,M,other,SERBIA AND MONTENEGRO,UNKNOWN,,-68,-1
+331,68,M,other,SERBIA,UNKNOWN,,-68,-1
 333,71,F,heterosexual,GERMANY,GERMANY,,-71,-1
 334,68,M,homosexual/bisexual,GERMANY,GERMANY,22.10.1998,30,30
 337,81,M,homosexual/bisexual,GERMANY,GERMANY,15.04.2000,19,19
@@ -266,7 +266,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 370,75,F,heterosexual,GERMANY,UNKNOWN,,-75,-1
 371,74,F,other,MOZAMBIQUE,MOZAMBIQUE,15.03.2000,26,26
 373,51,M,other,ITALY,UNKNOWN,,-51,-1
-374,82,F,heterosexual,BOSNIA AND HERZEGOVINA,UNKNOWN,,-82,-1
+374,82,F,heterosexual,BOSNIA,UNKNOWN,,-82,-1
 375,62,M,homosexual/bisexual,POLAND,UNKNOWN,22.10.2004,42,42
 376,70,M,homosexual/bisexual,GERMANY,UNKNOWN,25.02.1989,19,19
 381,72,M,homosexual/bisexual,GERMANY,UNKNOWN,15.06.1997,25,25
@@ -307,7 +307,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 429,63,M,homosexual/bisexual,GERMANY,GERMANY,08.01.2003,40,40
 431,73,M,homosexual/bisexual,GERMANY,UNKNOWN,,-73,-1
 434,63,M,homosexual/bisexual,GERMANY,UNKNOWN,,-63,-1
-435,75,F,other,DOMINICAN REPUBLIC,UNKNOWN,19.07.2000,25,25
+435,75,F,other,DOM. REPUBLIC,UNKNOWN,19.07.2000,25,25
 437,54,M,heterosexual,GERMANY,UNKNOWN,,-54,-1
 438,64,M,homosexual/bisexual,GERMANY,GERMANY,15.07.1995,31,31
 439,80,M,other,GERMANY,UNKNOWN,15.07.1996,16,16
@@ -489,7 +489,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 681,71,F,other,COTE D'IVOIRE,COTE D'IVOIRE,15.01.1996,25,25
 682,71,M,homosexual/bisexual,TURKEY,GERMANY,15.06.1998,27,27
 683,64,M,homosexual/bisexual,GERMANY,GERMANY,10.02.2002,38,38
-684,70,M,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,15.09.2004,34,34
+684,70,M,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,15.09.2004,34,34
 685,62,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1995,33,33
 686,76,M,homosexual/bisexual,GERMANY,GERMANY,13.07.2001,25,25
 687,66,M,homosexual/bisexual,TURKEY,UNKNOWN,15.06.1989,23,23
@@ -513,7 +513,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 709,69,M,other,GERMANY,UNKNOWN,,-69,-1
 712,61,M,blood products,GERMANY,UNKNOWN,,-61,-1
 713,58,F,heterosexual,KENYA,UNKNOWN,01.06.1992,34,34
-714,67,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,GERMANY,20.09.2001,34,34
+714,67,M,homosexual/bisexual,IRAN,GERMANY,20.09.2001,34,34
 719,71,M,homosexual/bisexual,GERMANY,GERMANY,30.03.2004,33,33
 722,72,M,heterosexual,GERMANY,UNKNOWN,15.08.1995,23,23
 723,59,M,homosexual/bisexual,GERMANY,GERMANY,26.10.1989,30,30
@@ -745,7 +745,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1041,59,M,other,GERMANY,UNKNOWN,15.02.1998,39,39
 1042,77,M,homosexual/bisexual,GERMANY,UNKNOWN,23.04.2005,28,28
 1043,65,F,other,GERMANY,UNKNOWN,,-65,-1
-1045,89,F,other,CENTRAL AFRICAN REPUBLIC,UNKNOWN,,-89,-1
+1045,89,F,other,CENTRAL AFRICA,UNKNOWN,,-89,-1
 1046,75,M,homosexual/bisexual,GERMANY,GERMANY,15.06.1996,21,21
 1047,64,M,heterosexual,GERMANY,GERMANY,08.05.2001,37,37
 1048,64,M,homosexual/bisexual,GERMANY,UNKNOWN,03.10.1993,29,29
@@ -762,10 +762,10 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1062,35,M,homosexual/bisexual,GERMANY,UNKNOWN,30.06.1991,56,56
 1064,57,M,homosexual/bisexual,ALGERIA,ALGERIA,11.12.1998,41,41
 1065,67,M,other,COTE D'IVOIRE,COTE D'IVOIRE,26.09.1999,32,32
-1066,59,M,other,CENTRAL AFRICAN REPUBLIC,CENTRAL AFRICAN REPUBLIC,12.01.2000,41,41
-1067,65,F,other,CENTRAL AFRICAN REPUBLIC,CENTRAL AFRICAN REPUBLIC,,-65,-1
+1066,59,M,other,CENTRAL AFRICA,CENTRAL AFRICA,12.01.2000,41,41
+1067,65,F,other,CENTRAL AFRICA,CENTRAL AFRICA,,-65,-1
 1068,80,F,other,GUINEA,UNKNOWN,30.10.2005,25,25
-1069,47,M,heterosexual,SERBIA AND MONTENEGRO,NIGERIA,08.06.2001,54,54
+1069,47,M,heterosexual,SERBIA,NIGERIA,08.06.2001,54,54
 1070,67,F,other,TOGO,TOGO,15.02.2002,35,35
 1071,54,M,homosexual/bisexual,GERMANY,GERMANY,,-54,-1
 1073,73,F,heterosexual,GERMANY,GERMANY,01.07.1992,19,19
@@ -950,7 +950,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1315,69,M,homosexual/bisexual,GERMANY,UNKNOWN,10.07.2004,35,35
 1316,63,F,other,ANGOLA,UNKNOWN,20.09.2005,42,42
 1320,63,M,homosexual/bisexual,ITALY,GERMANY,15.09.2000,37,37
-1321,66,F,other,CENTRAL AFRICAN REPUBLIC,CENTRAL AFRICAN REPUBLIC,26.07.1995,29,29
+1321,66,F,other,CENTRAL AFRICA,CENTRAL AFRICA,26.07.1995,29,29
 1322,85,F,other,CAMEROON,UNKNOWN,15.02.1992,7,7
 1323,62,M,other,CONGO,CONGO,15.07.1997,35,35
 1324,55,M,homosexual/bisexual,UNITED STATES,UNKNOWN,,-55,-1
@@ -1140,7 +1140,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1579,75,M,heterosexual,POLAND,UNKNOWN,15.04.2003,28,28
 1580,67,F,other,KENYA,KENYA,16.11.2004,37,37
 1581,72,F,heterosexual,GERMANY,GERMANY,15.01.2000,28,28
-1582,81,F,heterosexual,DOMINICAN REPUBLIC,UNKNOWN,01.07.1985,4,4
+1582,81,F,heterosexual,DOM. REPUBLIC,UNKNOWN,01.07.1985,4,4
 1584,65,M,other,GHANA,GHANA,21.05.2001,36,36
 1586,71,F,other,KENYA,KENYA,,-71,-1
 1588,78,M,homosexual/bisexual,GERMANY,UNKNOWN,16.05.2002,24,24
@@ -1203,7 +1203,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1656,51,M,homosexual/bisexual,GERMANY,GERMANY,,-51,-1
 1657,63,M,other,ITALY,UNKNOWN,04.07.2004,41,41
 1658,55,M,homosexual/bisexual,GERMANY,UNKNOWN,15.01.1994,39,39
-1661,64,M,homosexual/bisexual,SERBIA AND MONTENEGRO,UNKNOWN,18.01.2004,40,40
+1661,64,M,homosexual/bisexual,SERBIA,UNKNOWN,18.01.2004,40,40
 1663,75,M,other,GERMANY,UNKNOWN,,-75,-1
 1665,77,F,IVDA,GERMANY,THAILAND,15.06.1985,8,8
 1666,73,M,homosexual/bisexual,SPAIN,GERMANY,,-73,-1
@@ -1326,7 +1326,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 1826,53,M,homosexual/bisexual,GERMANY,GERMANY,29.06.1998,45,45
 1827,80,M,IVDA,ECUADOR,ECUADOR,,-80,-1
 1828,59,M,homosexual/bisexual,GERMANY,GERMANY,,-59,-1
-1830,66,M,other,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-66,-1
+1830,66,M,other,IRAN,UNKNOWN,,-66,-1
 1831,64,F,other,ZAMBIA,ZAMBIA,,-64,-1
 1832,67,M,homosexual/bisexual,GREECE,UNKNOWN,15.06.1985,18,18
 1833,85,M,homosexual/bisexual,GERMANY,UNKNOWN,20.01.1998,13,13
@@ -1478,7 +1478,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2039,41,M,homosexual/bisexual,GERMANY,UNKNOWN,17.11.2003,62,62
 2040,82,F,other,TOGO,UNKNOWN,30.06.1991,9,9
 2041,76,F,other,COTE D'IVOIRE,COTE D'IVOIRE,,-76,-1
-2042,58,M,heterosexual,GERMANY,DOMINICAN REPUBLIC,,-58,-1
+2042,58,M,heterosexual,GERMANY,DOM. REPUBLIC,,-58,-1
 2043,65,M,homosexual/bisexual,GERMANY,UNKNOWN,,-65,-1
 2045,70,M,homosexual/bisexual,GERMANY,GERMANY,,-70,-1
 2047,53,M,homosexual/bisexual,GERMANY,UNKNOWN,30.06.1987,34,34
@@ -1608,7 +1608,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2206,49,M,homosexual/bisexual,GERMANY,UNKNOWN,15.01.2005,56,56
 2207,62,F,heterosexual,ITALY,UNKNOWN,,-62,-1
 2208,65,M,homosexual/bisexual,GERMANY,GERMANY,28.01.2003,38,38
-2210,55,M,other,SERBIA AND MONTENEGRO,UNKNOWN,15.07.1996,41,41
+2210,55,M,other,SERBIA,UNKNOWN,15.07.1996,41,41
 2211,67,M,homosexual/bisexual,GERMANY,GERMANY,01.01.2003,36,36
 2213,67,F,heterosexual,GERMANY,GERMANY,,-67,-1
 2214,44,M,heterosexual,GERMANY,UNKNOWN,12.08.2003,59,59
@@ -1624,7 +1624,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2228,47,M,homosexual/bisexual,GERMANY,UNKNOWN,25.09.2002,55,55
 2230,46,M,blood products,GERMANY,UNKNOWN,02.09.1997,51,51
 2231,73,F,other,CONGO,CONGO,15.07.2000,27,27
-2232,62,M,other,SERBIA AND MONTENEGRO,UNKNOWN,08.08.1998,36,36
+2232,62,M,other,SERBIA,UNKNOWN,08.08.1998,36,36
 2235,60,M,homosexual/bisexual,GERMANY,UNKNOWN,,-60,-1
 2236,79,M,homosexual/bisexual,GERMANY,UNKNOWN,15.01.1993,14,14
 2238,49,M,heterosexual,GERMANY,UNKNOWN,,-49,-1
@@ -1882,7 +1882,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2597,82,M,homosexual/bisexual,GERMANY,GERMANY,28.10.2003,21,21
 2599,75,M,other,GERMANY,GERMANY,30.06.1996,21,21
 2600,65,M,other,GERMANY,GERMANY,15.06.2006,41,41
-2601,72,M,IVDA,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,02.07.2006,34,34
+2601,72,M,IVDA,IRAN,UNKNOWN,02.07.2006,34,34
 2602,66,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1991,25,25
 2603,59,M,homosexual/bisexual,BRAZIL,NETHERLANDS,,-59,-1
 2604,79,M,homosexual/bisexual,GERMANY,GERMANY,,-79,-1
@@ -1899,7 +1899,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2628,44,M,heterosexual,GERMANY,UNKNOWN,,-44,-1
 2629,71,M,blood products,GERMANY,GERMANY,,-71,-1
 2630,56,F,other,KENYA,KENYA,,-56,-1
-2631,70,F,other,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,15.03.1998,28,28
+2631,70,F,other,DOM. REPUBLIC,DOM. REPUBLIC,15.03.1998,28,28
 2632,50,M,other,GERMANY,UNKNOWN,30.08.2003,53,53
 2633,69,F,other,CONGO,CONGO,31.05.2006,37,37
 2636,86,M,IVDA,GEORGIA,GEORGIA,31.07.2006,20,20
@@ -1910,7 +1910,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 2642,63,M,other,GERMANY,UNKNOWN,04.08.2006,43,43
 2643,72,M,homosexual/bisexual,GERMANY,GERMANY,,-72,-1
 2644,77,F,other,MOZAMBIQUE,UNKNOWN,19.04.1999,22,22
-2646,75,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-75,-1
+2646,75,M,heterosexual,IRAN,IRAN,,-75,-1
 2649,56,M,heterosexual,SRI LANKA,UNKNOWN,11.09.2006,50,50
 2650,72,M,heterosexual,TURKEY,ROMANIA,01.08.2006,34,34
 2653,73,M,homosexual/bisexual,GERMANY,GERMANY,07.08.1995,22,22
@@ -2548,7 +2548,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 3490,62,M,homosexual/bisexual,AUSTRIA,AUSTRIA,04.12.2007,45,45
 3491,75,F,heterosexual,GERMANY,GERMANY,15.08.2003,28,28
 3492,70,M,other,CAMEROON,CAMEROON,15.01.2003,33,33
-3493,85,F,IVDA,SERBIA AND MONTENEGRO,GERMANY,28.11.2007,22,22
+3493,85,F,IVDA,SERBIA,GERMANY,28.11.2007,22,22
 3494,70,M,IVDA,RUSSIA,RUSSIA,,-70,-1
 3495,65,M,homosexual/bisexual,GERMANY,GERMANY,15.05.1995,30,30
 3496,85,M,IVDA,KAZAKHSTAN,GERMANY,07.12.2007,22,22
@@ -2761,7 +2761,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 3824,60,M,homosexual/bisexual,GERMANY,GERMANY,15.02.1998,38,38
 3825,58,M,homosexual/bisexual,GERMANY,GERMANY,15.10.1997,39,39
 3826,61,M,homosexual/bisexual,GERMANY,UNKNOWN,01.04.1986,25,25
-3827,48,F,heterosexual,REPUBLIC OF KOREA,UNKNOWN,15.02.1998,50,50
+3827,48,F,heterosexual,KOREA,UNKNOWN,15.02.1998,50,50
 3828,69,M,homosexual/bisexual,GERMANY,GERMANY,15.03.1998,29,29
 3829,64,M,homosexual/bisexual,GERMANY,GERMANY,15.12.1997,33,33
 3831,78,F,heterosexual,GERMANY,GERMANY,08.04.1998,20,20
@@ -2769,7 +2769,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 3834,61,M,other,GERMANY,GERMANY,01.02.1998,37,37
 3835,57,M,homosexual/bisexual,GERMANY,GERMANY,01.12.1997,40,40
 3836,71,M,homosexual/bisexual,GERMANY,GERMANY,10.12.1997,26,26
-3837,69,M,other,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,15.06.1990,21,21
+3837,69,M,other,LIBYAN,UNKNOWN,15.06.1990,21,21
 3839,79,M,IVDA,GERMANY,GERMANY,15.03.1998,19,19
 3840,70,M,heterosexual,GERMANY,GERMANY,15.06.1998,28,28
 3843,65,M,homosexual/bisexual,GERMANY,GERMANY,15.06.1990,25,25
@@ -2797,7 +2797,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 3876,61,M,homosexual/bisexual,GERMANY,UNKNOWN,15.11.1985,24,24
 3877,51,M,homosexual/bisexual,GERMANY,GERMANY,15.01.1985,34,34
 3879,56,F,IVDA,GERMANY,GERMANY,15.04.1988,32,32
-3880,72,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,02.01.1900,-72,-1
+3880,72,M,homosexual/bisexual,BOSNIA,BOSNIA,02.01.1900,-72,-1
 3881,65,M,heterosexual,GERMANY,GERMANY,15.06.1986,21,21
 3882,62,M,homosexual/bisexual,GREECE,UNKNOWN,15.01.1986,24,24
 3883,63,M,homosexual/bisexual,GERMANY,GERMANY,15.12.1986,23,23
@@ -3311,7 +3311,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 4616,50,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1986,36,36
 4617,67,M,other,GERMANY,GERMANY,30.06.1987,20,20
 4618,58,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1991,33,33
-4619,46,M,other,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,30.06.1992,46,46
+4619,46,M,other,IRAN,IRAN,30.06.1992,46,46
 4620,68,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1992,24,24
 4621,68,M,other,GERMANY,GERMANY,15.03.1985,17,17
 4623,59,M,other,GERMANY,GERMANY,15.06.1993,34,34
@@ -3469,7 +3469,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 4820,67,M,homosexual/bisexual,GERMANY,UNKNOWN,15.04.1992,25,25
 4821,74,M,blood products,GERMANY,GERMANY,15.11.1996,22,22
 4824,67,F,other,GERMANY,UNKNOWN,15.08.1996,29,29
-4825,58,M,other,BOSNIA AND HERZEGOVINA,GERMANY,15.05.1996,38,38
+4825,58,M,other,BOSNIA,GERMANY,15.05.1996,38,38
 4826,46,M,heterosexual,GERMANY,GERMANY,15.06.1995,49,49
 4828,72,M,homosexual/bisexual,GERMANY,GERMANY,15.04.1996,24,24
 4830,60,M,heterosexual,GERMANY,GERMANY,15.05.1996,36,36
@@ -3506,7 +3506,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 4869,67,M,other,ITALY,UNKNOWN,30.06.1990,23,23
 4871,53,M,homosexual/bisexual,GERMANY,GERMANY,15.12.1995,42,42
 4873,63,M,other,TOGO,UNKNOWN,15.06.1987,24,24
-4874,64,M,heterosexual,UNITED ARAB EMIRATES,UNITED ARAB EMIRATES,15.06.1989,25,25
+4874,64,M,heterosexual,UAE,UAE,15.06.1989,25,25
 4875,60,F,IVDA,GERMANY,GERMANY,15.12.1996,36,36
 4880,56,M,homosexual/bisexual,GERMANY,UNKNOWN,15.04.1994,38,38
 4881,51,M,homosexual/bisexual,GERMANY,GERMANY,15.01.1991,40,40
@@ -3631,7 +3631,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 5038,80,F,other,CONGO,CONGO,15.01.1997,17,17
 5039,67,M,homosexual/bisexual,ISRAEL,UNKNOWN,15.06.1985,18,18
 5040,67,M,homosexual/bisexual,GERMANY,GERMANY,30.06.1992,25,25
-5041,72,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,15.06.1988,16,16
+5041,72,M,homosexual/bisexual,BOSNIA,BOSNIA,15.06.1988,16,16
 5042,55,M,homosexual/bisexual,GERMANY,GERMANY,15.12.1997,42,42
 5043,78,F,other,GERMANY,GERMANY,15.01.1998,20,20
 5044,60,F,heterosexual,GERMANY,GERMANY,15.12.1997,37,37
@@ -3908,7 +3908,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 5335,43,F,heterosexual,GERMANY,GERMANY,15.01.1998,55,55
 5336,68,M,homosexual/bisexual,GERMANY,GERMANY,15.08.2002,34,34
 5337,70,M,homosexual/bisexual,GERMANY,GERMANY,01.07.1992,22,22
-5338,67,F,heterosexual,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,15.04.2001,34,34
+5338,67,F,heterosexual,IRAN,IRAN,15.04.2001,34,34
 5339,70,M,other,GERMANY,GERMANY,15.12.1999,29,29
 5340,59,M,homosexual/bisexual,GERMANY,GERMANY,01.07.1984,25,25
 5341,59,M,homosexual/bisexual,GERMANY,GERMANY,19.09.2002,43,43
@@ -3917,7 +3917,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 5344,59,M,IVDA,GERMANY,GERMANY,15.10.2002,43,43
 5345,61,M,homosexual/bisexual,GERMANY,GERMANY,15.10.2002,41,41
 5346,72,M,other,GERMANY,GERMANY,16.08.2002,30,30
-5347,77,M,other,DOMINICAN REPUBLIC,UNKNOWN,29.11.2002,25,25
+5347,77,M,other,DOM. REPUBLIC,UNKNOWN,29.11.2002,25,25
 5348,48,M,homosexual/bisexual,ITALY,UNKNOWN,11.11.2002,54,54
 5349,74,F,other,COTE D'IVOIRE,COTE D'IVOIRE,15.09.2002,28,28
 5350,66,F,heterosexual,GERMANY,GERMANY,07.12.2002,36,36
@@ -4010,7 +4010,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 5442,47,M,homosexual/bisexual,GERMANY,GERMANY,10.12.2003,56,56
 5443,50,M,homosexual/bisexual,GERMANY,GERMANY,10.12.2003,53,53
 5444,66,M,homosexual/bisexual,GERMANY,GERMANY,03.08.1992,26,26
-5445,63,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,01.05.1989,26,26
+5445,63,M,heterosexual,LIBYAN,LIBYAN,01.05.1989,26,26
 5446,73,M,heterosexual,GERMANY,GERMANY,13.01.2004,31,31
 5447,48,F,heterosexual,GERMANY,GERMANY,19.12.2003,55,55
 5448,66,M,homosexual/bisexual,GERMANY,GERMANY,15.06.1998,32,32
@@ -4229,7 +4229,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 5745,84,F,heterosexual,GERMANY,SOUTH AFRICA,15.09.2006,22,22
 5746,79,F,heterosexual,GERMANY,GERMANY,19.05.2006,27,27
 5747,69,M,homosexual/bisexual,ALBANIA,GERMANY,15.06.2002,33,33
-5748,72,M,IVDA,BOSNIA AND HERZEGOVINA,GERMANY,05.09.2001,29,29
+5748,72,M,IVDA,BOSNIA,GERMANY,05.09.2001,29,29
 5749,69,M,other,GERMANY,GERMANY,26.10.2006,37,37
 5750,64,M,IVDA,GERMANY,UNKNOWN,18.03.2013,49,49
 5751,76,M,homosexual/bisexual,GERMANY,GERMANY,25.10.2006,30,30
@@ -4523,7 +4523,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6044,65,M,homosexual/bisexual,GERMANY,UNKNOWN,02.02.1994,29,29
 6045,36,F,heterosexual,GERMANY,GERMANY,01.01.1986,50,50
 6046,62,F,other,ZIMBABWE,UNKNOWN,01.07.1984,22,22
-6047,68,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,01.07.1989,21,21
+6047,68,M,homosexual/bisexual,IRAN,UNKNOWN,01.07.1989,21,21
 6048,60,M,other,ZIMBABWE,UNKNOWN,01.07.1983,23,23
 6049,72,M,blood products,GERMANY,GERMANY,15.12.1985,13,13
 6050,38,M,blood products,GERMANY,UNKNOWN,15.07.1985,47,47
@@ -4762,7 +4762,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6289,76,M,homosexual/bisexual,GERMANY,UNKNOWN,31.07.1997,21,21
 6290,63,F,other,KENYA,UNKNOWN,01.11.1997,34,34
 6291,73,M,heterosexual,ROMANIA,UNKNOWN,01.01.2003,30,30
-6292,63,M,other,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,16.03.1997,34,34
+6292,63,M,other,LIBYAN,UNKNOWN,16.03.1997,34,34
 6293,54,M,IVDA,ITALY,UNKNOWN,14.07.1997,43,43
 6294,73,M,IVDA,GERMANY,UNKNOWN,01.07.1995,22,22
 6295,79,F,IVDA,RUSSIA,RUSSIA,15.10.1992,13,13
@@ -5269,7 +5269,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6805,68,M,homosexual/bisexual,GERMANY,UNKNOWN,22.11.2006,38,38
 6806,64,M,homosexual/bisexual,GERMANY,UNKNOWN,29.03.2006,42,42
 6807,67,M,other,GERMANY,GERMANY,20.12.2006,39,39
-6808,68,M,IVDA,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,01.04.2003,35,35
+6808,68,M,IVDA,LIBYAN,UNKNOWN,01.04.2003,35,35
 6809,72,M,homosexual/bisexual,GERMANY,GERMANY,01.01.2003,31,31
 6810,72,M,homosexual/bisexual,GERMANY,GERMANY,15.09.1996,24,24
 6811,76,F,heterosexual,ETHIOPIA,UNKNOWN,15.02.2004,28,28
@@ -5321,7 +5321,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6857,41,M,homosexual/bisexual,GERMANY,GERMANY,01.01.1991,50,50
 6858,70,M,IVDA,GERMANY,GERMANY,01.11.1999,29,29
 6859,58,F,heterosexual,GERMANY,GERMANY,01.07.2003,45,45
-6860,51,M,heterosexual,GERMANY,CENTRAL AFRICAN REPUBLIC,01.06.2007,56,56
+6860,51,M,heterosexual,GERMANY,CENTRAL AFRICA,01.06.2007,56,56
 6861,81,F,other,CAMEROON,CAMEROON,01.07.2003,22,22
 6862,69,M,heterosexual,AZERBAIJAN,UNKNOWN,20.06.2007,38,38
 6863,76,M,homosexual/bisexual,INDONESIA,UNKNOWN,01.02.2007,31,31
@@ -5423,7 +5423,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6960,70,M,homosexual/bisexual,GERMANY,GERMANY,15.06.1995,25,25
 6961,53,M,other,GERMANY,UNKNOWN,15.06.1993,40,40
 6962,59,F,heterosexual,PHILIPPINES,GERMANY,15.06.1984,25,25
-6963,48,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,15.06.2008,60,60
+6963,48,M,heterosexual,IRAN,UNKNOWN,15.06.2008,60,60
 6964,74,F,other,BELARUS,GERMANY,15.06.2003,29,29
 6965,68,M,heterosexual,GERMANY,GERMANY,,-68,-1
 6966,80,M,homosexual/bisexual,GERMANY,GERMANY,,-80,-1
@@ -5436,7 +5436,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 6973,81,F,heterosexual,UKRAINE,UKRAINE,,-81,-1
 6974,80,F,other,KENYA,KENYA,31.07.2008,28,28
 6975,75,M,IVDA,UKRAINE,UKRAINE,,-75,-1
-6976,58,M,other,CENTRAL AFRICAN REPUBLIC,UNKNOWN,09.07.2008,50,50
+6976,58,M,other,CENTRAL AFRICA,UNKNOWN,09.07.2008,50,50
 6977,79,M,homosexual/bisexual,GERMANY,UNKNOWN,,-79,-1
 6978,76,F,IVDA,GERMANY,GERMANY,20.08.2008,32,32
 6979,51,F,homosexual/bisexual,HUNGARY,UNKNOWN,,-51,-1
@@ -5499,7 +5499,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 7036,80,M,homosexual/bisexual,JAPAN,UNKNOWN,,-80,-1
 7037,74,M,homosexual/bisexual,GERMANY,UNKNOWN,,-74,-1
 7038,70,M,other,GERMANY,UNKNOWN,18.08.2008,38,38
-7039,66,M,IVDA,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,,-66,-1
+7039,66,M,IVDA,LIBYAN,UNKNOWN,,-66,-1
 7040,77,F,heterosexual,IRAQ,UNKNOWN,01.06.1995,18,18
 7041,82,F,heterosexual,GERMANY,UNKNOWN,15.01.1992,10,10
 7042,75,M,homosexual/bisexual,GERMANY,UNKNOWN,,-75,-1
@@ -5594,7 +5594,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 7209,72,M,homosexual/bisexual,GERMANY,GERMANY,,-72,-1
 7210,66,M,homosexual/bisexual,GERMANY,GERMANY,,-66,-1
 7211,59,M,other,MALAWI,MALAWI,,-59,-1
-7212,76,M,other,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,,-76,-1
+7212,76,M,other,DOM. REPUBLIC,DOM. REPUBLIC,,-76,-1
 7213,80,F,other,THAILAND,UNKNOWN,,-80,-1
 7214,69,M,homosexual/bisexual,GERMANY,GERMANY,,-69,-1
 7215,69,M,homosexual/bisexual,GERMANY,GERMANY,,-69,-1
@@ -5883,7 +5883,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 7648,82,F,heterosexual,CONGO,UNKNOWN,,-82,-1
 7652,73,M,homosexual/bisexual,GERMANY,GERMANY,,-73,-1
 7658,80,M,heterosexual,RUSSIA,UNKNOWN,,-80,-1
-7661,88,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,GERMANY,,-88,-1
+7661,88,M,heterosexual,LIBYAN,GERMANY,,-88,-1
 7662,84,M,other,GERMANY,UNKNOWN,,-84,-1
 7668,52,M,other,GERMANY,GERMANY,,-52,-1
 7727,80,M,other,GERMANY,UNKNOWN,,-80,-1
@@ -5896,7 +5896,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 7853,71,M,homosexual/bisexual,GERMANY,GERMANY,01.05.2009,38,38
 7856,77,M,homosexual/bisexual,GERMANY,GERMANY,,-77,-1
 7857,72,M,homosexual/bisexual,BULGARIA,GERMANY,,-72,-1
-7859,77,M,homosexual/bisexual,GERMANY,DOMINICAN REPUBLIC,,-77,-1
+7859,77,M,homosexual/bisexual,GERMANY,DOM. REPUBLIC,,-77,-1
 7861,78,F,heterosexual,GERMANY,GERMANY,,-78,-1
 7862,67,M,homosexual/bisexual,GERMANY,UNKNOWN,,-67,-1
 7863,77,M,homosexual/bisexual,GERMANY,GERMANY,15.06.2009,32,32
@@ -6130,7 +6130,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 8229,60,M,other,GHANA,GHANA,,-60,-1
 8231,68,M,other,GERMANY,INDIA,,-68,-1
 8232,62,M,heterosexual,GERMANY,GERMANY,,-62,-1
-8233,83,M,homosexual/bisexual,DOMINICAN REPUBLIC,GERMANY,,-83,-1
+8233,83,M,homosexual/bisexual,DOM. REPUBLIC,GERMANY,,-83,-1
 8234,67,M,homosexual/bisexual,GERMANY,GERMANY,,-67,-1
 8236,65,M,homosexual/bisexual,GERMANY,UNKNOWN,,-65,-1
 8238,80,M,homosexual/bisexual,GERMANY,GERMANY,,-80,-1
@@ -6142,7 +6142,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 8244,76,M,other,CUBA,SPAIN,,-76,-1
 8247,74,M,homosexual/bisexual,GERMANY,GERMANY,,-74,-1
 8248,87,M,other,GERMANY,GERMANY,,-87,-1
-8249,77,M,other,LIBERIA,FALKLAND ISLANDS (MALVINAS),,-77,-1
+8249,77,M,other,LIBERIA,FALKLAND ISLANDS,,-77,-1
 8250,48,M,other,GERMANY,KENYA,,-48,-1
 8251,78,F,other,ETHIOPIA,ETHIOPIA,,-78,-1
 8258,78,M,homosexual/bisexual,GERMANY,GERMANY,,-78,-1
@@ -6257,7 +6257,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 8654,80,M,homosexual/bisexual,GERMANY,GERMANY,,-80,-1
 8655,79,M,homosexual/bisexual,GERMANY,UNKNOWN,15.12.2002,23,23
 8656,91,M,homosexual/bisexual,GERMANY,GERMANY,,-91,-1
-8657,55,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,,-55,-1
+8657,55,M,heterosexual,LIBYAN,UNKNOWN,,-55,-1
 8658,82,M,other,ERITREA,UNKNOWN,27.02.2010,28,28
 8659,63,F,heterosexual,GERMANY,UNKNOWN,,-63,-1
 8660,65,F,heterosexual,PORTUGAL,UNKNOWN,,-65,-1
@@ -6282,7 +6282,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 8684,62,M,heterosexual,GERMANY,UNKNOWN,,-62,-1
 8685,79,F,heterosexual,GERMANY,UNKNOWN,15.06.1992,13,13
 8686,70,F,other,ERITREA,UNKNOWN,,-70,-1
-8687,70,F,other,SERBIA AND MONTENEGRO,UNKNOWN,,-70,-1
+8687,70,F,other,SERBIA,UNKNOWN,,-70,-1
 8688,56,M,heterosexual,INDIA,UNKNOWN,,-56,-1
 8689,54,F,heterosexual,UGANDA,UNKNOWN,,-54,-1
 8690,80,F,heterosexual,THAILAND,UNKNOWN,15.08.2009,29,29
@@ -6556,7 +6556,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 9258,84,M,homosexual/bisexual,GERMANY,GERMANY,15.06.2005,21,21
 9263,77,F,other,NIGERIA,UNKNOWN,14.09.2010,33,33
 9264,71,M,homosexual/bisexual,GERMANY,GERMANY,15.01.2010,39,39
-9268,60,F,heterosexual,SERBIA AND MONTENEGRO,GERMANY,15.06.2010,50,50
+9268,60,F,heterosexual,SERBIA,GERMANY,15.06.2010,50,50
 9269,89,M,heterosexual,GERMANY,GERMANY,15.05.2007,18,18
 9275,80,M,homosexual/bisexual,GERMANY,GERMANY,15.07.2010,30,30
 9276,65,M,other,GERMANY,GERMANY,15.06.2010,45,45
@@ -6638,7 +6638,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 9412,71,M,blood products,GERMANY,GERMANY,,-71,-1
 9414,69,M,homosexual/bisexual,GERMANY,GERMANY,15.04.2011,42,42
 9415,83,F,other,NIGERIA,NIGERIA,15.03.2010,27,27
-9416,82,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-82,-1
+9416,82,M,homosexual/bisexual,IRAN,UNKNOWN,,-82,-1
 9417,50,M,heterosexual,GERMANY,THAILAND,10.08.2010,60,60
 9418,73,M,homosexual/bisexual,GERMANY,GERMANY,,-73,-1
 9419,85,M,homosexual/bisexual,GERMANY,GERMANY,,-85,-1
@@ -6746,7 +6746,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 9730,67,M,homosexual/bisexual,GERMANY,GERMANY,,-67,-1
 9731,78,M,homosexual/bisexual,GERMANY,UNKNOWN,,-78,-1
 9762,72,M,homosexual/bisexual,GERMANY,GERMANY,,-72,-1
-9767,81,M,other,SERBIA AND MONTENEGRO,GERMANY,01.08.2011,30,30
+9767,81,M,other,SERBIA,GERMANY,01.08.2011,30,30
 9773,60,M,IVDA,GERMANY,GERMANY,,-60,-1
 9786,55,M,heterosexual,GERMANY,GERMANY,,-55,-1
 9787,86,M,homosexual/bisexual,GERMANY,DENMARK,,-86,-1
@@ -6791,7 +6791,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 9830,79,M,other,LAO,LAO,,-79,-1
 9831,67,M,IVDA,GERMANY,GERMANY,21.09.2011,44,44
 9832,69,M,homosexual/bisexual,GERMANY,GERMANY,,-69,-1
-9833,75,F,other,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,15.06.2009,34,34
+9833,75,F,other,DOM. REPUBLIC,DOM. REPUBLIC,15.06.2009,34,34
 9834,74,M,other,TOGO,TOGO,,-74,-1
 9835,61,M,heterosexual,TURKEY,UNKNOWN,15.07.2005,44,44
 9836,67,M,other,GERMANY,UNKNOWN,03.05.2011,44,44
@@ -7220,7 +7220,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 10829,83,M,homosexual/bisexual,GERMANY,GERMANY,30.11.2012,29,29
 10830,41,M,homosexual/bisexual,GERMANY,GERMANY,13.11.2012,71,71
 10831,83,F,other,RUSSIA,GERMANY,30.11.2012,29,29
-10832,74,M,IVDA,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,15.06.1989,15,15
+10832,74,M,IVDA,IRAN,UNKNOWN,15.06.1989,15,15
 10833,80,M,homosexual/bisexual,GERMANY,UNKNOWN,01.03.1998,18,18
 10834,90,M,homosexual/bisexual,GERMANY,GERMANY,01.01.2013,23,23
 10838,56,M,IVDA,GERMANY,GERMANY,,-56,-1
@@ -7345,7 +7345,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 11196,57,M,homosexual/bisexual,GERMANY,GERMANY,,-57,-1
 11197,73,F,other,GHANA,GHANA,04.01.1997,24,24
 11198,80,M,heterosexual,ITALY,GHANA,,-80,-1
-11202,65,M,IVDA,BOSNIA AND HERZEGOVINA,UNKNOWN,,-65,-1
+11202,65,M,IVDA,BOSNIA,UNKNOWN,,-65,-1
 11207,83,M,homosexual/bisexual,GERMANY,UNKNOWN,,-83,-1
 11208,84,M,IVDA,GERMANY,GERMANY,,-84,-1
 11210,80,M,IVDA,GERMANY,GERMANY,,-80,-1
@@ -7614,7 +7614,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 11904,63,F,heterosexual,ITALY,SOUTH AMERICA,,-63,-1
 11907,53,F,heterosexual,COLOMBIA,COLOMBIA,,-53,-1
 11908,66,F,heterosexual,ITALY,ITALY,,-66,-1
-11910,61,F,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,,-61,-1
+11910,61,F,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,,-61,-1
 11915,54,F,heterosexual,ITALY,ITALY,22.06.2011,57,57
 11916,64,M,other,ITALY,SOUTH AMERICA,,-64,-1
 11921,69,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-69,-1
@@ -7668,7 +7668,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 12039,67,M,IVDA,ITALY,ITALY,,-67,-1
 12042,66,M,IVDA,ITALY,ITALY,,-66,-1
 12043,65,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-65,-1
-12047,86,F,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,,-86,-1
+12047,86,F,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,,-86,-1
 12058,74,F,heterosexual,ITALY,SOUTH AMERICA,,-74,-1
 12067,74,M,IVDA,UZBEKISTAN,UZBEKISTAN,,-74,-1
 12075,64,M,heterosexual,NIGERIA,SOUTH AMERICA,,-64,-1
@@ -7699,7 +7699,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 12357,74,F,heterosexual,ROMANIA,ROMANIA,10.12.1989,15,15
 12358,66,M,IVDA,ITALY,SOUTH AMERICA,10.02.1989,23,23
 12365,63,F,heterosexual,ITALY,ITALY,01.05.1996,33,33
-12375,76,F,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,10.10.1995,19,19
+12375,76,F,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,10.10.1995,19,19
 12385,76,M,heterosexual,ITALY,ITALY,10.01.1990,14,14
 12388,59,F,heterosexual,CAMEROON,CAMEROON,22.02.2000,41,41
 12400,55,M,homosexual/bisexual,ITALY,ITALY,10.04.1995,40,40
@@ -7772,7 +7772,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 12668,65,M,heterosexual,ITALY,ITALY,01.06.1996,31,31
 12669,57,M,IVDA,ITALY,ITALY,25.01.2009,52,52
 12670,55,M,heterosexual,SENEGAL,SENEGAL,10.01.1988,33,33
-12671,80,F,IVDA,REPUBLIC OF MOLDOVIA,REPUBLIC OF MOLDOVIA,10.12.2008,28,28
+12671,80,F,IVDA,MOLDOVIA,MOLDOVIA,10.12.2008,28,28
 12672,62,M,heterosexual,ITALY,ITALY,10.01.2009,47,47
 12673,67,M,homosexual/bisexual,ITALY,ITALY,01.10.1992,25,25
 12674,81,F,heterosexual,NIGERIA,SOUTH AMERICA,01.04.2009,28,28
@@ -7894,7 +7894,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 12797,66,M,other,ITALY,SOUTH AMERICA,01.01.1997,31,31
 12798,96,F,other,ITALY,SOUTH AMERICA,02.11.2010,14,14
 12799,77,M,heterosexual,ITALY,SOUTH AMERICA,01.04.1989,12,12
-12800,80,M,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,16.11.2010,30,30
+12800,80,M,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,16.11.2010,30,30
 12801,73,M,heterosexual,ERITREA,SOUTH AMERICA,03.11.2010,37,37
 12802,77,M,homosexual/bisexual,ITALY,SOUTH AMERICA,27.10.2010,33,33
 12803,80,M,homosexual/bisexual,ITALY,SOUTH AMERICA,01.10.1993,13,13
@@ -9199,7 +9199,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 14212,67,F,IVDA,ITALY,SOUTH AMERICA,10.01.1995,28,28
 14213,60,M,IVDA,ITALY,SOUTH AMERICA,10.01.1993,33,33
 14214,55,M,IVDA,ITALY,SOUTH AMERICA,15.06.1987,32,32
-14215,72,F,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,15.05.1992,20,20
+14215,72,F,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,15.05.1992,20,20
 14216,58,F,IVDA,ITALY,SOUTH AMERICA,10.01.1987,29,29
 14217,58,M,IVDA,ITALY,SOUTH AMERICA,15.09.1996,38,38
 14218,47,F,heterosexual,ITALY,SOUTH AMERICA,10.01.1989,42,42
@@ -10123,7 +10123,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 15575,57,M,heterosexual,ITALY,SOUTH AMERICA,01.08.1994,37,37
 15576,74,M,homosexual/bisexual,ITALY,SOUTH AMERICA,01.01.1987,13,13
 15577,70,M,homosexual/bisexual,ITALY,SOUTH AMERICA,01.11.2010,40,40
-15578,76,M,other,BOSNIA AND HERZEGOVINA,SOUTH AMERICA,27.05.2002,26,26
+15578,76,M,other,BOSNIA,SOUTH AMERICA,27.05.2002,26,26
 15579,57,M,other,ITALY,SOUTH AMERICA,01.07.1990,33,33
 15580,64,M,heterosexual,ITALY,SOUTH AMERICA,01.01.1992,28,28
 15581,59,M,other,ITALY,SOUTH AMERICA,01.01.1988,29,29
@@ -10856,7 +10856,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 16608,74,M,other,ITALY,ITALY,,-74,-1
 16609,54,M,heterosexual,ITALY,ITALY,,-54,-1
 16610,76,F,heterosexual,ECUADOR,SOUTH AMERICA,,-76,-1
-16611,39,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,,-39,-1
+16611,39,M,heterosexual,LIBYAN,SOUTH AMERICA,,-39,-1
 16612,64,M,homosexual/bisexual,TUNISIA,SOUTH AMERICA,,-64,-1
 16613,76,F,heterosexual,ARGENTINA,SOUTH AMERICA,,-76,-1
 16614,45,M,other,ITALY,ITALY,,-45,-1
@@ -11012,7 +11012,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 16765,53,M,heterosexual,ITALY,SOUTH AMERICA,,-53,-1
 16766,56,M,IVDA,ITALY,ITALY,,-56,-1
 16767,63,M,IVDA,ITALY,ITALY,,-63,-1
-16768,72,F,IVDA,SERBIA AND MONTENEGRO,SERBIA AND MONTENEGRO,,-72,-1
+16768,72,F,IVDA,SERBIA,SERBIA,,-72,-1
 16769,59,M,heterosexual,ITALY,ITALY,,-59,-1
 16770,48,M,heterosexual,ITALY,ITALY,,-48,-1
 16772,52,M,other,ITALY,ITALY,,-52,-1
@@ -11174,7 +11174,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 16936,80,F,IVDA,ITALY,SOUTH AMERICA,,-80,-1
 16937,54,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-54,-1
 16938,61,F,heterosexual,MOROCCO,SOUTH AMERICA,,-61,-1
-16939,40,M,homosexual/bisexual,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,,-40,-1
+16939,40,M,homosexual/bisexual,LIBYAN,SOUTH AMERICA,,-40,-1
 16940,81,F,heterosexual,CAMEROON,SOUTH AMERICA,,-81,-1
 16941,69,M,heterosexual,ECUADOR,SOUTH AMERICA,,-69,-1
 16942,74,M,heterosexual,ITALY,SOUTH AMERICA,,-74,-1
@@ -11184,7 +11184,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 16946,76,M,heterosexual,NIGERIA,SOUTH AMERICA,,-76,-1
 16947,58,M,homosexual/bisexual,VENEZUELA,SOUTH AMERICA,,-58,-1
 16948,92,M,homosexual/bisexual,ECUADOR,SOUTH AMERICA,,-92,-1
-16949,84,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-84,-1
+16949,84,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-84,-1
 16950,70,M,heterosexual,ITALY,SOUTH AMERICA,,-70,-1
 16951,56,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-56,-1
 16952,46,M,heterosexual,ITALY,SOUTH AMERICA,,-46,-1
@@ -11222,10 +11222,10 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 16985,87,M,IVDA,ITALY,SOUTH AMERICA,21.10.2003,16,16
 16986,87,F,homosexual/bisexual,ROMANIA,SOUTH AMERICA,10.01.1984,-3,-1
 16987,58,M,heterosexual,ROMANIA,SOUTH AMERICA,,-58,-1
-16989,65,F,heterosexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,,-65,-1
+16989,65,F,heterosexual,SERBIA,SOUTH AMERICA,,-65,-1
 16990,44,M,homosexual/bisexual,ITALY,SOUTH AMERICA,10.01.1999,55,55
 16991,65,M,IVDA,ITALY,SOUTH AMERICA,10.01.1985,20,20
-16992,83,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,10.01.1995,12,12
+16992,83,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,10.01.1995,12,12
 16993,70,F,heterosexual,ITALY,SOUTH AMERICA,10.01.1996,26,26
 16994,47,M,heterosexual,ITALY,SOUTH AMERICA,10.01.1985,38,38
 16995,58,M,IVDA,ITALY,SOUTH AMERICA,,-58,-1
@@ -11553,7 +11553,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 17345,61,M,IVDA,ITALY,SOUTH AMERICA,,-61,-1
 17347,63,F,heterosexual,ITALY,SOUTH AMERICA,,-63,-1
 17348,71,F,heterosexual,BURUNDI,SOUTH AMERICA,,-71,-1
-17349,83,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-83,-1
+17349,83,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-83,-1
 17355,,F,heterosexual,ITALY,SOUTH AMERICA,10.01.1985,85,85
 17384,,M,homosexual/bisexual,ITALY,SOUTH AMERICA,15.05.1997,97,97
 17399,,M,heterosexual,ITALY,SOUTH AMERICA,10.01.1989,89,89
@@ -12189,7 +12189,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 18857,67,M,homosexual/bisexual,ITALY,ITALY,,-67,-1
 18858,63,F,IVDA,ITALY,ITALY,,-63,-1
 18859,72,M,homosexual/bisexual,ITALY,ITALY,,-72,-1
-18860,65,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-65,-1
+18860,65,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-65,-1
 18861,69,M,other,ITALY,ITALY,,-69,-1
 18862,67,M,homosexual/bisexual,ITALY,ITALY,,-67,-1
 18863,63,F,heterosexual,ITALY,ITALY,,-63,-1
@@ -12417,7 +12417,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 19114,67,M,homosexual/bisexual,BRAZIL,ITALY,,-67,-1
 19115,66,F,heterosexual,ITALY,ITALY,,-66,-1
 19116,76,F,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-76,-1
-19117,62,M,heterosexual,SERBIA AND MONTENEGRO,ITALY,,-62,-1
+19117,62,M,heterosexual,SERBIA,ITALY,,-62,-1
 19119,70,F,heterosexual,UNITED STATES,UNITED STATES,,-70,-1
 19120,73,M,homosexual/bisexual,BRAZIL,BRAZIL,,-73,-1
 19121,65,M,homosexual/bisexual,ITALY,ITALY,,-65,-1
@@ -12490,7 +12490,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 19200,56,M,homosexual/bisexual,ITALY,ITALY,,-56,-1
 19201,73,M,homosexual/bisexual,ITALY,ITALY,,-73,-1
 19202,77,M,homosexual/bisexual,ITALY,ITALY,,-77,-1
-19203,44,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,,-44,-1
+19203,44,M,homosexual/bisexual,SERBIA,SOUTH AMERICA,,-44,-1
 19205,63,M,homosexual/bisexual,ITALY,ITALY,,-63,-1
 19209,66,M,IVDA,ITALY,ITALY,,-66,-1
 19212,69,F,heterosexual,ITALY,ITALY,,-69,-1
@@ -12543,8 +12543,8 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 19329,66,M,heterosexual,ITALY,ITALY,,-66,-1
 19330,46,F,heterosexual,ITALY,ITALY,,-46,-1
 19336,68,M,homosexual/bisexual,ITALY,ITALY,,-68,-1
-19337,68,M,homosexual/bisexual,REPUBLIC OF KOREA,SOUTH AMERICA,,-68,-1
-19342,68,M,homosexual/bisexual,ITALY,UNITED ARAB EMIRATES,,-68,-1
+19337,68,M,homosexual/bisexual,KOREA,SOUTH AMERICA,,-68,-1
+19342,68,M,homosexual/bisexual,ITALY,UAE,,-68,-1
 19343,81,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-81,-1
 19347,66,F,heterosexual,ITALY,ITALY,,-66,-1
 19354,69,M,homosexual/bisexual,ITALY,ITALY,,-69,-1
@@ -12604,7 +12604,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 19605,71,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-71,-1
 19607,79,M,heterosexual,ITALY,ITALY,,-79,-1
 19615,66,F,heterosexual,ITALY,ITALY,,-66,-1
-19622,66,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-66,-1
+19622,66,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-66,-1
 19626,89,F,heterosexual,ITALY,ITALY,,-89,-1
 19648,83,M,homosexual/bisexual,BRAZIL,SOUTH AMERICA,,-83,-1
 19662,64,M,homosexual/bisexual,ITALY,ITALY,,-64,-1
@@ -13066,7 +13066,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 25033,64,F,heterosexual,ITALY,SOUTH AMERICA,,-64,-1
 25034,57,M,heterosexual,ITALY,SOUTH AMERICA,,-57,-1
 25035,56,M,IVDA,ITALY,SOUTH AMERICA,,-56,-1
-25036,68,M,homosexual/bisexual,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,,-68,-1
+25036,68,M,homosexual/bisexual,LIBYAN,SOUTH AMERICA,,-68,-1
 25038,70,M,heterosexual,ITALY,SOUTH AMERICA,,-70,-1
 25041,70,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-70,-1
 25045,70,F,heterosexual,ITALY,SOUTH AMERICA,,-70,-1
@@ -13227,7 +13227,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 25769,64,M,IVDA,ITALY,SOUTH AMERICA,,-64,-1
 25770,60,F,IVDA,ITALY,SOUTH AMERICA,,-60,-1
 25771,60,M,IVDA,ITALY,SOUTH AMERICA,,-60,-1
-25772,54,M,homosexual/bisexual,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,,-54,-1
+25772,54,M,homosexual/bisexual,LIBYAN,SOUTH AMERICA,,-54,-1
 25773,69,F,heterosexual,ITALY,SOUTH AMERICA,,-69,-1
 25774,63,M,IVDA,ITALY,SOUTH AMERICA,,-63,-1
 25775,74,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-74,-1
@@ -13425,7 +13425,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 26627,62,M,IVDA,ITALY,SOUTH AMERICA,,-62,-1
 26628,47,M,other,ITALY,SOUTH AMERICA,,-47,-1
 26629,61,M,IVDA,ITALY,SOUTH AMERICA,,-61,-1
-26630,78,M,homosexual/bisexual,REPUBLIC OF MOLDOVIA,SOUTH AMERICA,,-78,-1
+26630,78,M,homosexual/bisexual,MOLDOVIA,SOUTH AMERICA,,-78,-1
 26631,62,M,other,ITALY,SOUTH AMERICA,,-62,-1
 26632,50,F,other,ITALY,SOUTH AMERICA,,-50,-1
 26633,79,F,other,ITALY,SOUTH AMERICA,,-79,-1
@@ -13689,7 +13689,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 26940,53,M,other,ITALY,SOUTH AMERICA,,-53,-1
 26941,85,M,vertical transmission,ITALY,SOUTH AMERICA,,-85,-1
 26943,43,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-43,-1
-26944,63,F,other,DOMINICAN REPUBLIC,SOUTH AMERICA,,-63,-1
+26944,63,F,other,DOM. REPUBLIC,SOUTH AMERICA,,-63,-1
 26945,39,M,other,ITALY,SOUTH AMERICA,,-39,-1
 26946,73,M,other,ITALY,SOUTH AMERICA,,-73,-1
 26947,65,M,other,ITALY,SOUTH AMERICA,,-65,-1
@@ -13862,7 +13862,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 27265,62,M,IVDA,ITALY,SOUTH AMERICA,,-62,-1
 27266,70,F,other,NIGERIA,SOUTH AMERICA,,-70,-1
 27267,72,F,other,GHANA,SOUTH AMERICA,,-72,-1
-27268,63,M,IVDA,ISLAMIC REPUBLIC OF IRAN,SOUTH AMERICA,,-63,-1
+27268,63,M,IVDA,IRAN,SOUTH AMERICA,,-63,-1
 27270,77,M,other,ITALY,SOUTH AMERICA,,-77,-1
 27271,81,F,other,ITALY,SOUTH AMERICA,,-81,-1
 27272,56,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-56,-1
@@ -13887,7 +13887,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 27299,68,F,other,ITALY,SOUTH AMERICA,,-68,-1
 27300,76,M,other,TUNISIA,SOUTH AMERICA,,-76,-1
 27301,69,M,other,ITALY,SOUTH AMERICA,,-69,-1
-27302,72,F,other,REPUBLIC OF MOLDOVIA,SOUTH AMERICA,,-72,-1
+27302,72,F,other,MOLDOVIA,SOUTH AMERICA,,-72,-1
 27303,67,M,IVDA,ITALY,SOUTH AMERICA,,-67,-1
 27304,69,F,other,ITALY,SOUTH AMERICA,,-69,-1
 27305,59,F,IVDA,ITALY,SOUTH AMERICA,,-59,-1
@@ -14484,7 +14484,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 30595,68,F,heterosexual,ITALY,SOUTH AMERICA,,-68,-1
 30597,65,F,heterosexual,ITALY,SOUTH AMERICA,,-65,-1
 30598,64,F,heterosexual,ITALY,SOUTH AMERICA,15.06.1992,28,28
-30599,69,F,heterosexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,30.12.2005,36,36
+30599,69,F,heterosexual,SERBIA,SOUTH AMERICA,30.12.2005,36,36
 30602,61,F,heterosexual,ANGOLA,SOUTH AMERICA,15.06.1995,34,34
 30603,44,M,heterosexual,ITALY,SOUTH AMERICA,,-44,-1
 30604,69,M,homosexual/bisexual,ITALY,SOUTH AMERICA,15.09.1997,28,28
@@ -14641,7 +14641,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 30815,42,M,heterosexual,ITALY,SOUTH AMERICA,14.01.1999,57,57
 30819,64,M,homosexual/bisexual,ITALY,SOUTH AMERICA,05.03.2000,36,36
 30820,73,M,other,ITALY,SOUTH AMERICA,15.09.1997,24,24
-30821,57,M,IVDA,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,13.02.2004,47,47
+30821,57,M,IVDA,LIBYAN,SOUTH AMERICA,13.02.2004,47,47
 30822,55,F,heterosexual,ITALY,SOUTH AMERICA,17.02.2009,54,54
 30823,68,M,other,ITALY,SOUTH AMERICA,13.02.2004,36,36
 30825,62,F,heterosexual,ITALY,SOUTH AMERICA,15.11.2003,41,41
@@ -14735,7 +14735,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 30954,44,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-44,-1
 30955,66,F,heterosexual,ITALY,SOUTH AMERICA,15.08.1998,32,32
 30957,50,M,IVDA,ITALY,SOUTH AMERICA,15.11.1998,48,48
-30958,55,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,18.02.2011,56,56
+30958,55,M,homosexual/bisexual,SERBIA,SOUTH AMERICA,18.02.2011,56,56
 30961,59,F,heterosexual,ITALY,SOUTH AMERICA,,-59,-1
 30963,67,F,heterosexual,ITALY,SOUTH AMERICA,15.06.1990,23,23
 30964,74,F,heterosexual,ITALY,SOUTH AMERICA,15.03.2006,32,32
@@ -14976,7 +14976,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 31272,56,F,heterosexual,ITALY,SOUTH AMERICA,15.06.1990,34,34
 31273,73,F,heterosexual,ETHIOPIA,SOUTH AMERICA,28.04.2000,27,27
 31276,59,M,heterosexual,ITALY,SOUTH AMERICA,11.04.2006,47,47
-31277,76,M,blood products,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,01.09.2000,24,24
+31277,76,M,blood products,LIBYAN,SOUTH AMERICA,01.09.2000,24,24
 31278,66,M,homosexual/bisexual,ITALY,SOUTH AMERICA,11.05.2006,40,40
 31279,72,F,heterosexual,ITALY,SOUTH AMERICA,26.01.2007,35,35
 31281,75,M,heterosexual,NIGERIA,SOUTH AMERICA,12.05.1998,23,23
@@ -15096,7 +15096,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 31421,60,M,heterosexual,ZIMBABWE,SOUTH AMERICA,15.04.2002,42,42
 31422,55,M,homosexual/bisexual,ITALY,SOUTH AMERICA,10.05.2005,50,50
 31423,66,M,IVDA,ITALY,SOUTH AMERICA,06.06.1988,22,22
-31424,74,F,heterosexual,REPUBLIC OF MOLDOVIA,SOUTH AMERICA,20.05.1988,14,14
+31424,74,F,heterosexual,MOLDOVIA,SOUTH AMERICA,20.05.1988,14,14
 31425,65,F,heterosexual,ITALY,SOUTH AMERICA,15.07.1999,34,34
 31427,48,M,homosexual/bisexual,ITALY,SOUTH AMERICA,15.06.1999,51,51
 31428,77,M,homosexual/bisexual,COLOMBIA,SOUTH AMERICA,30.03.2011,34,34
@@ -15628,7 +15628,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 32146,74,F,other,NIGERIA,SOUTH AMERICA,15.06.2009,35,35
 32147,72,M,homosexual/bisexual,ITALY,SOUTH AMERICA,09.04.1991,19,19
 32148,59,F,IVDA,ITALY,SOUTH AMERICA,15.06.1988,29,29
-32149,75,F,other,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,13.03.1991,16,16
+32149,75,F,other,LIBYAN,SOUTH AMERICA,13.03.1991,16,16
 32151,46,M,other,ITALY,SOUTH AMERICA,15.08.1986,40,40
 32152,58,M,homosexual/bisexual,ITALY,SOUTH AMERICA,05.04.1991,33,33
 32153,38,M,other,ITALY,SOUTH AMERICA,15.01.2002,64,64
@@ -15890,7 +15890,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 32504,60,M,IVDA,ITALY,SOUTH AMERICA,15.01.1993,33,33
 32505,77,M,homosexual/bisexual,ITALY,SOUTH AMERICA,15.06.1999,22,22
 32506,68,F,heterosexual,ITALY,SOUTH AMERICA,01.10.1998,30,30
-32507,60,M,IVDA,ISLAMIC REPUBLIC OF IRAN,SOUTH AMERICA,15.09.1991,31,31
+32507,60,M,IVDA,IRAN,SOUTH AMERICA,15.09.1991,31,31
 32508,49,M,IVDA,ITALY,SOUTH AMERICA,31.12.2003,54,54
 32509,61,M,IVDA,ITALY,SOUTH AMERICA,15.11.2003,42,42
 32510,70,M,other,ITALY,SOUTH AMERICA,,-70,-1
@@ -16019,7 +16019,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 32690,65,M,heterosexual,ITALY,SOUTH AMERICA,11.03.1993,28,28
 32691,67,F,heterosexual,LITHUANIA,SOUTH AMERICA,15.03.1993,26,26
 32692,2001,F,other,BRAZIL,SOUTH AMERICA,15.06.1990,-1911,-1
-32693,61,M,IVDA,SERBIA AND MONTENEGRO,SOUTH AMERICA,15.06.1995,34,34
+32693,61,M,IVDA,SERBIA,SOUTH AMERICA,15.06.1995,34,34
 32694,59,M,IVDA,ITALY,SOUTH AMERICA,15.10.1987,28,28
 32695,74,F,heterosexual,ITALY,SOUTH AMERICA,11.08.2005,31,31
 32696,54,M,other,ITALY,SOUTH AMERICA,,-54,-1
@@ -16298,7 +16298,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 33081,71,M,heterosexual,ITALY,SOUTH AMERICA,,-71,-1
 33082,67,F,heterosexual,ITALY,SOUTH AMERICA,15.05.1994,27,27
 33084,64,M,heterosexual,ITALY,SOUTH AMERICA,12.08.2005,41,41
-33085,75,F,heterosexual,REPUBLIC OF MOLDOVIA,SOUTH AMERICA,29.12.2010,35,35
+33085,75,F,heterosexual,MOLDOVIA,SOUTH AMERICA,29.12.2010,35,35
 33087,64,M,IVDA,ITALY,SOUTH AMERICA,23.10.1993,29,29
 33088,76,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-76,-1
 33089,62,F,heterosexual,ITALY,SOUTH AMERICA,15.01.1994,32,32
@@ -16401,7 +16401,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 33211,60,M,IVDA,ITALY,SOUTH AMERICA,15.06.1984,24,24
 33213,45,F,IVDA,ITALY,SOUTH AMERICA,01.09.2003,58,58
 33214,68,M,heterosexual,ITALY,SOUTH AMERICA,11.10.1994,26,26
-33215,82,F,other,DOMINICAN REPUBLIC,SOUTH AMERICA,15.06.1994,12,12
+33215,82,F,other,DOM. REPUBLIC,SOUTH AMERICA,15.06.1994,12,12
 33217,71,M,other,ITALY,SOUTH AMERICA,15.08.1994,23,23
 33218,70,F,other,ITALY,SOUTH AMERICA,,-70,-1
 33219,57,M,other,ITALY,SOUTH AMERICA,07.09.2001,44,44
@@ -16429,7 +16429,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 33245,82,M,homosexual/bisexual,BRAZIL,SOUTH AMERICA,24.10.2003,21,21
 33246,59,F,heterosexual,MOZAMBIQUE,SOUTH AMERICA,20.08.2007,48,48
 33247,60,M,homosexual/bisexual,ITALY,SOUTH AMERICA,03.12.1998,38,38
-33248,74,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,18.11.1994,20,20
+33248,74,M,heterosexual,LIBYAN,SOUTH AMERICA,18.11.1994,20,20
 33249,57,M,heterosexual,ITALY,SOUTH AMERICA,11.09.2001,44,44
 33250,59,F,heterosexual,ITALY,SOUTH AMERICA,15.08.1988,29,29
 33251,80,F,other,ITALY,SOUTH AMERICA,15.08.1999,19,19
@@ -16662,7 +16662,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 33615,73,F,heterosexual,KENYA,SOUTH AMERICA,,-73,-1
 33616,73,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-73,-1
 33617,53,M,other,ITALY,SOUTH AMERICA,01.01.1985,32,32
-33618,67,F,heterosexual,SYRIAN ARAB REPUBLIC,SOUTH AMERICA,,-67,-1
+33618,67,F,heterosexual,SYRIA,SOUTH AMERICA,,-67,-1
 33620,61,F,heterosexual,ITALY,SOUTH AMERICA,,-61,-1
 33623,72,M,heterosexual,ITALY,SOUTH AMERICA,,-72,-1
 33625,73,M,homosexual/bisexual,BRAZIL,SOUTH AMERICA,,-73,-1
@@ -16690,7 +16690,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 33656,66,F,heterosexual,ITALY,SOUTH AMERICA,,-66,-1
 33658,62,M,IVDA,ITALY,SOUTH AMERICA,,-62,-1
 33659,60,M,heterosexual,ITALY,SOUTH AMERICA,,-60,-1
-33660,48,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,,-48,-1
+33660,48,M,homosexual/bisexual,SERBIA,SOUTH AMERICA,,-48,-1
 33661,70,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-70,-1
 33662,62,F,IVDA,ITALY,SOUTH AMERICA,,-62,-1
 33663,71,F,IVDA,POLAND,SOUTH AMERICA,,-71,-1
@@ -17030,7 +17030,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 34443,84,M,other,ITALY,SOUTH AMERICA,01.01.1989,5,5
 34445,65,M,other,ITALY,SOUTH AMERICA,,-65,-1
 34446,71,M,other,ITALY,SOUTH AMERICA,,-71,-1
-34447,63,M,other,LIBYAN ARAB JAMAHIRIYA,SOUTH AMERICA,,-63,-1
+34447,63,M,other,LIBYAN,SOUTH AMERICA,,-63,-1
 34448,66,M,other,TOGO,SOUTH AMERICA,,-66,-1
 34449,64,M,other,ITALY,SOUTH AMERICA,,-64,-1
 34452,69,M,IVDA,ITALY,SOUTH AMERICA,,-69,-1
@@ -17454,7 +17454,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 36631,63,M,IVDA,ITALY,SOUTH AMERICA,,-63,-1
 36646,72,M,IVDA,ITALY,SOUTH AMERICA,,-72,-1
 36652,69,M,heterosexual,ITALY,SOUTH AMERICA,,-69,-1
-36653,73,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-73,-1
+36653,73,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-73,-1
 36660,57,F,IVDA,ITALY,SOUTH AMERICA,,-57,-1
 36661,64,M,IVDA,ITALY,SOUTH AMERICA,,-64,-1
 36670,41,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-41,-1
@@ -17573,7 +17573,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 36994,68,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-68,-1
 36996,53,M,homosexual/bisexual,ITALY,SOUTH AMERICA,01.11.1999,46,46
 37001,64,F,heterosexual,ITALY,ITALY,,-64,-1
-37004,59,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SOUTH AMERICA,,-59,-1
+37004,59,M,heterosexual,IRAN,SOUTH AMERICA,,-59,-1
 37008,65,M,IVDA,ITALY,SOUTH AMERICA,,-65,-1
 37009,52,M,IVDA,ITALY,SOUTH AMERICA,,-52,-1
 37010,43,F,heterosexual,ITALY,SOUTH AMERICA,,-43,-1
@@ -18077,7 +18077,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 38157,63,M,heterosexual,BRAZIL,SOUTH AMERICA,,-63,-1
 38160,73,F,heterosexual,THAILAND,SOUTH AMERICA,,-73,-1
 38161,77,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-77,-1
-38162,57,M,heterosexual,SERBIA AND MONTENEGRO,SOUTH AMERICA,,-57,-1
+38162,57,M,heterosexual,SERBIA,SOUTH AMERICA,,-57,-1
 38164,61,M,IVDA,ITALY,ITALY,,-61,-1
 38165,59,M,IVDA,ITALY,SOUTH AMERICA,,-59,-1
 38166,52,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-52,-1
@@ -18142,7 +18142,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 38295,66,F,heterosexual,BELGIUM,SOUTH AMERICA,,-66,-1
 38301,74,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-74,-1
 38302,65,F,heterosexual,ITALY,SOUTH AMERICA,,-65,-1
-38304,59,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,SOUTH AMERICA,13.11.2002,43,43
+38304,59,M,homosexual/bisexual,IRAN,SOUTH AMERICA,13.11.2002,43,43
 38307,76,F,heterosexual,ITALY,SOUTH AMERICA,,-76,-1
 38308,75,M,heterosexual,ITALY,SOUTH AMERICA,,-75,-1
 38312,67,F,IVDA,ITALY,ITALY,,-67,-1
@@ -18311,7 +18311,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 38706,71,F,heterosexual,ITALY,ITALY,,-71,-1
 38709,72,M,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,01.04.1994,22,22
 38711,80,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-80,-1
-38712,74,F,heterosexual,REPUBLIC OF MOLDOVIA,REPUBLIC OF MOLDOVIA,,-74,-1
+38712,74,F,heterosexual,MOLDOVIA,MOLDOVIA,,-74,-1
 38714,65,M,heterosexual,BURKINA FASO,SOUTH AMERICA,,-65,-1
 38715,50,F,heterosexual,ITALY,SOUTH AMERICA,,-50,-1
 38716,67,F,heterosexual,ITALY,SOUTH AMERICA,11.11.1995,28,28
@@ -18382,7 +18382,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 38920,62,M,heterosexual,ITALY,SOUTH AMERICA,,-62,-1
 38923,68,F,heterosexual,ITALY,SOUTH AMERICA,,-68,-1
 38928,46,M,homosexual/bisexual,ITALY,ITALY,01.01.2005,59,59
-38933,68,F,heterosexual,BOSNIA AND HERZEGOVINA,SOUTH AMERICA,,-68,-1
+38933,68,F,heterosexual,BOSNIA,SOUTH AMERICA,,-68,-1
 38952,78,M,heterosexual,NIGER,NIGER,,-78,-1
 38959,57,M,IVDA,ITALY,SOUTH AMERICA,,-57,-1
 38960,73,M,IVDA,ITALY,SOUTH AMERICA,,-73,-1
@@ -18554,7 +18554,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 39392,61,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-61,-1
 39400,65,F,heterosexual,ITALY,SOUTH AMERICA,,-65,-1
 39406,67,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-67,-1
-39407,78,M,IVDA,REPUBLIC OF MOLDOVIA,SOUTH AMERICA,,-78,-1
+39407,78,M,IVDA,MOLDOVIA,SOUTH AMERICA,,-78,-1
 39408,70,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-70,-1
 39409,76,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-76,-1
 39410,48,M,heterosexual,ITALY,SOUTH AMERICA,,-48,-1
@@ -18879,7 +18879,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 40053,64,M,IVDA,ITALY,SOUTH AMERICA,,-64,-1
 40055,75,F,heterosexual,NIGERIA,SOUTH AMERICA,,-75,-1
 40056,70,F,heterosexual,MOROCCO,SOUTH AMERICA,,-70,-1
-40059,61,M,IVDA,SERBIA AND MONTENEGRO,SOUTH AMERICA,,-61,-1
+40059,61,M,IVDA,SERBIA,SOUTH AMERICA,,-61,-1
 40060,69,M,IVDA,ALGERIA,SOUTH AMERICA,,-69,-1
 40061,47,M,homosexual/bisexual,ITALY,SOUTH AMERICA,,-47,-1
 40066,84,M,heterosexual,ITALY,SOUTH AMERICA,,-84,-1
@@ -19312,7 +19312,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 41428,77,M,heterosexual,NIGERIA,SOUTH AMERICA,,-77,-1
 41429,87,M,homosexual/bisexual,ITALY,ITALY,,-87,-1
 41430,61,M,homosexual/bisexual,CONGO,ITALY,,-61,-1
-41431,48,M,heterosexual,ITALY,DOMINICAN REPUBLIC,,-48,-1
+41431,48,M,heterosexual,ITALY,DOM. REPUBLIC,,-48,-1
 41433,67,M,IVDA,ITALY,ITALY,,-67,-1
 41435,54,M,homosexual/bisexual,ITALY,ITALY,,-54,-1
 41436,68,F,IVDA,ITALY,ITALY,,-68,-1
@@ -19330,7 +19330,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 41453,37,M,heterosexual,ITALY,ITALY,,-37,-1
 41454,56,M,homosexual/bisexual,ITALY,ITALY,,-56,-1
 41455,64,M,homosexual/bisexual,ITALY,ITALY,,-64,-1
-41456,74,F,heterosexual,DOMINICAN REPUBLIC,SOUTH AMERICA,,-74,-1
+41456,74,F,heterosexual,DOM. REPUBLIC,SOUTH AMERICA,,-74,-1
 41457,68,M,homosexual/bisexual,ITALY,ITALY,,-68,-1
 41458,85,F,heterosexual,COTE D'IVOIRE,SOUTH AMERICA,,-85,-1
 41459,43,M,IVDA,ITALY,ITALY,,-43,-1
@@ -19391,7 +19391,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 41537,76,M,homosexual/bisexual,ITALY,ITALY,,-76,-1
 41541,74,M,IVDA,ITALY,SOUTH AMERICA,,-74,-1
 41542,,M,homosexual/bisexual,BELIZE,BOLIVIA,,0,0
-41543,70,F,homosexual/bisexual,TAJIKISTAN,BOSNIA AND HERZEGOVINA,,-70,-1
+41543,70,F,homosexual/bisexual,TAJIKISTAN,BOSNIA,,-70,-1
 41552,70,M,heterosexual,ITALY,ITALY,,-70,-1
 41553,64,F,heterosexual,ANTIGUA,ANTIGUA,,-64,-1
 41563,72,M,IVDA,ITALY,ITALY,,-72,-1
@@ -19669,7 +19669,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 41850,58,M,IVDA,SWEDEN,SWEDEN,,-58,-1
 41851,63,F,heterosexual,UGANDA,UGANDA,,-63,-1
 41852,52,M,IVDA,SWEDEN,SWEDEN,,-52,-1
-41853,71,F,heterosexual,DEMOCRATIC KOREA,SWITZERLAND,,-71,-1
+41853,71,F,heterosexual,KOREA,SWITZERLAND,,-71,-1
 41854,44,M,IVDA,SWEDEN,SWEDEN,,-44,-1
 41855,48,F,heterosexual,SWEDEN,AUSTRIA,,-48,-1
 41856,64,M,homosexual/bisexual,FINLAND,SWEDEN,,-64,-1
@@ -20028,7 +20028,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 42217,62,M,homosexual/bisexual,SWEDEN,SWEDEN,,-62,-1
 42218,52,M,IVDA,SWEDEN,SWEDEN,,-52,-1
 42219,50,M,heterosexual,SWEDEN,MOZAMBIQUE,,-50,-1
-42220,42,M,heterosexual,SERBIA AND MONTENEGRO,THAILAND,,-42,-1
+42220,42,M,heterosexual,SERBIA,THAILAND,,-42,-1
 42221,74,F,heterosexual,SWEDEN,CYPRUS,,-74,-1
 42222,70,F,heterosexual,MOZAMBIQUE,UNKNOWN,,-70,-1
 42223,64,M,heterosexual,ETHIOPIA,ETHIOPIA,,-64,-1
@@ -20291,7 +20291,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 42487,61,F,heterosexual,CHILE,SWEDEN,,-61,-1
 42488,70,M,homosexual/bisexual,INDIA,SWEDEN,,-70,-1
 42489,64,M,heterosexual,SWEDEN,SWEDEN,,-64,-1
-42490,68,M,IVDA,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-68,-1
+42490,68,M,IVDA,IRAN,SWEDEN,,-68,-1
 42491,61,F,heterosexual,SWEDEN,GERMANY,,-61,-1
 42492,73,F,heterosexual,ETHIOPIA,ETHIOPIA,,-73,-1
 42493,62,M,heterosexual,MOZAMBIQUE,MOZAMBIQUE,,-62,-1
@@ -20379,7 +20379,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 42577,60,F,IVDA,SWEDEN,SWEDEN,,-60,-1
 42578,61,M,heterosexual,UGANDA,UGANDA,,-61,-1
 42579,70,M,heterosexual,AFGHANISTAN,RUSSIA,,-70,-1
-42580,75,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-75,-1
+42580,75,M,heterosexual,LIBYAN,LIBYAN,,-75,-1
 42581,70,M,heterosexual,CAMEROON,CAMEROON,,-70,-1
 42582,74,M,IVDA,SWEDEN,SWEDEN,,-74,-1
 42583,75,F,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-75,-1
@@ -20402,9 +20402,9 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 42600,66,F,heterosexual,SWEDEN,SWEDEN,,-66,-1
 42601,73,M,heterosexual,ETHIOPIA,ETHIOPIA,,-73,-1
 42602,68,F,heterosexual,ETHIOPIA,ETHIOPIA,,-68,-1
-42603,74,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-74,-1
+42603,74,M,heterosexual,LIBYAN,LIBYAN,,-74,-1
 42604,55,M,homosexual/bisexual,SWEDEN,UNITED STATES,,-55,-1
-42605,51,M,IVDA,SERBIA AND MONTENEGRO,SWEDEN,,-51,-1
+42605,51,M,IVDA,SERBIA,SWEDEN,,-51,-1
 42606,48,M,IVDA,SWEDEN,SWEDEN,,-48,-1
 42607,57,F,heterosexual,SOMALIA,SOMALIA,,-57,-1
 42608,72,F,heterosexual,TANZANIA,TANZANIA,,-72,-1
@@ -20447,7 +20447,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 42649,56,M,IVDA,SWEDEN,UNKNOWN,,-56,-1
 42651,57,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-57,-1
 42652,56,M,homosexual/bisexual,DENMARK,UNKNOWN,,-56,-1
-42653,59,M,homosexual/bisexual,SERBIA AND MONTENEGRO,MEXICO,,-59,-1
+42653,59,M,homosexual/bisexual,SERBIA,MEXICO,,-59,-1
 42654,54,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-54,-1
 42656,59,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-59,-1
 42657,60,M,homosexual/bisexual,SWEDEN,SWEDEN,,-60,-1
@@ -20628,7 +20628,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43020,53,M,IVDA,SWEDEN,SWEDEN,,-53,-1
 43022,53,M,homosexual/bisexual,SWEDEN,UNITED STATES,,-53,-1
 43023,53,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-53,-1
-43024,53,M,IVDA,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-53,-1
+43024,53,M,IVDA,IRAN,UNKNOWN,,-53,-1
 43025,53,M,IVDA,SWEDEN,SWEDEN,,-53,-1
 43026,53,M,IVDA,SWEDEN,SWEDEN,,-53,-1
 43027,53,M,homosexual/bisexual,SWEDEN,SWEDEN,,-53,-1
@@ -20869,7 +20869,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43469,59,F,heterosexual,FINLAND,KENYA,,-59,-1
 43472,68,M,heterosexual,GHANA,GHANA,,-68,-1
 43474,54,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-54,-1
-43477,40,M,heterosexual,SYRIAN ARAB REPUBLIC,UNKNOWN,,-40,-1
+43477,40,M,heterosexual,SYRIA,UNKNOWN,,-40,-1
 43480,52,M,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-52,-1
 43481,50,M,heterosexual,SWEDEN,SWEDEN,,-50,-1
 43482,65,F,heterosexual,KENYA,KENYA,,-65,-1
@@ -20920,7 +20920,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43559,62,M,IVDA,SWITZERLAND,UNKNOWN,,-62,-1
 43561,58,M,heterosexual,UGANDA,UGANDA,,-58,-1
 43563,63,M,IVDA,SWEDEN,SWEDEN,,-63,-1
-43564,54,F,blood products,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-54,-1
+43564,54,F,blood products,IRAN,UNKNOWN,,-54,-1
 43565,36,F,heterosexual,UGANDA,UGANDA,,-36,-1
 43567,67,M,heterosexual,UGANDA,UGANDA,,-67,-1
 43568,64,F,heterosexual,SWEDEN,SWEDEN,,-64,-1
@@ -21016,7 +21016,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43747,31,M,IVDA,SWEDEN,SWEDEN,,-31,-1
 43751,67,F,heterosexual,KENYA,KENYA,,-67,-1
 43753,48,M,IVDA,SWEDEN,SWEDEN,,-48,-1
-43754,59,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-59,-1
+43754,59,M,heterosexual,IRAN,UNKNOWN,,-59,-1
 43755,56,M,homosexual/bisexual,SWEDEN,SWEDEN,,-56,-1
 43757,49,M,heterosexual,ETHIOPIA,UNKNOWN,,-49,-1
 43759,41,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-41,-1
@@ -21108,7 +21108,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43853,74,F,other,ETHIOPIA,ETHIOPIA,,-74,-1
 43854,72,M,heterosexual,KENYA,KENYA,,-72,-1
 43855,72,M,blood products,KENYA,KENYA,,-72,-1
-43856,67,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,,-67,-1
+43856,67,M,heterosexual,LIBYAN,UNKNOWN,,-67,-1
 43857,65,M,homosexual/bisexual,SWEDEN,SWEDEN,,-65,-1
 43858,74,F,heterosexual,SOMALIA,SOMALIA,,-74,-1
 43859,59,M,heterosexual,SWEDEN,THAILAND,,-59,-1
@@ -21162,7 +21162,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 43906,75,M,other,AZERBAIJAN,UZBEKISTAN,,-75,-1
 43907,81,M,IVDA,ESTONIA,ESTONIA,,-81,-1
 43908,74,F,heterosexual,SWEDEN,UNKNOWN,,-74,-1
-43909,81,M,IVDA,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-81,-1
+43909,81,M,IVDA,IRAN,SWEDEN,,-81,-1
 43910,67,M,homosexual/bisexual,ERITREA,SUDAN,,-67,-1
 43911,71,M,IVDA,SWEDEN,SWEDEN,,-71,-1
 43912,68,F,heterosexual,TANZANIA,TANZANIA,,-68,-1
@@ -21285,7 +21285,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44031,59,M,IVDA,UKRAINE,SWEDEN,,-59,-1
 44032,59,M,heterosexual,SWEDEN,TANZANIA,,-59,-1
 44033,75,M,other,BURUNDI,NETHERLANDS,,-75,-1
-44034,68,M,IVDA,ISLAMIC REPUBLIC OF IRAN,INDIA,,-68,-1
+44034,68,M,IVDA,IRAN,INDIA,,-68,-1
 44035,76,F,heterosexual,ETHIOPIA,ETHIOPIA,,-76,-1
 44036,82,F,heterosexual,SIERRA LEONE,SIERRA LEONE,,-82,-1
 44037,63,M,IVDA,SWEDEN,SWEDEN,,-63,-1
@@ -21384,7 +21384,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44130,59,M,homosexual/bisexual,SWEDEN,SWEDEN,,-59,-1
 44131,58,M,IVDA,SWEDEN,SWEDEN,,-58,-1
 44132,79,F,heterosexual,ETHIOPIA,ETHIOPIA,,-79,-1
-44133,58,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,SWEDEN,,-58,-1
+44133,58,M,homosexual/bisexual,BOSNIA,SWEDEN,,-58,-1
 44134,77,F,heterosexual,SOMALIA,SOMALIA,,-77,-1
 44135,80,F,heterosexual,ETHIOPIA,ETHIOPIA,,-80,-1
 44136,81,F,heterosexual,NIGERIA,SPAIN,,-81,-1
@@ -21402,7 +21402,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44148,60,M,heterosexual,SOMALIA,SOMALIA,,-60,-1
 44149,77,M,homosexual/bisexual,THAILAND,THAILAND,,-77,-1
 44150,70,F,heterosexual,LATVIA,LATVIA,,-70,-1
-44151,56,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-56,-1
+44151,56,M,homosexual/bisexual,IRAN,SWEDEN,,-56,-1
 44152,56,M,heterosexual,IRAQ,SWEDEN,,-56,-1
 44153,82,F,blood products,UGANDA,UGANDA,,-82,-1
 44154,69,M,homosexual/bisexual,SWEDEN,SWEDEN,,-69,-1
@@ -21523,9 +21523,9 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44270,73,F,heterosexual,BRAZIL,BRAZIL,,-73,-1
 44271,61,F,heterosexual,UGANDA,UGANDA,,-61,-1
 44272,65,M,heterosexual,ERITREA,ERITREA,,-65,-1
-44273,48,F,blood products,SERBIA AND MONTENEGRO,SWEDEN,,-48,-1
+44273,48,F,blood products,SERBIA,SWEDEN,,-48,-1
 44274,63,M,homosexual/bisexual,SWEDEN,SWEDEN,,-63,-1
-44275,67,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-67,-1
+44275,67,M,homosexual/bisexual,SERBIA,SWEDEN,,-67,-1
 44276,34,F,heterosexual,CAPE VERDE,SWEDEN,,-34,-1
 44277,42,M,homosexual/bisexual,SWEDEN,SWEDEN,,-42,-1
 44278,92,M,vertical transmission,UGANDA,UGANDA,,-92,-1
@@ -21569,11 +21569,11 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44319,65,M,blood products,ETHIOPIA,ETHIOPIA,,-65,-1
 44320,60,M,heterosexual,ETHIOPIA,ETHIOPIA,,-60,-1
 44321,64,F,heterosexual,UGANDA,UGANDA,,-64,-1
-44322,55,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,,-55,-1
+44322,55,M,homosexual/bisexual,BOSNIA,BOSNIA,,-55,-1
 44323,65,F,heterosexual,SWEDEN,SWEDEN,,-65,-1
 44324,65,M,homosexual/bisexual,SWEDEN,GERMANY,,-65,-1
 44325,67,M,heterosexual,ERITREA,ERITREA,,-67,-1
-44326,62,M,heterosexual,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,,-62,-1
+44326,62,M,heterosexual,BOSNIA,BOSNIA,,-62,-1
 44327,54,M,IVDA,SPAIN,SPAIN,,-54,-1
 44328,74,M,other,SOMALIA,SOMALIA,,-74,-1
 44329,66,F,heterosexual,SWEDEN,UNITED STATES,,-66,-1
@@ -21651,7 +21651,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44425,74,M,homosexual/bisexual,SWEDEN,ITALY,,-74,-1
 44426,60,M,heterosexual,SOMALIA,SOMALIA,,-60,-1
 44427,64,F,heterosexual,KENYA,KENYA,,-64,-1
-44428,54,M,heterosexual,SERBIA AND MONTENEGRO,SERBIA AND MONTENEGRO,,-54,-1
+44428,54,M,heterosexual,SERBIA,SERBIA,,-54,-1
 44429,72,F,heterosexual,UGANDA,UGANDA,,-72,-1
 44430,41,M,heterosexual,CAPE VERDE,CAPE VERDE,,-41,-1
 44431,49,M,homosexual/bisexual,SWEDEN,SWEDEN,,-49,-1
@@ -21757,7 +21757,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44561,67,M,homosexual/bisexual,SWEDEN,SWEDEN,,-67,-1
 44562,57,M,homosexual/bisexual,THAILAND,THAILAND,,-57,-1
 44563,72,F,heterosexual,NIGERIA,NIGERIA,,-72,-1
-44564,67,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-67,-1
+44564,67,M,homosexual/bisexual,SYRIA,SWEDEN,,-67,-1
 44565,72,F,heterosexual,UGANDA,UGANDA,,-72,-1
 44566,47,M,homosexual/bisexual,NETHERLANDS,SWEDEN,,-47,-1
 44574,65,M,homosexual/bisexual,SWEDEN,SWEDEN,,-65,-1
@@ -21781,7 +21781,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44596,63,M,homosexual/bisexual,SWEDEN,SWEDEN,,-63,-1
 44597,78,F,heterosexual,ERITREA,ERITREA,,-78,-1
 44598,64,F,heterosexual,THAILAND,THAILAND,,-64,-1
-44599,76,F,heterosexual,SWEDEN,DOMINICAN REPUBLIC,,-76,-1
+44599,76,F,heterosexual,SWEDEN,DOM. REPUBLIC,,-76,-1
 44600,56,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-56,-1
 44601,85,F,heterosexual,SUDAN,SUDAN,,-85,-1
 44602,80,F,heterosexual,ERITREA,ERITREA,,-80,-1
@@ -21792,7 +21792,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44607,50,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-50,-1
 44608,68,M,heterosexual,IRAQ,NETHERLANDS,,-68,-1
 44609,70,M,heterosexual,SWEDEN,THAILAND,,-70,-1
-44610,70,F,heterosexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-70,-1
+44610,70,F,heterosexual,IRAN,SWEDEN,,-70,-1
 44611,82,F,heterosexual,SWEDEN,SWEDEN,,-82,-1
 44612,71,F,heterosexual,CONGO,CONGO,,-71,-1
 44613,68,M,homosexual/bisexual,THAILAND,THAILAND,,-68,-1
@@ -21882,7 +21882,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44720,71,M,homosexual/bisexual,SWEDEN,SWEDEN,,-71,-1
 44721,64,M,heterosexual,SWEDEN,PHILIPPINES,,-64,-1
 44722,80,F,heterosexual,ETHIOPIA,SWEDEN,,-80,-1
-44723,66,M,heterosexual,DOMINICAN REPUBLIC,DOMINICAN REPUBLIC,,-66,-1
+44723,66,M,heterosexual,DOM. REPUBLIC,DOM. REPUBLIC,,-66,-1
 44724,60,F,heterosexual,SWEDEN,UNKNOWN,,-60,-1
 44725,74,M,heterosexual,ERITREA,ERITREA,,-74,-1
 44726,75,M,heterosexual,SWEDEN,GAMBIA,,-75,-1
@@ -21924,8 +21924,8 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44761,80,F,IVDA,ESTONIA,ESTONIA,,-80,-1
 44762,80,M,heterosexual,UGANDA,UGANDA,,-80,-1
 44763,75,M,homosexual/bisexual,SWEDEN,SWEDEN,,-75,-1
-44764,53,F,heterosexual,BOSNIA AND HERZEGOVINA,SWEDEN,,-53,-1
-44765,45,M,heterosexual,BOSNIA AND HERZEGOVINA,UNKNOWN,,-45,-1
+44764,53,F,heterosexual,BOSNIA,SWEDEN,,-53,-1
+44765,45,M,heterosexual,BOSNIA,UNKNOWN,,-45,-1
 44766,65,F,heterosexual,THAILAND,THAILAND,,-65,-1
 44767,82,F,heterosexual,SENEGAL,SENEGAL,,-82,-1
 44768,69,F,heterosexual,ERITREA,ERITREA,,-69,-1
@@ -21968,7 +21968,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44807,37,M,other,CZECH REPUBLIC,SWEDEN,,-37,-1
 44808,43,M,heterosexual,SWEDEN,AFRICA UNKNOWN,,-43,-1
 44809,44,M,homosexual/bisexual,SWEDEN,SWEDEN,,-44,-1
-44810,44,M,other,SERBIA AND MONTENEGRO,UNKNOWN,,-44,-1
+44810,44,M,other,SERBIA,UNKNOWN,,-44,-1
 44811,44,M,heterosexual,SWEDEN,UNKNOWN,,-44,-1
 44812,45,M,homosexual/bisexual,POLAND,SWEDEN,,-45,-1
 44813,45,F,heterosexual,ZAMBIA,ZAMBIA,,-45,-1
@@ -21986,7 +21986,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44826,52,M,homosexual/bisexual,SWEDEN,SWEDEN,,-52,-1
 44827,52,M,heterosexual,SWEDEN,THAILAND,,-52,-1
 44828,54,M,heterosexual,YEMEN,YEMEN,,-54,-1
-44830,54,M,IVDA,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-54,-1
+44830,54,M,IVDA,IRAN,UNKNOWN,,-54,-1
 44831,55,M,homosexual/bisexual,SWEDEN,SWEDEN,,-55,-1
 44832,55,M,homosexual/bisexual,SWEDEN,SWEDEN,,-55,-1
 44834,57,M,homosexual/bisexual,SWEDEN,DENMARK,,-57,-1
@@ -22048,12 +22048,12 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44907,71,M,homosexual/bisexual,SWEDEN,UNITED STATES,,-71,-1
 44908,72,M,heterosexual,UGANDA,UGANDA,,-72,-1
 44909,72,F,heterosexual,TANZANIA,TANZANIA,,-72,-1
-44911,72,M,blood products,SERBIA AND MONTENEGRO,UNKNOWN,,-72,-1
+44911,72,M,blood products,SERBIA,UNKNOWN,,-72,-1
 44912,72,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-72,-1
 44913,72,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-72,-1
 44914,72,M,heterosexual,CAMEROON,UNKNOWN,,-72,-1
 44915,73,M,homosexual/bisexual,THAILAND,THAILAND,,-73,-1
-44916,73,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SERBIA AND MONTENEGRO,,-73,-1
+44916,73,M,homosexual/bisexual,SERBIA,SERBIA,,-73,-1
 44919,73,F,other,THAILAND,THAILAND,,-73,-1
 44920,73,M,heterosexual,SWEDEN,THAILAND,,-73,-1
 44923,74,M,IVDA,POLAND,UNKNOWN,,-74,-1
@@ -22094,9 +22094,9 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 44966,62,M,blood products,SWEDEN,SWEDEN,,-62,-1
 44967,46,M,homosexual/bisexual,SWEDEN,SWEDEN,,-46,-1
 44968,62,M,blood products,SWEDEN,SWEDEN,,-62,-1
-44969,67,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-67,-1
+44969,67,M,heterosexual,IRAN,SWEDEN,,-67,-1
 44970,64,M,homosexual/bisexual,CHILE,DENMARK,,-64,-1
-44971,61,M,blood products,SERBIA AND MONTENEGRO,SWEDEN,,-61,-1
+44971,61,M,blood products,SERBIA,SWEDEN,,-61,-1
 44972,50,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-50,-1
 44973,62,M,homosexual/bisexual,DENMARK,UNKNOWN,,-62,-1
 44974,68,M,heterosexual,ETHIOPIA,ETHIOPIA,,-68,-1
@@ -22321,7 +22321,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45208,60,M,homosexual/bisexual,SWEDEN,FRANCE,,-60,-1
 45209,60,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-60,-1
 45210,60,M,heterosexual,TURKEY,TURKEY,,-60,-1
-45211,60,M,heterosexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-60,-1
+45211,60,M,heterosexual,SYRIA,SWEDEN,,-60,-1
 45212,60,M,heterosexual,UGANDA,UNKNOWN,,-60,-1
 45213,60,F,heterosexual,UGANDA,UGANDA,,-60,-1
 45214,60,M,IVDA,SWEDEN,UNKNOWN,,-60,-1
@@ -22625,22 +22625,22 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45521,68,M,homosexual/bisexual,MEXICO,MEXICO,,-68,-1
 45522,56,M,other,GAMBIA,GAMBIA,,-56,-1
 45523,58,M,heterosexual,ETHIOPIA,ETHIOPIA,,-58,-1
-45524,44,M,heterosexual,SERBIA AND MONTENEGRO,BANGLADESH,,-44,-1
+45524,44,M,heterosexual,SERBIA,BANGLADESH,,-44,-1
 45525,62,F,heterosexual,THAILAND,THAILAND,,-62,-1
 45526,56,M,heterosexual,SWEDEN,SWEDEN,,-56,-1
-45527,41,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-41,-1
+45527,41,M,homosexual/bisexual,SERBIA,SWEDEN,,-41,-1
 45528,42,M,heterosexual,SWEDEN,THAILAND,,-42,-1
-45529,45,M,heterosexual,BOSNIA AND HERZEGOVINA,EUROPE UNKNOWN,,-45,-1
+45529,45,M,heterosexual,BOSNIA,EUROPE UNKNOWN,,-45,-1
 45530,48,M,homosexual/bisexual,SWEDEN,GERMANY,,-48,-1
 45531,48,M,heterosexual,SWEDEN,ZAMBIA,,-48,-1
 45532,49,M,homosexual/bisexual,SWEDEN,SWEDEN,,-49,-1
 45533,51,M,homosexual/bisexual,SWEDEN,SWEDEN,,-51,-1
 45534,52,F,heterosexual,SWEDEN,SWEDEN,,-52,-1
-45535,59,M,heterosexual,SWEDEN,NORTH AMERICA UNKNOWN,,-59,-1
+45535,59,M,heterosexual,SWEDEN,NAR UNKNOWN,,-59,-1
 45536,59,M,homosexual/bisexual,SWEDEN,SWEDEN,,-59,-1
 45537,61,F,heterosexual,SWEDEN,SWEDEN,,-61,-1
 45539,63,M,homosexual/bisexual,SWEDEN,SWEDEN,,-63,-1
-45540,65,M,homosexual/bisexual,REPUBLIC OF KOREA,REPUBLIC OF KOREA,,-65,-1
+45540,65,M,homosexual/bisexual,KOREA,KOREA,,-65,-1
 45541,66,F,heterosexual,SWEDEN,MOZAMBIQUE,,-66,-1
 45542,74,F,heterosexual,THAILAND,THAILAND,,-74,-1
 45543,75,F,heterosexual,THAILAND,THAILAND,,-75,-1
@@ -22658,7 +22658,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45556,63,M,homosexual/bisexual,DENMARK,SWEDEN,,-63,-1
 45557,79,F,other,UKRAINE,UKRAINE,,-79,-1
 45558,48,M,heterosexual,SWEDEN,MOZAMBIQUE,,-48,-1
-45559,72,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,THAILAND,,-72,-1
+45559,72,M,heterosexual,IRAN,THAILAND,,-72,-1
 45560,75,F,heterosexual,THAILAND,THAILAND,,-75,-1
 45561,57,M,homosexual/bisexual,SWEDEN,DENMARK,,-57,-1
 45562,68,F,heterosexual,SWEDEN,UNKNOWN,,-68,-1
@@ -22678,7 +22678,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45576,59,M,heterosexual,SWEDEN,INDONESIA,,-59,-1
 45577,75,M,homosexual/bisexual,SWEDEN,MEXICO,,-75,-1
 45578,67,M,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-67,-1
-45579,60,M,other,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,,-60,-1
+45579,60,M,other,BOSNIA,BOSNIA,,-60,-1
 45580,71,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-71,-1
 45581,68,M,homosexual/bisexual,SWEDEN,SWEDEN,,-68,-1
 45582,85,M,homosexual/bisexual,SWEDEN,SWEDEN,,-85,-1
@@ -22899,7 +22899,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45813,91,F,blood products,BURUNDI,BURUNDI,,-91,-1
 45814,93,M,vertical transmission,TANZANIA,TANZANIA,,-93,-1
 45815,97,M,vertical transmission,SWEDEN,SWEDEN,,-97,-1
-45816,71,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-71,-1
+45816,71,M,heterosexual,IRAN,SWEDEN,,-71,-1
 45817,70,M,blood products,IRAQ,IRAQ,,-70,-1
 45818,83,F,heterosexual,THAILAND,THAILAND,,-83,-1
 45819,74,F,heterosexual,UGANDA,RWANDA,,-74,-1
@@ -22914,7 +22914,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 45828,46,M,homosexual/bisexual,SWEDEN,SWEDEN,,-46,-1
 45829,60,M,homosexual/bisexual,SWEDEN,SWEDEN,,-60,-1
 45830,54,M,homosexual/bisexual,SWEDEN,SWEDEN,,-54,-1
-45831,51,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-51,-1
+45831,51,M,homosexual/bisexual,IRAN,IRAN,,-51,-1
 45832,45,M,homosexual/bisexual,SWEDEN,SWEDEN,,-45,-1
 45833,49,M,homosexual/bisexual,SWEDEN,SWEDEN,,-49,-1
 45834,41,M,homosexual/bisexual,SWEDEN,SWEDEN,,-41,-1
@@ -23305,7 +23305,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46219,67,M,homosexual/bisexual,SWEDEN,SWEDEN,,-67,-1
 46220,78,M,homosexual/bisexual,SWEDEN,SWEDEN,,-78,-1
 46221,64,M,homosexual/bisexual,SWEDEN,SWEDEN,,-64,-1
-46222,76,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,SWEDEN,,-76,-1
+46222,76,M,homosexual/bisexual,BOSNIA,SWEDEN,,-76,-1
 46223,70,M,homosexual/bisexual,SWEDEN,SWEDEN,,-70,-1
 46224,60,M,homosexual/bisexual,SWEDEN,SWEDEN,,-60,-1
 46225,40,M,homosexual/bisexual,SWEDEN,SWEDEN,,-40,-1
@@ -23590,7 +23590,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46700,55,M,homosexual/bisexual,SWEDEN,SWEDEN,,-55,-1
 46701,57,M,homosexual/bisexual,SWEDEN,SWEDEN,,-57,-1
 46702,59,M,homosexual/bisexual,SWEDEN,SWEDEN,,-59,-1
-46703,80,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-80,-1
+46703,80,M,homosexual/bisexual,IRAN,SWEDEN,,-80,-1
 46704,63,M,homosexual/bisexual,SWITZERLAND,SWEDEN,,-63,-1
 46705,64,M,homosexual/bisexual,SWEDEN,SPAIN,,-64,-1
 46706,78,M,homosexual/bisexual,SWEDEN,SWEDEN,,-78,-1
@@ -23615,7 +23615,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46725,53,M,homosexual/bisexual,SWEDEN,SWEDEN,,-53,-1
 46726,80,M,homosexual/bisexual,FRANCE,SWEDEN,,-80,-1
 46727,77,M,homosexual/bisexual,SUDAN,UNITED KINGDOM,,-77,-1
-46728,69,M,homosexual/bisexual,TUNISIA,UNITED ARAB EMIRATES,,-69,-1
+46728,69,M,homosexual/bisexual,TUNISIA,UAE,,-69,-1
 46729,31,M,homosexual/bisexual,AUSTRIA,AUSTRIA,,-31,-1
 46730,67,M,homosexual/bisexual,GHANA,SWEDEN,,-67,-1
 46731,80,M,homosexual/bisexual,SWEDEN,SWEDEN,,-80,-1
@@ -23658,7 +23658,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46768,63,M,heterosexual,SWEDEN,THAILAND,,-63,-1
 46769,70,M,homosexual/bisexual,SWEDEN,NETHERLANDS,,-70,-1
 46770,83,M,homosexual/bisexual,SWEDEN,SWEDEN,,-83,-1
-46771,80,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-80,-1
+46771,80,M,homosexual/bisexual,SERBIA,SWEDEN,,-80,-1
 46772,64,M,homosexual/bisexual,SWEDEN,SWEDEN,,-64,-1
 46773,84,M,homosexual/bisexual,ESTONIA,SWEDEN,,-84,-1
 46774,58,M,homosexual/bisexual,SWEDEN,LITHUANIA,,-58,-1
@@ -23766,7 +23766,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46876,52,F,heterosexual,ERITREA,ERITREA,,-52,-1
 46877,78,M,homosexual/bisexual,ESTONIA,SWEDEN,,-78,-1
 46878,74,M,homosexual/bisexual,SWEDEN,SWEDEN,,-74,-1
-46879,77,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-77,-1
+46879,77,M,homosexual/bisexual,SYRIA,SWEDEN,,-77,-1
 46880,68,F,heterosexual,KENYA,KENYA,,-68,-1
 46881,75,M,homosexual/bisexual,SWEDEN,SWEDEN,,-75,-1
 46882,72,M,homosexual/bisexual,SWEDEN,SWEDEN,,-72,-1
@@ -23804,7 +23804,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 46915,,M,homosexual/bisexual,SWEDEN,SWEDEN,,0,0
 46916,56,F,heterosexual,UGANDA,UGANDA,,-56,-1
 46917,,M,homosexual/bisexual,SWEDEN,SWEDEN,,0,0
-46918,,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,0,0
+46918,,M,homosexual/bisexual,IRAN,SWEDEN,,0,0
 46919,56,M,homosexual/bisexual,SWEDEN,SWEDEN,,-56,-1
 46920,72,M,homosexual/bisexual,SWEDEN,SWEDEN,,-72,-1
 46921,75,M,heterosexual,SWEDEN,GAMBIA,,-75,-1
@@ -24023,14 +24023,14 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47137,65,M,heterosexual,SWEDEN,NETHERLANDS,,-65,-1
 47138,72,F,heterosexual,THAILAND,SWEDEN,,-72,-1
 47139,56,M,heterosexual,FINLAND,SWEDEN,,-56,-1
-47140,59,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-59,-1
+47140,59,M,homosexual/bisexual,SYRIA,SWEDEN,,-59,-1
 47141,53,M,heterosexual,SWEDEN,SWEDEN,,-53,-1
 47142,77,F,heterosexual,THAILAND,THAILAND,,-77,-1
 47143,62,M,heterosexual,ETHIOPIA,ETHIOPIA,,-62,-1
 47144,82,M,homosexual/bisexual,CUBA,SWEDEN,,-82,-1
 47145,56,F,heterosexual,SWEDEN,SWEDEN,,-56,-1
 47146,67,F,heterosexual,THAILAND,THAILAND,,-67,-1
-47147,59,M,heterosexual,DEMOCRATIC KOREA,THAILAND,,-59,-1
+47147,59,M,heterosexual,KOREA,THAILAND,,-59,-1
 47148,58,F,heterosexual,ERITREA,ERITREA,,-58,-1
 47149,75,M,other,TANZANIA,UNKNOWN,,-75,-1
 47150,60,F,heterosexual,THAILAND,SWEDEN,,-60,-1
@@ -24055,7 +24055,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47169,83,M,heterosexual,NIGERIA,NIGERIA,,-83,-1
 47170,82,F,heterosexual,THAILAND,THAILAND,,-82,-1
 47171,65,M,homosexual/bisexual,NORWAY,SWEDEN,,-65,-1
-47172,48,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SPAIN,,-48,-1
+47172,48,M,heterosexual,IRAN,SPAIN,,-48,-1
 47173,70,M,homosexual/bisexual,CZECH REPUBLIC,CZECH REPUBLIC,,-70,-1
 47174,79,F,heterosexual,THAILAND,THAILAND,,-79,-1
 47175,87,M,other,SOMALIA,SOMALIA,,-87,-1
@@ -24111,7 +24111,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47227,77,F,heterosexual,KENYA,KENYA,,-77,-1
 47228,42,M,heterosexual,SWEDEN,THAILAND,,-42,-1
 47229,70,M,homosexual/bisexual,SWEDEN,SWEDEN,,-70,-1
-47230,79,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,SWEDEN,,-79,-1
+47230,79,M,homosexual/bisexual,BOSNIA,SWEDEN,,-79,-1
 47231,83,F,heterosexual,ETHIOPIA,ETHIOPIA,,-83,-1
 47232,80,F,heterosexual,KENYA,KENYA,,-80,-1
 47233,52,M,heterosexual,SWEDEN,SWEDEN,,-52,-1
@@ -24152,11 +24152,11 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47268,74,M,heterosexual,SOMALIA,SOMALIA,,-74,-1
 47269,54,M,homosexual/bisexual,SWEDEN,SWEDEN,,-54,-1
 47270,52,M,IVDA,SWEDEN,SWEDEN,,-52,-1
-47271,,F,heterosexual,REPUBLIC OF KOREA,UNITED STATES,,0,0
+47271,,F,heterosexual,KOREA,UNITED STATES,,0,0
 47272,42,M,heterosexual,KENYA,KENYA,,-42,-1
 47273,67,M,IVDA,SWEDEN,SWEDEN,,-67,-1
 47274,60,F,heterosexual,TANZANIA,TANZANIA,,-60,-1
-47275,55,M,IVDA,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-55,-1
+47275,55,M,IVDA,IRAN,SWEDEN,,-55,-1
 47277,54,F,heterosexual,SWEDEN,ITALY,,-54,-1
 47278,60,F,heterosexual,IRAQ,IRAQ,,-60,-1
 47279,64,M,IVDA,SWEDEN,SWEDEN,,-64,-1
@@ -24220,7 +24220,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47337,74,F,heterosexual,UGANDA,UGANDA,,-74,-1
 47338,68,F,heterosexual,ZIMBABWE,ZAMBIA,,-68,-1
 47339,52,F,heterosexual,SOMALIA,SWEDEN,,-52,-1
-47340,77,M,blood products,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-77,-1
+47340,77,M,blood products,IRAN,IRAN,,-77,-1
 47341,76,F,heterosexual,SWEDEN,SWEDEN,,-76,-1
 47342,68,M,homosexual/bisexual,CHILE,UNKNOWN,,-68,-1
 47343,44,M,heterosexual,SWEDEN,ZAMBIA,,-44,-1
@@ -24497,8 +24497,8 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47622,54,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-54,-1
 47623,53,M,IVDA,SPAIN,SPAIN,,-53,-1
 47624,73,F,heterosexual,SWEDEN,SWEDEN,,-73,-1
-47625,85,M,homosexual/bisexual,DOMINICAN REPUBLIC,SWEDEN,,-85,-1
-47626,67,M,heterosexual,DOMINICAN REPUBLIC,UNKNOWN,,-67,-1
+47625,85,M,homosexual/bisexual,DOM. REPUBLIC,SWEDEN,,-85,-1
+47626,67,M,heterosexual,DOM. REPUBLIC,UNKNOWN,,-67,-1
 47627,31,M,heterosexual,SWEDEN,UNKNOWN,,-31,-1
 47628,58,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-58,-1
 47629,39,F,heterosexual,SWEDEN,SWEDEN,,-39,-1
@@ -24697,7 +24697,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47886,76,M,heterosexual,SWEDEN,SWEDEN,,-76,-1
 47887,66,M,heterosexual,GAMBIA,GAMBIA,,-66,-1
 47888,90,F,heterosexual,BURUNDI,BURUNDI,,-90,-1
-47889,68,F,heterosexual,REPUBLIC OF KOREA,SWEDEN,,-68,-1
+47889,68,F,heterosexual,KOREA,SWEDEN,,-68,-1
 47890,59,M,other,BURUNDI,BURUNDI,,-59,-1
 47891,92,M,vertical transmission,BURUNDI,BURUNDI,,-92,-1
 47892,68,F,heterosexual,BURUNDI,BURUNDI,,-68,-1
@@ -24726,7 +24726,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47915,80,F,heterosexual,MOZAMBIQUE,MOZAMBIQUE,,-80,-1
 47916,87,M,homosexual/bisexual,VIET NAM,VIET NAM,,-87,-1
 47917,76,F,heterosexual,THAILAND,THAILAND,,-76,-1
-47918,65,F,heterosexual,REPUBLIC OF KOREA,UNKNOWN,,-65,-1
+47918,65,F,heterosexual,KOREA,UNKNOWN,,-65,-1
 47919,33,M,homosexual/bisexual,SWEDEN,SWEDEN,,-33,-1
 47920,81,F,heterosexual,TOGO,SWEDEN,,-81,-1
 47921,40,M,heterosexual,SWEDEN,ASIA UNKNOWN,,-40,-1
@@ -24758,7 +24758,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 47947,66,M,heterosexual,BURUNDI,BURUNDI,,-66,-1
 47948,66,M,heterosexual,ETHIOPIA,ETHIOPIA,,-66,-1
 47949,68,F,heterosexual,THAILAND,THAILAND,,-68,-1
-47950,64,M,other,PALESTINIA,LIBYAN ARAB JAMAHIRIYA,,-64,-1
+47950,64,M,other,PALESTINIA,LIBYAN,,-64,-1
 47951,69,M,heterosexual,SWEDEN,SWEDEN,,-69,-1
 47952,71,M,heterosexual,CAMEROON,CAMEROON,,-71,-1
 47953,75,F,heterosexual,ERITREA,ERITREA,,-75,-1
@@ -24824,7 +24824,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48014,83,F,heterosexual,SUDAN,SUDAN,,-83,-1
 48015,69,F,heterosexual,BURUNDI,BURUNDI,,-69,-1
 48016,74,F,heterosexual,BURUNDI,BURUNDI,,-74,-1
-48017,72,M,heterosexual,CENTRAL AFRICAN REPUBLIC,CAMEROON,,-72,-1
+48017,72,M,heterosexual,CENTRAL AFRICA,CAMEROON,,-72,-1
 48018,81,M,heterosexual,SWEDEN,UNITED STATES,,-81,-1
 48019,57,M,heterosexual,SWEDEN,SWEDEN,,-57,-1
 48020,66,F,heterosexual,THAILAND,THAILAND,,-66,-1
@@ -24880,7 +24880,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48070,78,F,heterosexual,ERITREA,ERITREA,,-78,-1
 48071,70,M,heterosexual,ERITREA,ERITREA,,-70,-1
 48072,65,M,blood products,ERITREA,ERITREA,,-65,-1
-48073,75,M,IVDA,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-75,-1
+48073,75,M,IVDA,LIBYAN,LIBYAN,,-75,-1
 48074,89,F,heterosexual,BURUNDI,BURUNDI,,-89,-1
 48075,66,F,heterosexual,CAMBODIA,THAILAND,,-66,-1
 48076,47,M,heterosexual,SWEDEN,SWEDEN,,-47,-1
@@ -24906,7 +24906,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48096,76,F,heterosexual,KENYA,KENYA,,-76,-1
 48097,54,M,heterosexual,SOMALIA,SOMALIA,,-54,-1
 48098,85,F,heterosexual,MOROCCO,SWEDEN,,-85,-1
-48099,78,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-78,-1
+48099,78,M,heterosexual,LIBYAN,LIBYAN,,-78,-1
 48100,80,M,heterosexual,SWEDEN,THAILAND,,-80,-1
 48101,62,M,other,BURUNDI,BURUNDI,,-62,-1
 48102,89,F,other,ZIMBABWE,ZIMBABWE,,-89,-1
@@ -24964,7 +24964,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48155,54,F,heterosexual,SWEDEN,UNKNOWN,,-54,-1
 48156,77,F,other,BURUNDI,BURUNDI,,-77,-1
 48157,81,F,heterosexual,THAILAND,THAILAND,,-81,-1
-48158,70,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,NORWAY,,-70,-1
+48158,70,M,heterosexual,LIBYAN,NORWAY,,-70,-1
 48159,81,F,heterosexual,ETHIOPIA,ETHIOPIA,,-81,-1
 48161,59,M,heterosexual,ERITREA,ETHIOPIA,,-59,-1
 48162,75,F,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-75,-1
@@ -24972,7 +24972,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48164,2000,M,vertical transmission,BURUNDI,BURUNDI,,-2000,-1
 48165,72,F,heterosexual,UGANDA,UGANDA,,-72,-1
 48166,59,M,heterosexual,SWEDEN,UNKNOWN,,-59,-1
-48167,72,M,IVDA,LIBYAN ARAB JAMAHIRIYA,UNKNOWN,,-72,-1
+48167,72,M,IVDA,LIBYAN,UNKNOWN,,-72,-1
 48168,93,M,other,BURUNDI,BURUNDI,,-93,-1
 48169,63,F,other,BURUNDI,BURUNDI,,-63,-1
 48170,73,F,heterosexual,BURUNDI,UNKNOWN,,-73,-1
@@ -25259,7 +25259,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48488,83,F,heterosexual,CONGO,CONGO,,-83,-1
 48489,59,M,homosexual/bisexual,SWEDEN,SWEDEN,,-59,-1
 48490,38,M,heterosexual,DENMARK,PHILIPPINES,,-38,-1
-48491,64,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-64,-1
+48491,64,M,heterosexual,LIBYAN,LIBYAN,,-64,-1
 48492,63,F,other,ETHIOPIA,ETHIOPIA,,-63,-1
 48493,59,M,homosexual/bisexual,SWEDEN,SWEDEN,,-59,-1
 48494,42,M,heterosexual,SWEDEN,THAILAND,,-42,-1
@@ -25306,7 +25306,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48535,80,F,heterosexual,THAILAND,THAILAND,,-80,-1
 48536,79,F,heterosexual,CAMEROON,CAMEROON,,-79,-1
 48537,79,M,homosexual/bisexual,CHILE,CHILE,,-79,-1
-48538,79,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-79,-1
+48538,79,M,homosexual/bisexual,SERBIA,SWEDEN,,-79,-1
 48539,79,M,homosexual/bisexual,MEXICO,MEXICO,,-79,-1
 48540,78,M,homosexual/bisexual,CUBA,CUBA,,-78,-1
 48542,77,F,heterosexual,THAILAND,THAILAND,,-77,-1
@@ -25382,7 +25382,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48612,49,M,homosexual/bisexual,SWEDEN,SWEDEN,,-49,-1
 48613,39,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-39,-1
 48614,47,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-47,-1
-48615,80,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,DENMARK,,-80,-1
+48615,80,M,homosexual/bisexual,BOSNIA,DENMARK,,-80,-1
 48616,73,M,heterosexual,SWEDEN,THAILAND,,-73,-1
 48617,58,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-58,-1
 48618,77,F,other,THAILAND,THAILAND,,-77,-1
@@ -25583,7 +25583,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48817,68,F,heterosexual,THAILAND,THAILAND,,-68,-1
 48818,26,M,homosexual/bisexual,SWEDEN,SWEDEN,,-26,-1
 48819,66,M,heterosexual,SWEDEN,UNKNOWN,,-66,-1
-48822,58,M,IVDA,ISLAMIC REPUBLIC OF IRAN,FRANCE,,-58,-1
+48822,58,M,IVDA,IRAN,FRANCE,,-58,-1
 48823,67,F,heterosexual,THAILAND,THAILAND,,-67,-1
 48824,54,M,IVDA,SWEDEN,SWEDEN,,-54,-1
 48825,69,M,homosexual/bisexual,SWEDEN,SWEDEN,,-69,-1
@@ -25647,7 +25647,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48891,42,F,IVDA,SWEDEN,SWEDEN,,-42,-1
 48892,45,M,heterosexual,SWEDEN,MOZAMBIQUE,,-45,-1
 48893,47,M,heterosexual,SWEDEN,SWEDEN,,-47,-1
-48894,48,F,other,BOSNIA AND HERZEGOVINA,BOSNIA AND HERZEGOVINA,,-48,-1
+48894,48,F,other,BOSNIA,BOSNIA,,-48,-1
 48895,52,M,heterosexual,SWEDEN,UNKNOWN,,-52,-1
 48896,54,M,heterosexual,ERITREA,SUDAN,,-54,-1
 48897,77,M,other,SOMALIA,SOMALIA,,-77,-1
@@ -25670,7 +25670,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48914,77,F,heterosexual,ETHIOPIA,ETHIOPIA,,-77,-1
 48915,88,M,other,SOMALIA,YEMEN,,-88,-1
 48916,52,M,other,BURUNDI,BURUNDI,,-52,-1
-48917,61,F,heterosexual,REPUBLIC OF KOREA,THAILAND,,-61,-1
+48917,61,F,heterosexual,KOREA,THAILAND,,-61,-1
 48918,47,F,heterosexual,SWEDEN,AFRICA UNKNOWN,,-47,-1
 48919,95,F,vertical transmission,BURUNDI,BURUNDI,,-95,-1
 48920,68,F,heterosexual,TANZANIA,TANZANIA,,-68,-1
@@ -25706,7 +25706,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 48950,70,M,heterosexual,ZAMBIA,ZAMBIA,,-70,-1
 48951,84,M,heterosexual,GEORGIA,SWEDEN,,-84,-1
 48952,51,M,homosexual/bisexual,SWEDEN,THAILAND,,-51,-1
-48953,62,M,blood products,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-62,-1
+48953,62,M,blood products,IRAN,IRAN,,-62,-1
 48954,75,M,heterosexual,KENYA,UNITED STATES,,-75,-1
 48955,76,M,heterosexual,BURUNDI,BURUNDI,,-76,-1
 48956,77,F,heterosexual,CAMEROON,CAMEROON,,-77,-1
@@ -25760,7 +25760,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49004,46,M,homosexual/bisexual,UNITED STATES,EGYPT,,-46,-1
 49005,58,M,IVDA,SWEDEN,SWEDEN,,-58,-1
 49006,64,M,heterosexual,NORWAY,UNKNOWN,,-64,-1
-49007,74,M,other,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-74,-1
+49007,74,M,other,LIBYAN,LIBYAN,,-74,-1
 49008,70,M,heterosexual,CAMEROON,CAMEROON,,-70,-1
 49009,74,F,IVDA,SWEDEN,SWEDEN,,-74,-1
 49010,74,M,IVDA,SWEDEN,SWEDEN,,-74,-1
@@ -25770,7 +25770,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49014,72,F,heterosexual,SOMALIA,SOMALIA,,-72,-1
 49015,75,M,heterosexual,CAMEROON,CAMEROON,,-75,-1
 49016,74,F,heterosexual,MOZAMBIQUE,MOZAMBIQUE,,-74,-1
-49017,55,F,other,ISLAMIC REPUBLIC OF IRAN,GAMBIA,,-55,-1
+49017,55,F,other,IRAN,GAMBIA,,-55,-1
 49018,78,M,blood products,ERITREA,SUDAN,,-78,-1
 49019,79,M,homosexual/bisexual,GERMANY,SWEDEN,,-79,-1
 49020,88,F,heterosexual,SOMALIA,SOMALIA,,-88,-1
@@ -25803,7 +25803,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49050,70,F,heterosexual,SOMALIA,UNKNOWN,,-70,-1
 49052,75,M,heterosexual,UGANDA,UGANDA,,-75,-1
 49053,45,M,heterosexual,SWEDEN,THAILAND,,-45,-1
-49054,73,M,blood products,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-73,-1
+49054,73,M,blood products,IRAN,IRAN,,-73,-1
 49055,88,M,heterosexual,CUBA,SWEDEN,,-88,-1
 49056,77,M,homosexual/bisexual,SWEDEN,SWEDEN,,-77,-1
 49057,47,M,heterosexual,SWEDEN,GAMBIA,,-47,-1
@@ -25835,7 +25835,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49085,78,M,homosexual/bisexual,SWEDEN,SWEDEN,,-78,-1
 49086,75,F,heterosexual,UGANDA,UGANDA,,-75,-1
 49087,49,F,other,SWEDEN,SWEDEN,,-49,-1
-49088,71,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-71,-1
+49088,71,M,heterosexual,LIBYAN,LIBYAN,,-71,-1
 49089,66,F,heterosexual,CAMEROON,CAMEROON,,-66,-1
 49090,78,F,heterosexual,THAILAND,THAILAND,,-78,-1
 49091,74,F,heterosexual,THAILAND,THAILAND,,-74,-1
@@ -25848,7 +25848,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49098,86,M,homosexual/bisexual,THAILAND,SWEDEN,,-86,-1
 49099,43,M,heterosexual,ETHIOPIA,ETHIOPIA,,-43,-1
 49100,79,M,homosexual/bisexual,SWEDEN,SWEDEN,,-79,-1
-49101,84,M,heterosexual,BOSNIA AND HERZEGOVINA,SWEDEN,,-84,-1
+49101,84,M,heterosexual,BOSNIA,SWEDEN,,-84,-1
 49102,59,M,heterosexual,IRAQ,DENMARK,,-59,-1
 49103,78,M,heterosexual,ETHIOPIA,ETHIOPIA,,-78,-1
 49104,63,M,heterosexual,ERITREA,AFRICA UNKNOWN,,-63,-1
@@ -25878,7 +25878,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49130,80,F,other,SOMALIA,SOMALIA,,-80,-1
 49131,62,M,homosexual/bisexual,SWEDEN,SWEDEN,,-62,-1
 49132,70,M,homosexual/bisexual,SWEDEN,SWEDEN,,-70,-1
-49133,73,F,heterosexual,CENTRAL AFRICAN REPUBLIC,SWEDEN,,-73,-1
+49133,73,F,heterosexual,CENTRAL AFRICA,SWEDEN,,-73,-1
 49134,92,F,heterosexual,IRAQ,IRAQ,,-92,-1
 49135,60,M,heterosexual,SWEDEN,THAILAND,,-60,-1
 49136,45,M,heterosexual,SWEDEN,TANZANIA,,-45,-1
@@ -25962,7 +25962,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49217,70,F,heterosexual,ERITREA,ERITREA,,-70,-1
 49218,80,M,heterosexual,CONGO,UNKNOWN,,-80,-1
 49219,70,F,heterosexual,VIET NAM,VIET NAM,,-70,-1
-49220,76,M,heterosexual,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,-76,-1
+49220,76,M,heterosexual,LIBYAN,LIBYAN,,-76,-1
 49221,72,M,homosexual/bisexual,PALESTINIA,SWEDEN,,-72,-1
 49222,74,F,heterosexual,THAILAND,THAILAND,,-74,-1
 49223,,M,homosexual/bisexual,UZBEKISTAN,UZBEKISTAN,,0,0
@@ -26004,7 +26004,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49268,76,M,homosexual/bisexual,SWEDEN,DENMARK,,-76,-1
 49269,81,F,other,RUSSIA,RUSSIA,,-81,-1
 49270,78,F,heterosexual,ERITREA,ERITREA,,-78,-1
-49271,79,M,homosexual/bisexual,REPUBLIC OF KOREA,REPUBLIC OF KOREA,,-79,-1
+49271,79,M,homosexual/bisexual,KOREA,KOREA,,-79,-1
 49272,45,M,heterosexual,GAMBIA,GAMBIA,,-45,-1
 49273,56,M,homosexual/bisexual,SWEDEN,SWEDEN,,-56,-1
 49274,67,M,heterosexual,ETHIOPIA,ETHIOPIA,,-67,-1
@@ -26108,7 +26108,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49374,69,F,heterosexual,THAILAND,THAILAND,,-69,-1
 49375,85,F,heterosexual,CAMEROON,CAMEROON,,-85,-1
 49376,73,F,heterosexual,ETHIOPIA,ETHIOPIA,,-73,-1
-49377,65,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-65,-1
+49377,65,M,heterosexual,IRAN,SWEDEN,,-65,-1
 49378,67,M,other,THAILAND,THAILAND,,-67,-1
 49379,75,F,heterosexual,CAMEROON,CAMEROON,,-75,-1
 49380,72,F,heterosexual,NIGERIA,NIGERIA,,-72,-1
@@ -26136,7 +26136,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49405,43,M,heterosexual,SWEDEN,ANGOLA,,-43,-1
 49406,67,F,heterosexual,THAILAND,THAILAND,,-67,-1
 49408,83,F,heterosexual,COTE D'IVOIRE,UNKNOWN,,-83,-1
-49409,75,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,UNITED ARAB EMIRATES,,-75,-1
+49409,75,M,homosexual/bisexual,SYRIA,UAE,,-75,-1
 49410,72,F,heterosexual,KENYA,KENYA,,-72,-1
 49411,77,M,homosexual/bisexual,ARGENTINA,UNITED STATES,,-77,-1
 49412,84,F,heterosexual,MYANMAR,MYANMAR,,-84,-1
@@ -26168,7 +26168,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49438,36,M,homosexual/bisexual,SWEDEN,SWEDEN,,-36,-1
 49439,79,F,heterosexual,SPAIN,BELGIUM,,-79,-1
 49440,79,F,heterosexual,CHINA,CHINA,,-79,-1
-49441,78,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-78,-1
+49441,78,M,homosexual/bisexual,SERBIA,SWEDEN,,-78,-1
 49442,2009,M,vertical transmission,BOTSWANA,BOTSWANA,,-2009,-1
 49443,76,F,heterosexual,ERITREA,ERITREA,,-76,-1
 49444,74,M,homosexual/bisexual,NIGERIA,NIGERIA,,-74,-1
@@ -26205,7 +26205,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49477,76,M,homosexual/bisexual,GERMANY,GERMANY,,-76,-1
 49478,75,F,heterosexual,NIGERIA,NIGERIA,,-75,-1
 49479,76,F,other,SOMALIA,SOMALIA,,-76,-1
-49480,79,M,other,BOSNIA AND HERZEGOVINA,UNKNOWN,,-79,-1
+49480,79,M,other,BOSNIA,UNKNOWN,,-79,-1
 49481,79,M,heterosexual,CONGO,CONGO,,-79,-1
 49482,72,F,heterosexual,THAILAND,THAILAND,,-72,-1
 49483,76,F,heterosexual,KENYA,KENYA,,-76,-1
@@ -26222,7 +26222,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49496,53,M,homosexual/bisexual,SWEDEN,SWEDEN,,-53,-1
 49498,77,M,heterosexual,ESTONIA,ESTONIA,,-77,-1
 49499,66,M,homosexual/bisexual,ISRAEL,SWEDEN,,-66,-1
-49500,81,F,heterosexual,SERBIA AND MONTENEGRO,SWEDEN,,-81,-1
+49500,81,F,heterosexual,SERBIA,SWEDEN,,-81,-1
 49501,41,M,homosexual/bisexual,SWEDEN,SWEDEN,,-41,-1
 49502,72,F,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-72,-1
 49503,71,M,heterosexual,SWEDEN,THAILAND,,-71,-1
@@ -26309,7 +26309,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49587,78,M,homosexual/bisexual,SWEDEN,SWEDEN,,-78,-1
 49588,68,M,IVDA,MALAYSIA,MALAYSIA,,-68,-1
 49589,80,M,homosexual/bisexual,THAILAND,THAILAND,,-80,-1
-49590,69,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,GERMANY,,-69,-1
+49590,69,M,homosexual/bisexual,BOSNIA,GERMANY,,-69,-1
 49591,77,F,other,ERITREA,ERITREA,,-77,-1
 49592,67,M,homosexual/bisexual,SWEDEN,ARGENTINA,,-67,-1
 49594,93,M,other,UGANDA,UGANDA,,-93,-1
@@ -26321,7 +26321,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49600,75,M,heterosexual,GAMBIA,GAMBIA,,-75,-1
 49601,85,F,heterosexual,GAMBIA,SWEDEN,,-85,-1
 49602,70,M,homosexual/bisexual,SWEDEN,SINGAPORE,,-70,-1
-49603,73,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SERBIA AND MONTENEGRO,,-73,-1
+49603,73,M,homosexual/bisexual,SERBIA,SERBIA,,-73,-1
 49604,73,M,heterosexual,NIGERIA,NIGERIA,,-73,-1
 49605,45,F,heterosexual,SOMALIA,SOMALIA,,-45,-1
 49606,85,F,heterosexual,SOMALIA,SOMALIA,,-85,-1
@@ -26482,10 +26482,10 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49768,56,F,heterosexual,SWEDEN,SWEDEN,,-56,-1
 49769,80,M,homosexual/bisexual,SWEDEN,SWEDEN,,-80,-1
 49770,78,M,other,BHUTAN,BHUTAN,,-78,-1
-49771,83,M,homosexual/bisexual,BOSNIA AND HERZEGOVINA,NETHERLANDS,,-83,-1
+49771,83,M,homosexual/bisexual,BOSNIA,NETHERLANDS,,-83,-1
 49772,77,F,heterosexual,ERITREA,ERITREA,,-77,-1
 49773,71,F,heterosexual,SWEDEN,SWEDEN,,-71,-1
-49774,60,M,heterosexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-60,-1
+49774,60,M,heterosexual,IRAN,SWEDEN,,-60,-1
 49775,74,M,homosexual/bisexual,SWEDEN,DENMARK,,-74,-1
 49776,83,M,homosexual/bisexual,IRELAND,SWEDEN,,-83,-1
 49777,48,M,heterosexual,SWEDEN,BOTSWANA,,-48,-1
@@ -26500,7 +26500,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49787,59,M,heterosexual,SWEDEN,THAILAND,,-59,-1
 49788,2003,F,vertical transmission,KENYA,KENYA,,-2003,-1
 49789,79,F,heterosexual,KENYA,KENYA,,-79,-1
-49790,,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SYRIAN ARAB REPUBLIC,,0,0
+49790,,M,homosexual/bisexual,SYRIA,SYRIA,,0,0
 49791,79,F,heterosexual,THAILAND,THAILAND,,-79,-1
 49792,64,M,other,ERITREA,ERITREA,,-64,-1
 49793,78,F,other,ERITREA,ERITREA,,-78,-1
@@ -26514,7 +26514,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49801,71,F,blood products,RUSSIA,UKRAINE,,-71,-1
 49802,73,F,heterosexual,THAILAND,THAILAND,,-73,-1
 49803,80,M,other,ERITREA,ERITREA,,-80,-1
-49804,,M,homosexual/bisexual,CANADA,REPUBLIC OF KOREA,,0,0
+49804,,M,homosexual/bisexual,CANADA,KOREA,,0,0
 49805,58,M,homosexual/bisexual,IRAQ,SWEDEN,,-58,-1
 49806,93,F,heterosexual,UGANDA,UGANDA,,-93,-1
 49807,66,M,homosexual/bisexual,SWEDEN,SWEDEN,,-66,-1
@@ -26539,7 +26539,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49827,64,M,homosexual/bisexual,SWEDEN,SWEDEN,,-64,-1
 49828,77,F,heterosexual,ROMANIA,SWEDEN,,-77,-1
 49829,85,M,heterosexual,KENYA,NIGERIA,,-85,-1
-49830,65,M,heterosexual,SERBIA AND MONTENEGRO,SWEDEN,,-65,-1
+49830,65,M,heterosexual,SERBIA,SWEDEN,,-65,-1
 49832,78,F,heterosexual,ARGENTINA,ARGENTINA,,-78,-1
 49833,81,M,homosexual/bisexual,CHILE,SPAIN,,-81,-1
 49834,82,F,heterosexual,CAMEROON,CAMEROON,,-82,-1
@@ -26664,7 +26664,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 49959,81,F,heterosexual,THAILAND,THAILAND,,-81,-1
 49960,82,F,heterosexual,POLAND,POLAND,,-82,-1
 49961,74,M,homosexual/bisexual,SWEDEN,GERMANY,,-74,-1
-49962,66,M,homosexual/bisexual,SERBIA AND MONTENEGRO,CROATIA,,-66,-1
+49962,66,M,homosexual/bisexual,SERBIA,CROATIA,,-66,-1
 49963,81,M,heterosexual,KENYA,KENYA,,-81,-1
 49964,66,M,homosexual/bisexual,CUBA,UNITED STATES,,-66,-1
 49965,69,M,heterosexual,COTE D'IVOIRE,SWEDEN,,-69,-1
@@ -26900,9 +26900,9 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50217,78,M,homosexual/bisexual,SWEDEN,SWEDEN,,-78,-1
 50218,75,M,heterosexual,SWEDEN,THAILAND,,-75,-1
 50219,64,F,heterosexual,ERITREA,UNKNOWN,,-64,-1
-50220,73,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,SWEDEN,,-73,-1
+50220,73,M,homosexual/bisexual,IRAN,SWEDEN,,-73,-1
 50221,71,M,heterosexual,ERITREA,ERITREA,,-71,-1
-50222,81,F,blood products,ERITREA,LIBYAN ARAB JAMAHIRIYA,,-81,-1
+50222,81,F,blood products,ERITREA,LIBYAN,,-81,-1
 50223,62,M,homosexual/bisexual,SWEDEN,SWEDEN,,-62,-1
 50224,79,F,heterosexual,ETHIOPIA,SWEDEN,,-79,-1
 50226,86,F,heterosexual,THAILAND,THAILAND,,-86,-1
@@ -27074,7 +27074,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50396,75,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-75,-1
 50397,85,M,heterosexual,SWEDEN,UNKNOWN,,-85,-1
 50398,78,M,heterosexual,GUINEA,GUINEA,,-78,-1
-50399,78,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SERBIA AND MONTENEGRO,,-78,-1
+50399,78,M,homosexual/bisexual,SERBIA,SERBIA,,-78,-1
 50400,72,M,homosexual/bisexual,CHILE,UNITED STATES,,-72,-1
 50401,73,F,heterosexual,SWEDEN,SWEDEN,,-73,-1
 50402,66,M,homosexual/bisexual,SWEDEN,SPAIN,,-66,-1
@@ -27123,7 +27123,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50448,66,F,heterosexual,KENYA,KENYA,,-66,-1
 50449,59,F,heterosexual,SOMALIA,SOMALIA,,-59,-1
 50450,63,M,homosexual/bisexual,SWEDEN,PERU,,-63,-1
-50451,79,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-79,-1
+50451,79,M,homosexual/bisexual,SYRIA,SWEDEN,,-79,-1
 50452,69,M,homosexual/bisexual,SWEDEN,SWEDEN,,-69,-1
 50454,76,M,other,MOROCCO,DENMARK,,-76,-1
 50455,60,M,heterosexual,BURUNDI,BURUNDI,,-60,-1
@@ -27148,7 +27148,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50477,61,M,other,SWEDEN,UNKNOWN,,-61,-1
 50478,93,F,heterosexual,CONGO,UNKNOWN,,-93,-1
 50479,81,M,heterosexual,ETHIOPIA,UNKNOWN,,-81,-1
-50480,84,F,heterosexual,ERITREA,LIBYAN ARAB JAMAHIRIYA,,-84,-1
+50480,84,F,heterosexual,ERITREA,LIBYAN,,-84,-1
 50481,77,M,homosexual/bisexual,SWEDEN,SWEDEN,,-77,-1
 50482,88,M,homosexual/bisexual,SWEDEN,UNITED STATES,,-88,-1
 50483,82,M,heterosexual,SWEDEN,SWEDEN,,-82,-1
@@ -27197,7 +27197,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50531,63,F,other,ETHIOPIA,ETHIOPIA,,-63,-1
 50532,69,F,heterosexual,ERITREA,ERITREA,,-69,-1
 50533,60,F,heterosexual,SWEDEN,SWEDEN,,-60,-1
-50534,84,M,homosexual/bisexual,SYRIAN ARAB REPUBLIC,SWEDEN,,-84,-1
+50534,84,M,homosexual/bisexual,SYRIA,SWEDEN,,-84,-1
 50535,84,M,heterosexual,POLAND,SWEDEN,,-84,-1
 50536,72,M,homosexual/bisexual,SWEDEN,UNITED STATES,,-72,-1
 50537,77,F,heterosexual,THAILAND,THAILAND,,-77,-1
@@ -27281,7 +27281,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50623,72,F,heterosexual,COTE D'IVOIRE,COTE D'IVOIRE,,-72,-1
 50624,39,M,heterosexual,SWEDEN,GAMBIA,,-39,-1
 50625,77,M,heterosexual,CAMEROON,CAMEROON,,-77,-1
-50626,64,M,homosexual/bisexual,SERBIA AND MONTENEGRO,SWEDEN,,-64,-1
+50626,64,M,homosexual/bisexual,SERBIA,SWEDEN,,-64,-1
 50627,97,F,other,ERITREA,SURINAME,,-97,-1
 50628,2007,F,vertical transmission,ETHIOPIA,ETHIOPIA,,-2007,-1
 50629,82,F,heterosexual,ETHIOPIA,ETHIOPIA,,-82,-1
@@ -27301,7 +27301,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50644,85,F,heterosexual,THAILAND,THAILAND,,-85,-1
 50645,69,F,heterosexual,UGANDA,UGANDA,,-69,-1
 50646,72,M,homosexual/bisexual,SWEDEN,SWEDEN,,-72,-1
-50647,69,M,homosexual/bisexual,SWEDEN,UNITED ARAB EMIRATES,,-69,-1
+50647,69,M,homosexual/bisexual,SWEDEN,UAE,,-69,-1
 50648,62,M,homosexual/bisexual,THAILAND,THAILAND,,-62,-1
 50649,81,M,homosexual/bisexual,SWEDEN,SWEDEN,,-81,-1
 50650,79,F,heterosexual,SWAZILAND,SWAZILAND,,-79,-1
@@ -27318,7 +27318,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50662,83,M,IVDA,ESTONIA,ESTONIA,,-83,-1
 50663,72,F,heterosexual,ETHIOPIA,YEMEN,,-72,-1
 50664,69,F,heterosexual,THAILAND,THAILAND,,-69,-1
-50665,,M,homosexual/bisexual,EGYPT,UNITED ARAB EMIRATES,,0,0
+50665,,M,homosexual/bisexual,EGYPT,UAE,,0,0
 50666,81,M,homosexual/bisexual,SWEDEN,SWEDEN,,-81,-1
 50667,,M,homosexual/bisexual,ARGENTINA,ARGENTINA,,0,0
 50668,79,F,other,ETHIOPIA,ETHIOPIA,,-79,-1
@@ -27404,7 +27404,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50753,81,F,heterosexual,THAILAND,THAILAND,,-81,-1
 50754,88,M,homosexual/bisexual,COLOMBIA,SWEDEN,,-88,-1
 50755,84,F,heterosexual,UGANDA,UGANDA,,-84,-1
-50756,87,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,MALAYSIA,,-87,-1
+50756,87,M,homosexual/bisexual,IRAN,MALAYSIA,,-87,-1
 50757,72,F,heterosexual,ZIMBABWE,ZIMBABWE,,-72,-1
 50758,88,M,homosexual/bisexual,RUSSIA,SWEDEN,,-88,-1
 50759,84,M,homosexual/bisexual,CUBA,CUBA,,-84,-1
@@ -27492,7 +27492,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50851,88,F,other,KENYA,KENYA,,-88,-1
 50852,72,F,heterosexual,ERITREA,SUDAN,,-72,-1
 50853,85,M,homosexual/bisexual,ITALY,UNKNOWN,,-85,-1
-50854,78,M,IVDA,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-78,-1
+50854,78,M,IVDA,IRAN,IRAN,,-78,-1
 50855,65,M,homosexual/bisexual,SWEDEN,ARGENTINA,,-65,-1
 50856,68,M,homosexual/bisexual,UNITED KINGDOM,UNITED KINGDOM,,-68,-1
 50857,74,M,other,ERITREA,SUDAN,,-74,-1
@@ -27528,7 +27528,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50893,90,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-90,-1
 50894,73,M,heterosexual,ETHIOPIA,ETHIOPIA,,-73,-1
 50895,84,F,heterosexual,UKRAINE,UKRAINE,,-84,-1
-50896,78,M,other,ISLAMIC REPUBLIC OF IRAN,ISLAMIC REPUBLIC OF IRAN,,-78,-1
+50896,78,M,other,IRAN,IRAN,,-78,-1
 50897,88,M,homosexual/bisexual,SWEDEN,SWEDEN,,-88,-1
 50898,86,M,homosexual/bisexual,IRAQ,SWEDEN,,-86,-1
 50899,59,M,IVDA,SWEDEN,SWEDEN,,-59,-1
@@ -27592,7 +27592,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50972,84,M,homosexual/bisexual,SWEDEN,SWEDEN,,-84,-1
 50973,61,M,homosexual/bisexual,SWEDEN,UNKNOWN,,-61,-1
 50974,71,F,heterosexual,ETHIOPIA,ETHIOPIA,,-71,-1
-50975,78,F,heterosexual,CAMEROON,UNITED ARAB EMIRATES,,-78,-1
+50975,78,F,heterosexual,CAMEROON,UAE,,-78,-1
 50979,73,M,heterosexual,SWEDEN,SWEDEN,,-73,-1
 50981,74,F,heterosexual,THAILAND,THAILAND,,-74,-1
 50982,86,M,homosexual/bisexual,PALESTINIA,SWEDEN,,-86,-1
@@ -27606,7 +27606,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 50992,86,F,heterosexual,ERITREA,ERITREA,,-86,-1
 50993,71,M,other,SOMALIA,SOMALIA,,-71,-1
 50994,69,M,homosexual/bisexual,SWEDEN,SWEDEN,,-69,-1
-50995,,M,other,LIBYAN ARAB JAMAHIRIYA,LIBYAN ARAB JAMAHIRIYA,,0,0
+50995,,M,other,LIBYAN,LIBYAN,,0,0
 50997,82,F,other,ETHIOPIA,UNKNOWN,,-82,-1
 51001,73,F,heterosexual,SPAIN,UNKNOWN,,-73,-1
 51002,84,F,heterosexual,NIGERIA,UNKNOWN,,-84,-1
@@ -27980,7 +27980,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 51370,58,F,heterosexual,BRAZIL,UNKNOWN,01.01.1985,27,27
 51371,64,M,heterosexual,PORTUGAL,UNKNOWN,01.01.1989,25,25
 51372,45,M,homosexual/bisexual,BELGIUM,UNKNOWN,07.06.2004,59,59
-51373,79,F,IVDA,BOSNIA AND HERZEGOVINA,UNKNOWN,15.03.2004,25,25
+51373,79,F,IVDA,BOSNIA,UNKNOWN,15.03.2004,25,25
 51374,74,M,heterosexual,UKRAINE,UNKNOWN,01.01.1988,14,14
 51375,64,M,homosexual/bisexual,LUXEMBOURG,UNKNOWN,25.06.2005,41,41
 51376,67,M,IVDA,LUXEMBOURG,UNKNOWN,01.05.1995,28,28
@@ -29317,7 +29317,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 53222,79,F,heterosexual,THAILAND,UNKNOWN,,-79,-1
 53224,77,M,heterosexual,CAMEROON,UNKNOWN,,-77,-1
 53225,76,F,heterosexual,BURUNDI,UNKNOWN,,-76,-1
-53226,63,M,heterosexual,DOMINICAN REPUBLIC,UNKNOWN,,-63,-1
+53226,63,M,heterosexual,DOM. REPUBLIC,UNKNOWN,,-63,-1
 53228,77,M,homosexual/bisexual,GHANA,UNKNOWN,,-77,-1
 53229,71,F,heterosexual,BELGIUM,UNKNOWN,,-71,-1
 53231,62,M,homosexual/bisexual,BELGIUM,UNKNOWN,,-62,-1
@@ -29489,7 +29489,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 53431,68,M,heterosexual,KENYA,UNKNOWN,,-68,-1
 53433,71,M,homosexual/bisexual,GREECE,UNKNOWN,,-71,-1
 53434,66,M,homosexual/bisexual,TOGO,UNKNOWN,,-66,-1
-53437,74,M,homosexual/bisexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-74,-1
+53437,74,M,homosexual/bisexual,IRAN,UNKNOWN,,-74,-1
 53438,78,M,heterosexual,ITALY,UNKNOWN,,-78,-1
 53439,68,M,homosexual/bisexual,BELGIUM,UNKNOWN,,-68,-1
 53440,67,M,heterosexual,SOUTH AFRICA,UNKNOWN,,-67,-1
@@ -30151,7 +30151,7 @@ patient_id,year_of_birth,Gender,Risk,origin,infection,first_positive_test_date,a
 58896,72,F,heterosexual,GUINEA-BISSAU,UNKNOWN,,-72,-1
 58898,87,M,homosexual/bisexual,PORTUGAL,UNKNOWN,,-87,-1
 58920,2001,M,vertical transmission,PORTUGAL,UNKNOWN,,-2001,-1
-58926,58,F,heterosexual,ISLAMIC REPUBLIC OF IRAN,UNKNOWN,,-58,-1
+58926,58,F,heterosexual,IRAN,UNKNOWN,,-58,-1
 58942,72,M,IVDA,ANGOLA,UNKNOWN,,-72,-1
 58971,76,M,IVDA,PORTUGAL,UNKNOWN,,-76,-1
 58986,72,M,IVDA,PORTUGAL,UNKNOWN,,-72,-1
