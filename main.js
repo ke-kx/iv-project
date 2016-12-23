@@ -1,15 +1,19 @@
 /*
 high:
-  stop causes! (generate data + display in bars)
-    make sure to remove superflous global etc vars to save memory!!!
-  change all groups to lookups instead of arrays?!
   heatmap?! -> http://bl.ocks.org/tjdecke/5558084 and like in whatsapp
+    chage step by step:
+      first one big function still with old dataset
+      change left axis, top axis, displayed data
+      make sure there is one datastrukture which is valid for all possible displays
+    enable switching between what is displayed (gender, riskgroup, + add additionals)
+
   filter for hover + display bars (just override?!)
 
 medium:
-  wrap long country names in ybarchart - https://bl.ocks.org/mbostock/7555321
   enable filtering by clicking on a bar of the barcharts
+  wrap long country names in ybarchart - https://bl.ocks.org/mbostock/7555321
   main.html: change into column layout of bootstrap -> no problem with table?!
+  change all groups to lookups instead of arrays?!
 
 super low priority:
   genderpie: make text also transition around pie
@@ -67,7 +71,6 @@ function update() {
 }
 
 function change_view(new_view) {
-  console.log(new_view);
   // remove currently displayed content
   d3.select('#content').selectAll('*').remove();
 

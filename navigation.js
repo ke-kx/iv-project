@@ -24,7 +24,7 @@ var navigation = (function () {
     var buttons = [
       {string: "Overview", display: bars, name:"overviewButton"},
       {string: "Compare riskgroups", display: riskgroups_chart, name:"riskgroupsButton"},
-      {string: "Compare countries", display: bars, name:"countriesButton"}
+      {string: "Compare countries", display: heatmap, name:"countriesButton"}
       //{string: "See table", display: table, name:"tableButton"} // debug
     ];
 
@@ -72,16 +72,13 @@ var navigation = (function () {
 
     //manipulate selector boxes for riskgroupsview
     if(current_graph == riskgroups_chart){
-      select_data[0] = [];
-
-      d3.select('#selectors')
-        .select('#riskgroup').attr('disabled', false);
+      // I inserted the riskgroup filters again, since they seem to work flawlessly
+      // left this piece in in case you wanted to reinstate it -> not sure it's necessary
 
       d3.select('#selectors')
         .select('#agegroup').attr('maxOptions', 2)
     } else {
-      d3.select('#selectors')
-        .select('#riskgroup').attr('disabled', null);
+
     }
 
     // save selected values of all select boxes
