@@ -33,7 +33,7 @@ var data = (function () {
         unique_columns = columns.map(x => get_unique_column(x.html, filtered_dataset));
         filtered_unique_columns = unique_columns.map(column_filter);
         unique_stop_causes = get_unique_column(x => x.stop_cause_desc, therapies);
-
+		
         update_derived_data();
         cb();
       });
@@ -82,7 +82,8 @@ var data = (function () {
         result.push(name);
       }
     }
-    return result;
+	
+    return result.sort();
   }
 
   // reset all derived data arrays to their initial state (0,0,0,...)
