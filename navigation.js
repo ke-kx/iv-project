@@ -90,13 +90,13 @@ var navigation = (function () {
     // same changes for heatmap
     if (current_graph == heatmap) {
 
-      if($('#infection').val().length > 10) {
+      if($('#infection').val().length > 7) {
         columns[4].filter = [];
         $('#infection').val('').selectpicker('refresh')
       }
 
       $('#infection').selectpicker({
-        maxOptions: 10,
+        maxOptions: 7,
         maxOptionsText: "In this view the maximum number of selectable countries is 10!",
       });
     } else {

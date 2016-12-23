@@ -5,7 +5,7 @@ var heatmap = (function () {
   var margin = { top: 50, right: 0, bottom: 100, left: 30 },
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
-    gridSize = Math.floor(width / 24),
+    gridSize = Math.floor(height / 7),
     legendElementWidth = gridSize*2,
     buckets = 9,
     colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"], // alternatively colorbrewer.YlGnBu[9]
@@ -18,7 +18,8 @@ var heatmap = (function () {
   mod.attrFunction;
   mod.buttons = [
     {string: "Gender", attrFunction: x => x.gender},
-    {string: "Riskgroups", attrFunction: x => x.riskgroups}
+    {string: "Riskgroups", attrFunction: x => x.riskgroups},
+    {string: "Stopcauses", attrFunction: x => x.stopcauses}
   ];
 
   mod.setup = function () {
@@ -44,11 +45,13 @@ var heatmap = (function () {
       "IVDA": 0,
       "vertical transmission": 0
     };
-    //TODO: add more potential data
+
+    var empty_sc = {};
+    // leave
+    console.log(unique_stop_causes);
 
     //TODO: enable for both, origin and infection
     dataset = $('#infection').val(); // infection
-    console.log(dataset);
 
     country_values = {};
     for (var i in dataset) {
@@ -94,12 +97,21 @@ var heatmap = (function () {
         }
       }
     }
+
+    var ind = topData.indexOf("homosexual/bisexual");
+    if (ind != -1) {
+      topData[ind] = "homosexual";
+    }
+
+    ind = topData.indexOf("vertical transmission");
+    if (ind != -1) {
+      topData[ind] = "vert. trans.";
+    }
   }
 
   function create_heatmap (first_time, data) {
 
     if (first_time) {
-      console.log("ADDING HEATMAP BUTTONS")
       d3.select('#navigation').select('#heatmap_buttons')
         .selectAll('button').data(heatmap.buttons).enter()
         .append('button')
@@ -109,7 +121,6 @@ var heatmap = (function () {
         .style('margin-right','15px')
         .style('margin-top','5px')
         .on('click', x => {
-          console.log(x);
           mod.attrFunction = x.attrFunction;
           mod.update();
         })
@@ -119,17 +130,16 @@ var heatmap = (function () {
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left * 3 + "," + margin.top + ")");
     } else {
       var svg = d3.select('#content').select('g');
     }
 
     // modifying / adding top labels
-    console.log(topData);
     var topLabels = svg.selectAll(".timeLabel").data(topData)
     .text(function(d) { return d; })
     .attr("x", function(d, i) { return i * gridSize; })
-    .attr("y", 0)
+    .attr("y", function(d, i) { return (i % 2 == 0) ? 0 : -10; })
     .style("text-anchor", "middle")
     .attr("transform", "translate(" + gridSize / 2 + ", -6)")
     .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
@@ -138,7 +148,7 @@ var heatmap = (function () {
       .append("text")
       .text(function(d) { return d; })
       .attr("x", function(d, i) { return i * gridSize; })
-      .attr("y", 0)
+      .attr("y", function(d, i) { return (i % 2 == 0) ? 0 : -10; })
       .style("text-anchor", "middle")
       .attr("transform", "translate(" + gridSize / 2 + ", -6)")
       .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel mono axis axis-worktime" : "timeLabel mono axis"); });
@@ -164,8 +174,6 @@ var heatmap = (function () {
       .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "dayLabel mono axis axis-workweek" : "dayLabel mono axis"); });
 
     leftLabels.exit().remove();
-
-    console.log(data);
 
     var colorScale = d3.scaleQuantile()
       .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])

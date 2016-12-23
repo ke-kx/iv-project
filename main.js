@@ -1,7 +1,6 @@
 /*
 high:
   heatmap?!
-    show whole countryname + top display solution for longer stuff
     add more possible datapoints to choose from (ageranges, stop causes..)
 
   filter for hover + display bars (just override?!)
