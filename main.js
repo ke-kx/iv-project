@@ -5,6 +5,7 @@ high:
       first one big function still with old dataset
       change left axis, top axis, displayed data
       make sure there is one datastrukture which is valid for all possible displays
+    make sure to display percentages as absolute values make no sense at all
     enable switching between what is displayed (gender, riskgroup, + add additionals)
 
   filter for hover + display bars (just override?!)
@@ -25,6 +26,8 @@ var unique_columns, filtered_unique_columns;
 var unique_stop_causes, stopcauses_total;
 var agegroups, riskgroups, gendergroups, stopcausesgroups, countryofinfectiongroups, riskagegroups;
 var riskgroup_bars, agegroup_bars;
+var datasets = [];
+var heatmapAttrFun, heatmapData;
 
 var current_graph;
 
@@ -51,7 +54,7 @@ main();
 function main () {
   data.load(function () {
 
-   current_graph = bars;
+   current_graph = heatmap;
 
     // generate elements which only have to be generated once
     navigation.setup();
